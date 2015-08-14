@@ -1,4 +1,8 @@
 build
 dist
 docs
+.DS_Store
+*.log
+coverage
+doc
 node_modules

@@ -200,4 +200,5 @@ module.exports = function (grunt) {
 
   // Setup default task that runs when you just run 'grunt'
   grunt.registerTask('default', ['build']);
+
 };
