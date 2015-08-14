@@ -1,0 +1,1836 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"coun",
+				"counter	(sample.js)"
+			],
+			[
+				"count",
+				"counter"
+			],
+			[
+				"fin",
+				"fingerprint	(core.js)"
+			],
+			[
+				"params",
+				"paramsObj"
+			],
+			[
+				"param",
+				"params"
+			],
+			[
+				"get",
+				"getElementsByName〔function〕"
+			],
+			[
+				"scene",
+				"sceneData"
+			],
+			[
+				"date",
+				"dataType"
+			],
+			[
+				"append",
+				"appendChild"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"lo",
+				"location                                  (obj)  [C]"
+			],
+			[
+				"sign",
+				"signature"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"conf",
+				"config"
+			],
+			[
+				"curr",
+				"currentIndex"
+			],
+			[
+				"comp",
+				"components"
+			],
+			[
+				"com",
+				"components"
+			],
+			[
+				"new",
+				"newList"
+			],
+			[
+				"sc",
+				"scope"
+			],
+			[
+				"option",
+				"options"
+			],
+			[
+				"de",
+				"destroy	(tools.ctrl.js)"
+			],
+			[
+				"init",
+				"initSwiper"
+			],
+			[
+				"console",
+				"console (obj) [C]"
+			],
+			[
+				"resoue",
+				"$resource	AngularJS"
+			],
+			[
+				"fact",
+				"factory"
+			],
+			[
+				"name",
+				"namepath"
+			],
+			[
+				"conti",
+				"continue〔keyword〕"
+			],
+			[
+				"dir",
+				"direction"
+			],
+			[
+				"onS",
+				"onSubmitComplete"
+			],
+			[
+				"parent",
+				"parentNode"
+			],
+			[
+				"subm",
+				"submit"
+			],
+			[
+				"accou",
+				"accountKeyInput"
+			],
+			[
+				"scen",
+				"sceneIdInput"
+			],
+			[
+				"crea",
+				"createElement〔function〕"
+			],
+			[
+				"submi",
+				"submitForm"
+			],
+			[
+				"server",
+				"serverConfig"
+			],
+			[
+				"serve",
+				"serverConfig"
+			],
+			[
+				"serv",
+				"serverConfig"
+			],
+			[
+				"stat",
+				"staticTemplates"
+			],
+			[
+				"mus",
+				"musicLibData"
+			],
+			[
+				"imag",
+				"imageLib"
+			],
+			[
+				"load",
+				"loading"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"scee",
+				"sceneData"
+			],
+			[
+				"ma",
+				"match"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"ckeditor",
+				"_ckeditor-reset.sass"
+			],
+			[
+				"dest",
+				"destroy"
+			],
+			[
+				"in",
+				"instance"
+			],
+			[
+				"edi",
+				"editor"
+			],
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"play",
+				"playing"
+			],
+			[
+				"getEle",
+				"getElementById"
+			],
+			[
+				"anima",
+				"animation"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"music",
+				"musicplayer"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"hi",
+				"hidden"
+			],
+			[
+				"abs",
+				"absolute"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"poi",
+				"position"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"backgroun",
+				"backgroundSize"
+			],
+			[
+				"line",
+				"linear"
+			],
+			[
+				"next",
+				"nextElementSibling"
+			],
+			[
+				"previ",
+				"previousElementSibling"
+			],
+			[
+				"previe",
+				"previewBox"
+			],
+			[
+				"eve",
+				"eventType"
+			],
+			[
+				"exit",
+				"exitPreviewMode"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"dist",
+				"distHtml"
+			],
+			[
+				"string",
+				"stringify"
+			],
+			[
+				"upload",
+				"uploadMusic"
+			],
+			[
+				"delet",
+				"deleteImg"
+			],
+			[
+				"loca",
+				"location                                  (obj)  [E]"
+			],
+			[
+				"succ",
+				"success"
+			],
+			[
+				"copy",
+				"copy:dist"
+			],
+			[
+				"check",
+				"checkedImg"
+			],
+			[
+				"chec",
+				"checkedImg"
+			],
+			[
+				"temp",
+				"template"
+			],
+			[
+				"path",
+				"pathname"
+			],
+			[
+				"controll",
+				"controller"
+			],
+			[
+				"sce",
+				"sceneId"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"deep",
+				"deepCopy"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"prop",
+				"propertices"
+			],
+			[
+				"dele",
+				"delete"
+			],
+			[
+				"control",
+				"controller"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"write",
+				"writeFileSync"
+			],
+			[
+				"wri",
+				"writeFileSync"
+			],
+			[
+				"auto",
+				"autoUpload"
+			],
+			[
+				"uplo",
+				"upload"
+			],
+			[
+				"acc",
+				"acceptUpload"
+			],
+			[
+				"set",
+				"setTimeout〔function〕"
+			],
+			[
+				"file",
+				"filepath"
+			],
+			[
+				"$root",
+				"$rootScope"
+			],
+			[
+				"base",
+				"basename"
+			],
+			[
+				"$roo",
+				"$rootScope"
+			],
+			[
+				"prev",
+				"preview"
+			],
+			[
+				"timeo",
+				"$timeout	AngularJS"
+			],
+			[
+				"even",
+				"event"
+			],
+			[
+				"ms_",
+				"ms_audio"
+			],
+			[
+				"for",
+				"formData"
+			],
+			[
+				"parse",
+				"parseInt〔function〕"
+			],
+			[
+				"iset",
+				"inset"
+			],
+			[
+				"rel",
+				"relative"
+			],
+			[
+				"creat",
+				"createPageId"
+			],
+			[
+				"ng-mouse",
+				"ng-mouseup	AngularJS"
+			],
+			[
+				"anim",
+				"animations"
+			],
+			[
+				"deepC",
+				"deepCopyFilter"
+			],
+			[
+				"filt",
+				"filter"
+			],
+			[
+				"parm",
+				"params"
+			],
+			[
+				"acco",
+				"accountKey"
+			],
+			[
+				"root",
+				"rootScope"
+			],
+			[
+				"time",
+				"timeout"
+			],
+			[
+				"att",
+				"attrs"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 4142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/colin/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
+			"settings":
+			{
+				"buffer_size": 8539,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/test.conf.js",
+			"settings":
+			{
+				"buffer_size": 81,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/karma.conf.js",
+			"settings":
+			{
+				"buffer_size": 2412,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/mw-sdk.js",
+			"settings":
+			{
+				"buffer_size": 719,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/spec/mw-sdk.spec.js",
+			"settings":
+			{
+				"buffer_size": 487,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "to",
+		"selected_items":
+		[
+			[
+				"to",
+				"TodoReview: Open Files"
+			],
+			[
+				"todo",
+				"Show TODOs: Project and open files"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"show",
+				"Show TODOs: Open files only"
+			],
+			[
+				"rp",
+				"Package Control: Remove Package"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"lp",
+				"Package Control: List Packages"
+			],
+			[
+				"ali",
+				"Preferences: Alignment File Settings – Syntax Specific – User"
+			],
+			[
+				"set",
+				"Set Syntax: HTML"
+			],
+			[
+				"rpa",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 178.0,
+		"history":
+		[
+			"var a;",
+			"var a",
+			"ls",
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/colin/zxinsight/mw-jssdk",
+		"/Users/colin/zxinsight/mw-jssdk/src",
+		"/Users/colin/zxinsight/mw-jssdk/test",
+		"/Users/colin/zxinsight/mw-jssdk/test/spec"
+	],
+	"file_history":
+	[
+		"/Users/colin/zxinsight/mw-jssdk/package.json",
+		"/Users/colin/zxinsight/mw-jssdk/test/s.js",
+		"/Users/colin/zxinsight/mw-jssdk/lib/sample.js",
+		"/Users/colin/zxinsight/mw-jssdk/lib/core.js",
+		"/Users/colin/zxinsight/mw-jssdk/test/unit/lib/sample.spec.js",
+		"/Users/colin/zxinsight/mw-jssdk/test/unit/lib/core.spec.js",
+		"/Users/colin/zxinsight/mw-jssdk/test/mocha.opts",
+		"/Users/colin/zxinsight/mw-jssdk/coverage/unit/lcov-report/prettify.js",
+		"/Users/colin/zxinsight/mw-jssdk/.gitignore",
+		"/Users/colin/zxinsight/mw-jssdk/README.md",
+		"/Users/colin/zxinsight/mw-jssdk/test/mocks/.gitkeep",
+		"/Users/colin/zxinsight/mw-jssdk/bin/mw-jssdk",
+		"/Users/colin/zxinsight/mw-tracking-js/.gitignore",
+		"/Users/colin/zxinsight/mw-tracking-js/api-description.json",
+		"/Users/colin/zxinsight/mw-tracking-js/mw-tracking.map",
+		"/Users/colin/zxinsight/mw-tracking-js/dist/mw-tracing.js",
+		"/Users/colin/zxinsight/mw-tracking-js/piwik-mw.js",
+		"/Users/colin/zxinsight/mw-tracking-js/piwik-mw.min.js",
+		"/Users/colin/Desktop/bootstrap.groovy",
+		"/Users/colin/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
+		"/stringify&&(JSON2.stringify=function(a,b,c){var d;if(gap=\"\",indent=\"\",\"number\"==typeof c)for(d=0;c>d;d+=1)indent+=\" \";else\"string\"==typeof c&&(indent=c);if(rep=b,b&&\"function\"!=typeof b&&(\"object\"!=typeof b||\"number\"!=typeof b.length))throw new Error(\"JSON2.stringify\");return str(\"\",{\"\":a})}),\"function\"!=typeof JSON2.parse&&(JSON2.parse=function(text,reviver){function walk(a,b){var c,d,e=a[b];if(e&&\"object\"==typeof e)for(c in e)Object.prototype.hasOwnProperty.call(e,c)&&(d=walk(e,c),void 0!==d?e[c]=d:delete e[c]);return reviver.call(a,b,e)}var j;if(text=String(text),cx.lastIndex=0,cx.test(text)&&(text=text.replace(cx,function(a){return\"\\\\u\"+(\"0000\"+a.charCodeAt(0).toString(16)).slice(-4)})),new RegExp(\"^[\\\\],:{}\\\\s]*$\").test(text.replace(new RegExp('\\\\\\\\(?:[\"\\\\\\\\/bfnrt]|u[0-9a-fA-F]{4})',\"g\"),\"@\").replace(new RegExp('\"[^\"\\\\\\\\\\n\\r]*\"|true|false|null|-?\\\\d+(?:\\\\.\\\\d*)?(?:[eE][+\\\\-]?\\\\d+)?',\"g\"),\"]\").replace(new RegExp(\"(?:^|:|,)(?:\\\\s*\\\\[)+\",\"g\"),\"\")))return j=eval(\"(\"+text+\")\"),\"function\"==typeof reviver?walk({\"\":j},\"\"):j;throw new SyntaxError(\"JSON2.parse\")})}(),\"object\"!=typeof _paq&&(_paq=[]),\"object\"!=typeof Piwik&&(Piwik=function(){\"use strict\";function isDefined(a){var b=typeof a;return\"undefined\"!==b}function isFunction(a){return\"function\"==typeof a}function isObject(a){return\"object\"==typeof a}function isString(a){return\"string\"==typeof a||a instanceof String}function apply(){var a,b,c;for(a=0;a<arguments.length;a+=1)c=arguments[a],b=c.shift(),isString(b)?asyncTracker[b].apply(asyncTracker,c):b.apply(asyncTracker,c)}function addEventListener(a,b,c,d){return a.addEventListener?(a.addEventListener(b,c,d),!0):a.attachEvent?a.attachEvent(\"on\"+b,c):void(a[\"on\"+b]=c)}function executePluginMethod(a,b){var c,d,e=\"\";for(c in plugins)Object.prototype.hasOwnProperty.call(plugins,c)&&(d=plugins[c][a],isFunction(d)&&(e+=d(b)));return e}function beforeUnloadHandler(){var a;if(executePluginMethod(\"unload\"),expireDateTime)do a=new Date;while(a.getTimeAlias()<expireDateTime)}function myBeforeUnloadHandler(a){}function loadHandler(){var a;if(!hasLoaded)for(hasLoaded=!0,executePluginMethod(\"load\"),a=0;a<registeredOnLoadHandlers.length;a++)registeredOnLoadHandlers[a]();return!0}function addReadyListener(){var a;documentAlias.addEventListener?addEventListener(documentAlias,\"DOMContentLoaded\",function b(){documentAlias.removeEventListener(\"DOMContentLoaded\",b,!1),loadHandler()}):documentAlias.attachEvent&&(documentAlias.attachEvent(\"onreadystatechange\",function c(){\"complete\"===documentAlias.readyState&&(documentAlias.detachEvent(\"onreadystatechange\",c),loadHandler())}),documentAlias.documentElement.doScroll&&windowAlias===windowAlias.top&&!function d(){if(!hasLoaded){try{documentAlias.documentElement.doScroll(\"left\")}catch(a){return void setTimeout(d,0)}loadHandler()}}()),new RegExp(\"WebKit\").test(navigatorAlias.userAgent)&&(a=setInterval(function(){(hasLoaded||/loaded|complete/.test(documentAlias.readyState))&&(clearInterval(a),loadHandler())},10)),addEventListener(windowAlias,\"load\",loadHandler,!1)}function getReferrer(){var a=\"\";try{a=windowAlias.top.document.referrer}catch(b){if(windowAlias.parent)try{a=windowAlias.parent.document.referrer}catch(c){a=\"\"}}return\"\"===a&&(a=documentAlias.referrer),a}function getHostName(a){var b=new RegExp(\"^(?:(?:https?|ftp):)/*(?:[^@]+@)?([^:/#]+)\"),c=b.exec(a);return c?c[1]:a}function getParameter(a,b){var c=\"[\\\\?&#]\"+b+\"=([^&#]*)\",d=new RegExp(c),e=d.exec(a);return e?decodeWrapper(e[1]):\"\"}function utf8_encode(a){return urldecode(encodeWrapper(a))}function sha1(a){var b,c,d,e,f,g,h,i,j,k,l=function(a,b){return a<<b|a>>>32-b},m=function(a){var b,c,d=\"\";for(b=7;b>=0;b--)c=a>>>4*b&15,d+=c.toString(16);return d},n=[],o=1732584193,p=4023233417,q=2562383102,r=271733878,s=3285377520,t=[];for(a=utf8_encode(a),k=a.length,c=0;k-3>c;c+=4)d=a.charCodeAt(c)<<24|a.charCodeAt(c+1)<<16|a.charCodeAt(c+2)<<8|a.charCodeAt(c+3),t.push(d);switch(3&k){case 0:c=2147483648;break;case 1:c=a.charCodeAt(k-1)<<24|8388608;break;case 2:c=a.charCodeAt(k-2)<<24|a.charCodeAt(k-1)<<16|32768;break;case 3:c=a.charCodeAt(k-3)<<24|a.charCodeAt(k-2)<<16|a.charCodeAt(k-1)<<8|128}for(t.push(c);14!==(15&t.length);)t.push(0);for(t.push(k>>>29),t.push(k<<3&4294967295),b=0;b<t.length;b+=16){for(c=0;16>c;c++)n[c]=t[b+c];for(c=16;79>=c;c++)n[c]=l(n[c-3]^n[c-8]^n[c-14]^n[c-16],1);for(e=o,f=p,g=q,h=r,i=s,c=0;19>=c;c++)j=l(e,5)+(f&g|~f&h)+i+n[c]+1518500249&4294967295,i=h,h=g,g=l(f,30),f=e,e=j;for(c=20;39>=c;c++)j=l(e,5)+(f^g^h)+i+n[c]+1859775393&4294967295,i=h,h=g,g=l(f,30),f=e,e=j;for(c=40;59>=c;c++)j=l(e,5)+(f&g|f&h|g&h)+i+n[c]+2400959708&4294967295,i=h,h=g,g=l(f,30),f=e,e=j;for(c=60;79>=c;c++)j=l(e,5)+(f^g^h)+i+n[c]+3395469782&4294967295,i=h,h=g,g=l(f,30),f=e,e=j;o=o+e&4294967295,p=p+f&4294967295,q=q+g&4294967295,r=r+h&4294967295,s=s+i&4294967295}return j=m(o)+m(p)+m(q)+m(r)+m(s),j.toLowerCase()}function urlFixup(a,b,c){return\"translate.googleusercontent.com\"===a?(\"\"===c&&(c=b),b=getParameter(b,\"u\"),a=getHostName(b)):(\"cc.bingj.com\"===a||\"webcache.googleusercontent.com\"===a||\"74.6.\"===a.slice(0,5))&&(b=documentAlias.links[0].href,a=getHostName(b)),[a,b,c]}function extractUrlParameter(a,b){var c=a.indexOf(b),d=\"\";if(c>0){var e=a.indexOf(\"&\",c);d=e>0?a.substring(c,e):a.substring(c),d=d.replace(b+\"=\",\"\").trim()}return d}function domainFixup(a){var b=a.length;return\".\"===a.charAt(--b)&&(a=a.slice(0,b)),\"*.\"===a.slice(0,2)&&(a=a.slice(1)),a}function titleFixup(a){if(a=a&&a.text?a.text:a,!isString(a)){var b=documentAlias.getElementsByTagName(\"title\");b&&isDefined(b[0])&&(a=b[0].text)}return a}function Tracker(trackerUrl,siteId){function setCookie(a,b,c,d,e,f){if(!configCookiesDisabled){var g;c&&(g=new Date,g.setTime(g.getTime()+c)),documentAlias.cookie=a+\"=\"+encodeWrapper(b)+(c?\";expires=\"+g.toGMTString():\"\")+\";path=\"+(d||\"/\")+(e?\";domain=\"+e:\"\")+(f?\";secure\":\"\")}}function getCookie(a){if(configCookiesDisabled)return 0;var b=new RegExp(\"(^|;)[ ]*\"+a+\"=([^;]*)\"),c=b.exec(documentAlias.cookie);return c?decodeWrapper(c[2]):0}function purify(a){var b;return configDiscardHashTag?(b=new RegExp(\"#.*\"),a.replace(b,\"\")):a}function isSiteHostName(a){var b,c,d;for(b=0;b<configHostsAlias.length;b++){if(c=domainFixup(configHostsAlias[b].toLowerCase()),a===c)return!0;if(\".\"===c.slice(0,1)){if(a===c.slice(1))return!0;if(d=a.length-c.length,d>0&&a.slice(d)===c)return!0}}return!1}function getImage(a,b){var c=new Image(1,1);c.onload=function(){iterator=0,\"function\"==typeof b&&b()},c.src=configTrackerUrl+(configTrackerUrl.indexOf(\"?\")<0?\"?\":\"&\")+a}function sendRequest(a,b,c){var d=new Date;configDoNotTrack||(getImage(a,c),expireDateTime=d.getTime()+b)}function getCookieName(a){return configCookieNamePrefix+a+\".\"+configTrackerSiteId+\".\"+domainHash}function hasCookies(){if(configCookiesDisabled)return\"0\";if(!isDefined(navigatorAlias.cookieEnabled)){var a=getCookieName(\"testcookie\");return setCookie(a,\"1\"),\"1\"===getCookie(a)?\"1\":\"0\"}return navigatorAlias.cookieEnabled?\"1\":\"0\"}function updateDomainHash(){domainHash=hash((configCookieDomain||domainAlias)+(configCookiePath||\"/\")).slice(0,4)}function activityHandler(){var a=new Date;lastActivityTime=a.getTime()}function setVisitorIdCookie(a,b,c,d,e,f,g){setCookie(getCookieName(\"id\"),a+\".\"+b+\".\"+c+\".\"+d+\".\"+e+\".\"+f+\".\"+g,configVisitorCookieTimeout,configCookiePath,configCookieDomain)}function setZXCookie(a,b){setCookie(getCookieName(\"zx\"),a+\".\"+b,configZXCookieTimeout,configCookiePath,configCookieDomain)}function loadVisitorIdCookie(){var a,b=new Date,c=Math.round(b.getTime()/1e3),d=getCookie(getCookieName(\"id\"));return d?(a=d.split(\".\"),a.unshift(\"0\")):(visitorUUID||(visitorUUID=hash((navigatorAlias.userAgent||\"\")+(navigatorAlias.platform||\"\")+JSON2.stringify(browserFeatures)+b.getTime()+Math.random()).slice(0,16)),a=[\"1\",visitorUUID,c,0,c,\"\",\"\",0,\"\",\"\"]),a}function loadZXCookie(){var a,b=getCookie(getCookieName(\"zx\"));return a=b?b.split(\".\"):[\"\",\"\"]}function loadReferrerAttributionCookie(){var a=getCookie(getCookieName(\"ref\"));if(a.length)try{if(a=JSON2.parse(a),isObject(a))return a}catch(b){}return[\"\",\"\",0,\"\"]}function deleteCookies(){var a=configCookiesDisabled;configCookiesDisabled=!1,setCookie(getCookieName(\"id\"),\"\",-86400,configCookiePath,configCookieDomain),setCookie(getCookieName(\"ses\"),\"\",-86400,configCookiePath,configCookieDomain),setCookie(getCookieName(\"cvar\"),\"\",-86400,configCookiePath,configCookieDomain),setCookie(getCookieName(\"ref\"),\"\",-86400,configCookiePath,configCookieDomain),setCookie(getCookieName(\"zx\"),\"\",-86400,configCookiePath,configCookieDomain),configCookiesDisabled=a}function sortObjectByKeys(a){if(a&&isObject(a)){var b,c=[];for(b in a)Object.prototype.hasOwnProperty.call(a,b)&&c.push(b);var d={};c.sort();var e,f=c.length;for(e=0;f>e;e++)d[c[e]]=a[c[e]];return d}}function getRequest(a,b,c,d){function e(a,b){var c=JSON2.stringify(a);return c.length>2?\"&\"+b+\"=\"+encodeWrapper(c):\"\"}var f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w=new Date,x=Math.round(w.getTime()/1e3),y=1024,z=encodeWrapper(documentAlias.title),A=customVariables,B=getCookieName(\"ses\"),C=getCookieName(\"ref\"),D=getCookieName(\"cvar\"),E=loadVisitorIdCookie(),F=loadZXCookie(),G=getCookie(B),H=loadReferrerAttributionCookie(),I=configCustomUrl||locationHrefAlias;if(configCookiesDisabled&&deleteCookies(),configDoNotTrack)return\"\";g=E[0],h=E[1],j=E[2],i=E[3],k=E[4],l=E[5],isDefined(E[6])||(E[6]=\"\"),isDefined(E[7])||(E[7]=0),p=E[6],m=E[7],n=extractUrlParameter(windowAlias.location.href,\"a_k\"),\"\"==n&&(n=F[0]),o=configOsType,\"\"==o&&(o=F[1]),isDefined(d)||(d=\"\");var J=documentAlias.characterSet||documentAlias.charset;if(J&&\"utf-8\"!==J.toLowerCase()||(J=null),u=H[0],v=H[1],q=H[2],r=H[3],!G){var K=configSessionCookieTimeout/1e3;if((!l||x-l>K)&&(i++,k=x,m=0),!configConversionAttributionFirstReferrer||!u.length){for(f in configCampaignNameParameters)if(Object.prototype.hasOwnProperty.call(configCampaignNameParameters,f)&&(u=getParameter(I,configCampaignNameParameters[f]),u.length))break;for(f in configCampaignKeywordParameters)if(Object.prototype.hasOwnProperty.call(configCampaignKeywordParameters,f)&&(v=getParameter(I,configCampaignKeywordParameters[f]),v.length))break}s=getHostName(configReferrerUrl),t=r.length?getHostName(r):\"\",!s.length||isSiteHostName(s)||configConversionAttributionFirstReferrer&&t.length&&!isSiteHostName(t)||(r=configReferrerUrl),(r.length||u.length)&&(q=x,H=[u,v,q,purify(r.slice(0,y))],setCookie(C,JSON2.stringify(H),configReferralCookieTimeout,configCookiePath,configCookieDomain))}m++,a+=\"&idsite=\"+configTrackerSiteId+\"&rec=1&r=\"+String(Math.random()).slice(2,8)+\"&h=\"+w.getHours()+\"&m=\"+w.getMinutes()+\"&s=\"+w.getSeconds()+\"&url=\"+encodeWrapper(purify(I))+(configReferrerUrl.length?\"&urlref=\"+encodeWrapper(purify(configReferrerUrl)):\"\")+\"&_id=\"+h+\"&_idts=\"+j+\"&_idvc=\"+i+\"&_idn=\"+g+(u.length?\"&_rcn=\"+encodeWrapper(u):\"\")+(v.length?\"&_rck=\"+encodeWrapper(v):\"\")+\"&_refts=\"+q+\"&_viewts=\"+k+\"&_viewte=\"+x+\"&_depth=\"+m+\"&_title=\"+z+\"&f_k=MAGICWINDOW&a_k=\"+n+\"&c_k=\"+o+(String(p).length?\"&_ects=\"+p:\"\")+(String(r).length?\"&_ref=\"+encodeWrapper(purify(r.slice(0,y))):\"\")+(J?\"&cs=\"+encodeWrapper(J):\"\");for(f in browserFeatures)Object.prototype.hasOwnProperty.call(browserFeatures,f)&&(a+=\"&\"+f+\"=\"+browserFeatures[f]);b?a+=\"&data=\"+encodeWrapper(JSON2.stringify(b)):configCustomData&&(a+=\"&data=\"+encodeWrapper(JSON2.stringify(configCustomData)));var L=sortObjectByKeys(customVariablesPage),M=sortObjectByKeys(customVariablesEvent);if(a+=e(L,\"cvar\"),a+=e(M,\"e_cvar\"),customVariables){a+=e(customVariables,\"_cvar\");for(f in A)Object.prototype.hasOwnProperty.call(A,f)&&(\"\"===customVariables[f][0]||\"\"===customVariables[f][1])&&delete customVariables[f];configStoreCustomVariablesInCookie&&setCookie(D,JSON2.stringify(customVariables),configSessionCookieTimeout,configCookiePath,configCookieDomain)}return configPerformanceTrackingEnabled&&(configPerformanceGenerationTime?a+=\"&gt_ms=\"+configPerformanceGenerationTime:performanceAlias&&performanceAlias.timing&&performanceAlias.timing.requestStart&&performanceAlias.timing.responseEnd&&(a+=\"&gt_ms=\"+(performanceAlias.timing.responseEnd-performanceAlias.timing.requestStart))),setVisitorIdCookie(h,j,i,x,l,isDefined(d)&&String(d).length?d:p,m),setZXCookie(n,o),setCookie(B,\"*\",configSessionCookieTimeout,configCookiePath,configCookieDomain),a+=executePluginMethod(c),configAppendToTrackingUrl.length&&(a+=\"&\"+configAppendToTrackingUrl),isFunction(configCustomRequestContentProcessing)&&(a=configCustomRequestContentProcessing(a)),a}function logPageView(a,b){var c=new Date,d=getRequest(\"action_name=log\",b,\"log\");sendRequest(d,configTrackerPause),configMinimumVisitTime&&configHeartBeatTimer&&!activityTrackingInstalled&&(activityTrackingInstalled=!0,addEventListener(documentAlias,\"click\",activityHandler),addEventListener(documentAlias,\"mouseup\",activityHandler),addEventListener(documentAlias,\"mousedown\",activityHandler),addEventListener(documentAlias,\"mousemove\",activityHandler),addEventListener(documentAlias,\"mousewheel\",activityHandler),addEventListener(windowAlias,\"DOMMouseScroll\",activityHandler),addEventListener(windowAlias,\"scroll\",activityHandler),addEventListener(documentAlias,\"keypress\",activityHandler),addEventListener(documentAlias,\"keydown\",activityHandler),addEventListener(documentAlias,\"keyup\",activityHandler),addEventListener(windowAlias,\"resize\",activityHandler),addEventListener(windowAlias,\"focus\",activityHandler),addEventListener(windowAlias,\"blur\",activityHandler),lastActivityTime=c.getTime(),setTimeout(function e(){var a;c=new Date,lastActivityTime+configHeartBeatTimer>c.getTime()&&(configMinimumVisitTime<c.getTime()&&(a=getRequest(\"ping=1\",b,\"ping\"),sendRequest(a,configTrackerPause)),setTimeout(e,configHeartBeatTimer))},configHeartBeatTimer))}function logEvent(a,b,c,d,e){if(0===String(a).length||0===String(b).length)return!1;var f=getRequest(\"e_c=\"+encodeWrapper(a)+\"&e_a=\"+encodeWrapper(b)+(isDefined(c)?\"&e_n=\"+encodeWrapper(c):\"\")+(isDefined(d)?\"&e_v=\"+encodeWrapper(d):\"\"),e,\"event\");sendRequest(f,configTrackerPause)}function logZXEvent(a,b){if(0===String(a).length)return!1;var c=getRequest(\"action_name=event&e_key=\"+encodeWrapper(a),b,\"event\");sendRequest(c,configTrackerPause)}function logZXGoal(a,b){if(0===String(a).length)return!1;var c=getRequest(\"action_name=goal&g_key=\"+encodeWrapper(a),b,\"goal\");sendRequest(c,configTrackerPause)}function logGoal(a,b,c){var d=getRequest(\"idgoal=\"+a+(b?\"&revenue=\"+b:\"\"),c,\"goal\");sendRequest(d,configTrackerPause)}function logLink(a,b,c,d){var e=getRequest(b+\"=\"+encodeWrapper(purify(a)),c,\"link\");sendRequest(e,d?0:configTrackerPause,d)}function prefixPropertyName(a,b){return\"\"!==a?a+b.charAt(0).toUpperCase()+b.slice(1):b}function trackCallback(a){var b,c,d,e=[\"\",\"webkit\",\"ms\",\"moz\"];if(!configCountPreRendered)for(c=0;c<e.length;c++)if(d=e[c],Object.prototype.hasOwnProperty.call(documentAlias,prefixPropertyName(d,\"hidden\"))){\"prerender\"===documentAlias[prefixPropertyName(d,\"visibilityState\")]&&(b=!0);break}return b?void addEventListener(documentAlias,d+\"visibilitychange\",function f(){documentAlias.removeEventListener(d+\"visibilitychange\",f,!1),a()}):void a()}function getClassesRegExp(a,b){var c,d=\"(^| )(piwik[_-]\"+b;if(a)for(c=0;c<a.length;c++)d+=\"|\"+a[c];return d+=\")( |$)\",new RegExp(d)}function getLinkType(a,b,c){var d=getClassesRegExp(configDownloadClasses,\"download\"),e=getClassesRegExp(configLinkClasses,\"link\"),f=new RegExp(\"\\\\.(\"+configDownloadExtensions+\")([?&#]|$)\",\"i\");return e.test(a)?\"link\":d.test(a)||f.test(b)?\"download\":c?0:\"link\"}function processClick(a){var b,c,d;for(b=a.parentNode;null!==b&&isDefined(b)&&(c=a.tagName.toUpperCase(),\"A\"!==c&&\"AREA\"!==c);)a=b,b=a.parentNode;if(isDefined(a.href)){var e=a.hostname||getHostName(a.href),f=e.toLowerCase(),g=a.href.replace(e,f),h=new RegExp(\"^(javascript|vbscript|jscript|mocha|livescript|ecmascript|mailto):\",\"i\");h.test(g)||(d=getLinkType(a.className,g,isSiteHostName(f)),d&&(g=urldecode(g),logLink(g,d)))}}function clickHandler(a){var b,c;a=a||windowAlias.event,b=a.which||a.button,c=a.target||a.srcElement,\"click\"===a.type?c&&processClick(c):\"mousedown\"===a.type?1!==b&&2!==b||!c?lastButton=lastTarget=null:(lastButton=b,lastTarget=c):\"mouseup\"===a.type&&(b===lastButton&&c===lastTarget&&processClick(c),lastButton=lastTarget=null)}function addClickListener(a,b){b?(addEventListener(a,\"mouseup\",clickHandler,!1),addEventListener(a,\"mousedown\",clickHandler,!1)):addEventListener(a,\"click\",clickHandler,!1)}function addClickListeners(a){if(!linkTrackingInstalled){linkTrackingInstalled=!0;var b,c=getClassesRegExp(configIgnoreClasses,\"ignore\"),d=documentAlias.links;if(d)for(b=0;b<d.length;b++)c.test(d[b].className)||addClickListener(d[b],a)}}function detectBrowserFeatures(){var a,b,c={pdf:\"application/pdf\",qt:\"video/quicktime\",realp:\"audio/x-pn-realaudio-plugin\",wma:\"application/x-mplayer2\",dir:\"application/x-director\",fla:\"application/x-shockwave-flash\",java:\"application/x-java-vm\",gears:\"application/x-googlegears\",ag:\"application/x-silverlight\"},d=new RegExp(\"Mac OS X.*Safari/\").test(navigatorAlias.userAgent)?windowAlias.devicePixelRatio||1:1;if(!new RegExp(\"MSIE\").test(navigatorAlias.userAgent)){if(navigatorAlias.mimeTypes&&navigatorAlias.mimeTypes.length)for(a in c)Object.prototype.hasOwnProperty.call(c,a)&&(b=navigatorAlias.mimeTypes[c[a]],browserFeatures[a]=b&&b.enabledPlugin?\"1\":\"0\");\"unknown\"!=typeof navigator.javaEnabled&&isDefined(navigatorAlias.javaEnabled)&&navigatorAlias.javaEnabled()&&(browserFeatures.java=\"1\"),isFunction(windowAlias.GearsFactory)&&(browserFeatures.gears=\"1\"),browserFeatures.cookie=hasCookies()}browserFeatures.res=screenAlias.width*d+\"x\"+screenAlias.height*d}function registerHook(hookName,userHook){var hookObj=null;if(isString(hookName)&&!isDefined(registeredHooks[hookName])&&userHook){if(isObject(userHook))hookObj=userHook;else if(isString(userHook))try{eval(\"hookObj =\"+userHook)}catch(ignore){}registeredHooks[hookName]=hookObj}return hookObj}var registeredHooks={},locationArray=urlFixup(documentAlias.domain,windowAlias.location.href,getReferrer()),domainAlias=domainFixup(locationArray[0]),locationHrefAlias=locationArray[1],configReferrerUrl=locationArray[2],enableJSErrorTracking=!1,defaultRequestMethod=\"GET\",configRequestMethod=defaultRequestMethod,defaultRequestContentType=\"application/x-www-form-urlencoded; charset=UTF-8\",configRequestContentType=defaultRequestContentType,configTrackerUrl=trackerUrl||\"\",configOsType=\"\",configApiUrl=\"\",configAppendToTrackingUrl=\"\",configTrackerSiteId=siteId||\"\",configCustomUrl,configTitle=documentAlias.title,configDownloadExtensions=\"7z|aac|apk|ar[cj]|as[fx]|avi|azw3|bin|csv|deb|dmg|docx?|epub|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mobi|mp(2|3|4|e?g)|mov(ie)?|ms[ip]|od[bfgpst]|og[gv]|pdf|phps|png|pptx?|qtm?|ra[mr]?|rpm|sea|sit|tar|t?bz2?|tgz|torrent|txt|wav|wm[av]|wpd||xlsx?|xml|z|zip\",configHostsAlias=[domainAlias],configIgnoreClasses=[],configDownloadClasses=[],configLinkClasses=[],configTrackerPause=500,configMinimumVisitTime,configHeartBeatTimer,configDiscardHashTag,configCustomData,configCampaignNameParameters=[\"pk_campaign\",\"piwik_campaign\",\"utm_campaign\",\"utm_source\",\"utm_medium\"],configCampaignKeywordParameters=[\"pk_kwd\",\"piwik_kwd\",\"utm_term\"],configCookieNamePrefix=\"_pk_\",configCookieDomain,configCookiePath,configCookiesDisabled=!1,configDoNotTrack,configCountPreRendered,configConversionAttributionFirstReferrer,configVisitorCookieTimeout=63072e6,configZXCookieTimeout=18e5,configSessionCookieTimeout=18e5,configReferralCookieTimeout=15768e6,configPerformanceTrackingEnabled=!0,configPerformanceGenerationTime=0,configStoreCustomVariablesInCookie=!1,customVariables=!1,configCustomRequestContentProcessing,customVariablesPage={},customVariablesEvent={},customVariableMaximumLength=200,ecommerceItems={},browserFeatures={},linkTrackingInstalled=!1,activityTrackingInstalled=!1,lastActivityTime,lastButton,lastTarget,hash=sha1,domainHash,visitorUUID;return detectBrowserFeatures(),updateDomainHash(),executePluginMethod(\"run\",registerHook),{hook:registeredHooks,getHook:function(a){return registeredHooks[a]},getVisitorId:function(){return loadVisitorIdCookie()[1]},getVisitorInfo:function(){return loadVisitorIdCookie()},getAttributionInfo:function(){return loadReferrerAttributionCookie()},getAttributionCampaignName:function(){return loadReferrerAttributionCookie()[0]},getAttributionCampaignKeyword:function(){return loadReferrerAttributionCookie()[1]},getAttributionReferrerTimestamp:function(){return loadReferrerAttributionCookie()[2]},getAttributionReferrerUrl:function(){return loadReferrerAttributionCookie()[3]},setTrackerUrl:function(a){configTrackerUrl=a},setOsType:function(a){configOsType=a},setSiteId:function(a){configTrackerSiteId=a},setCustomData:function(a,b){isObject(a)?configCustomData=a:(configCustomData||(configCustomData=[]),configCustomData[a]=b)},getCustomData:function(){return configCustomData},setCustomRequestProcessing:function(a){configCustomRequestContentProcessing=a},appendToTrackingUrl:function(a){configAppendToTrackingUrl=a},getRequest:function(a){return getRequest(a)},addPlugin:function(a,b){plugins[a]=b},storeCustomVariablesInCookie:function(){configStoreCustomVariablesInCookie=!0},setDocumentTitle:function(a){configTitle=a},setAPIUrl:function(a){configApiUrl=a},setDownloadClasses:function(a){configDownloadClasses=isString(a)?[a]:a},setLinkClasses:function(a){configLinkClasses=isString(a)?[a]:a},disableCookies:function(){configCookiesDisabled=!0,browserFeatures.cookie=\"0\"},deleteCookies:function(){deleteCookies()},addListener:function(a,b){addClickListener(a,b)},enableLinkTracking:function(a){hasLoaded?addClickListeners(a):registeredOnLoadHandlers.push(function(){addClickListeners(a)})},setCountPreRendered:function(a){configCountPreRendered=a},trackGoal:function(a){trackCallback(function(){logZXGoal(a)})},trackLink:function(a,b,c,d){trackCallback(function(){logLink(a,b,c,d)})},trackPageView:function(a,b){trackCallback(function(){logPageView(a,b)})},trackEvent:function(a){trackCallback(function(){logZXEvent(a)})},addZXEvent:function(a,b,c){addEventListener(a,b,function(){trackCallback(function(){logZXEvent(c)})},!0)},addZXGoal:function(a,b,c){addEventListener(a,b,function(){trackCallback(function(){logZXGoal(c)})},!0)}}}function TrackerProxy(){return{push:apply}}var expireDateTime,plugins={},documentAlias=document,navigatorAlias=navigator,screenAlias=screen,windowAlias=window,performanceAlias=windowAlias.performance||windowAlias.mozPerformance||windowAlias.msPerformance||windowAlias.webkitPerformance,hasLoaded=!1,registeredOnLoadHandlers=[],encodeWrapper=windowAlias.encodeURIComponent,decodeWrapper=windowAlias.decodeURIComponent,urldecode=unescape,asyncTracker,iterator,Piwik;windowAlias.onbeforeunload=myBeforeUnloadHandler,addReadyListener(),Date.prototype.getTimeAlias=Date.prototype.getTime,asyncTracker=new Tracker;var applyFirst={setTrackerUrl:1,setAPIUrl:1,setSiteId:1,disableCookies:1",
+		"/Users/colin/zxinsight/mw-tracking-js/test.html",
+		"/Users/colin/zxinsight/mw-tracking-js/package.json",
+		"/Users/colin/zxinsight/mw-tracking-js/piwik.js.original",
+		"/Users/colin/Projects/magicscenes/Gruntfile.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/core.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/dom.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/controller.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/plugins.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/emitter.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/hashnav.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/effects.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/dist/js/swiper.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/wrap-end.js",
+		"/Users/colin/Projects/magicscenes/libs/swiper/src/js/wrap-start.js",
+		"/Users/colin/Projects/magicscenes/app/scripts/tools.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/views/scene.tmpl.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/contextmenu.js",
+		"/Users/colin/Projects/magicscenes/mock-server.js",
+		"/Users/colin/Projects/magicscenes/app/scripts/scene.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/views/component-editor.tpl.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/component.editor.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/views/preview.tpl.html",
+		"/Users/colin/Projects/magicscenes/app/views/scenes-generator.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/form.js",
+		"/6s ease-in-out 0.6s 1 backwards; -moz-animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 316px; height: 73px; color: #000000; opacity: 1; background-color: rgba(255,255,255,0); border-radius: 320px; box-shadow: 0px 0px 7px #ffffff; border: 0px solid #eeeeee; \"><div id=\"text-compnt-1428406878827-88811 \" class=\"ng-binding \"><span style=\"color: rgb(255, 165, 0); font-size: 32px; \"><b>水</b></span><span style=\"color: rgb(255, 165, 0); font-size: 22px; \">不在深，有龙&nbsp;</span><span style=\"color: rgb(0, 139, 139); font-size: 40px; background-color: rgb(255, 255, 0); \">则灵！</span></div></div></div></form></div><div class=\"swiper-slide-shadow-top \" style=\"opacity: 0; transition-duration: 0ms; \"></div><div class=\"swiper-slide-shadow-bottom \" style=\"opacity: 2; transition-duration: 0ms; \"></div></section><section class=\"page-item swiper-slide swiper-slide-duplicate \" data-swiper-slide-index=\"0 \" style=\"height: 480px; transform: translate3d(0px, 0px, -300px) rotateX(150deg) rotateY(0deg); z-index: -2; transition-duration: 0ms; \"><div class=\"page-bg \" style=\"background-image: url(http:/192.168.1.2:49907/uploads/7410-1e137jp.jpg); \"></div><span class=\"arrow \"></span><div class=\"page-content \"><form id=\"0 \" action=\"?unset \" target=\"_blank \" class=\"ng-pristine ng-valid \"><div class=\"component \" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 137px; left: 32px; z-index: 0; \"><div class=\"component-content text-tools-container animate-zoomInLeft \" style=\"overflow:hidden; -webkit-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 39px; width: 243px; height: 244px; color: #ffffff; opacity: 1; background-color: rgba(197,8,150,0.63); border-radius: 320px; box-shadow: 0px 0px 13px #000000; border: 1px solid #ff008e; \"><div id=\"text-components-xxxx-00020 \" class=\"ng-binding \"><div class=\"wysiwyg-text-align-center \"><br><br><br>Hallo, <span style=\"font-size: 32px; \"><b>World！</b></span></div></div></div></div><div class=\"component \" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 68.796875px; left: 182.59375px; z-index: 1; \"><div class=\"component-content text-tools-container animate-zoomIn \" style=\"overflow:hidden; -webkit-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 108px; height: 110px; color: #000000; opacity: 1; background-color: rgba(255,170,0,0.59); border-radius: 320px; box-shadow: 0px 0px 0px #000000; border: 1px solid #ffbf31; \"><div id=\"text-compnt-1428405572644-7221 \" class=\"ng-binding \"></div></div></div></form></div><div class=\"swiper-slide-shadow-top \" style=\"opacity: 0; transition-duration: 0ms; \"></div><div class=\"swiper-slide-shadow-bottom \" style=\"opacity: 3; transition-duration: 0ms; \"></div></section></div></div></div><script src=\"/js/client-min.js?ver=1434352694277 \"></script><!-- mockjs --><!-- 以下mockjs注释块内的引用在build后将会自动删除 --><link rel=\"stylesheet \" href=\"/css/scene.css \"><link rel=\"stylesheet \" href=\"/swiper/dist/css/swiper.css \" /><script src=\"/swiper/dist/js/swiper.js \"></script><script src=\"/scripts/client/a-tools.js \"></script><script src=\"/scripts/client/ajax.js \"></script><script src=\"/scripts/client/device.js \"></script><script src=\"/scripts/client/swipe.js \"></script><script src=\"/scripts/client/form.js \"></script><script src=\"/scripts/client/audio.js \"></script><script src=\"/scripts/client/init.js \"></script><script ssrc=\"http:/192.168.1.5:8089",
+		"/85, maximum-scale=1.0, user-scalable=0\">');} else {document.write('<meta id=\"viewport\" name=\"viewport\" content=\"width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">');}var h5Domain = '';var siteDomain = '';var accountKey = 'test';var sceneId = 'xxx';function onpageload() {var loading = document.getElementById('ms-loading'),content = document.getElementById('ms-content');loading.style.opacity = 0;content.style.opacity = 1;setTimeout(function() {loading.style.display = 'none';loading = content = null;}, 1000);}setTimeout(onpageload, 10000);</script><title>抢红包啦</title><meta name=\"description\" content=\"\"><meta name=\"keywords\" content=\"场景应用,Magic Scenes,魔窗\"><link href=\"/css/scene-min.css?ver=1434352694277\" rel=\"stylesheet\"><style type=\"text/css\">/* 为了避免在页面加载前显示空白，把loading所需样式直接写在这里 */.rotate,.rotate-ccw {-webkit-animation:rotate 2s infinite linear;animation: rotate 2s infinite linear;}.rotate-ccw {animation-direction: reverse;}.msFadeOut {-webkit-animation:fadeOut .4s 1 linear;animation: fadeOut .4s 1 linear;}.ms-loading {position: fixed;z-index: 999999999;background-color: rgba(0,0,0,0.9);left: 0;top: 0;width: 100%;height: 100%;-webkit-transition: opacity 1s;transition: opacity 1s;}.ms-loading .loading {position: absolute;left: 50%;top: 50%;box-sizing: border-box;width: 80px;height: 80px;padding: 0px;margin: -64px 0 0 -40px;border-radius: 100%;overflow: hidden;background-color: rgba(255,255,255,0.2);background-repeat: no-repeat;background-size: cover;background-position: center center;}.ms-loading .loading::after,.ms-loading .loading .rotating {content: ' ';width: 80px;height:80px;display: block;box-sizing: border-box;border-radius: 100%;border: 4px solid rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.8);-webkit-animation:rotate 1s infinite linear;animation: rotate 1s infinite linear;}.ms-loading .loading figure,.ms-loading .loading figure img {box-sizing: border-box;width: 100%;height: 100%;}@-webkit-keyframes rotate {0% {-webkit-transform: rotate(0deg);}50% {-webkit-transform: rotate(180deg);}100% {-webkit-transform: rotate(360deg);}}@-moz-keyframes rotate {0% {-moz-transform: rotate(0deg);}50% {-moz-transform: rotate(180deg);}100% {-moz-transform: rotate(360deg);}}@keyframes rotate {0% {transform: rotate(0deg);}50% {transform: rotate(180deg);}100% {transform: rotate(360deg);}}</style>↵</head>↵<body onload=\"onpageload()\"><div class=\"ms-loading\" id=\"ms-loading\"><div class=\"loading\"style=\"background-image: url(/uploads/7410-1e137jp.jpg);\" ><div class=\"rotating\"></div></div></div><div id=\"musicplayer\" class=\"animated rotate infinite\" style=\"display: block\"><audio id=\"bg-music\" m=\"res/music/平凡之路.mp3\" src=\"/res/music/平凡之路.mp3\" loop autobuffer autoplay preload></audio><span class=\"icon bg-music-handle\"><img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iMzJweCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMzI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDM3X19tdXNpY19ub2RlIj48cGF0aCBkPSJNMjUuMjcxLDE5LjEwMmMwLjAwNi0wLjAxNiwwLjAxMy0wLjAyOSwwLjAyMS0wLjA0M2MwLjAwNC0wLjA1LDAuMDA4LTAuMTAxLDAuMDE1LTAuMTUyICAgYy0wLjAxMS0wLjAyOC0wLjAyMy0wLjA1Ni0wLjAzNC0wLjA4NGMtNC43NjItMi45NDMtNC4wODgtMTEuNjUxLTkuNjIzLTE0LjczN2MtMC4xODEtMC4xMDMtMC4zNTgtMC4xNC0wLjUzNC0wLjE1MyAgIGMtMC4wNjEtMC4wMTUtMC4xMTktMC4wMzgtMC4xODYtMC4wMzhjLTAuNDQyLDAtMC44MDIsMC4zNi0wLjgwMiwwLjgwM3YxNy40NjZjLTAuNzg5LTAuNTAyLTEuNzk4LTAuODE2LTIuOTE2LTAuODE2ICAgYy0yLjQ5NiwwLTQuNTIxLDEuNTE0LTQuNTIxLDMuMzhzMi4wMjQsMy4zOCw0LjUyMSwzLjM4YzIuNDk3LDAsNC41MjEtMS41MTQsNC41MjEtMy4zOGMwLTAuMDE0LTAuMDA1LTAuMDI1LTAuMDA1LTAuMDM5ICAgYzAuMDAxLTAuMDEsMC4wMDUtMC4wMTcsMC4wMDUtMC4wMjZWMTEuMDg0YzIuNjI2LDEuNjQ2LDIuNjkxLDYuMjAyLDYuMjM5LDcuNzY1YzAuNDc0LDAuMjE3LDEuMzI0LDAuMzY4LDIuMTg5LDAuNDg2ICAgYzAuMTA0LTAuMDA1LDAuMi0wLjAxNSwwLjMwNS0wLjAxNWMwLjA2LDAsMC4xMTIsMC4wMDYsMC4xNjksMC4wMDhjMC4wODgtMC4wMTcsMC4xODQtMC4wMjUsMC4yNzMtMC4wMzkgICBDMjUuMDI1LDE5LjIyMiwyNS4xNDcsMTkuMTYsMjUuMjcxLDE5LjEwMnoiLz48L2c+PC9zdmc+\"></span></div><div id=\"ms-content\" style=\"opacity:0; transition: opacity 0.3s;\"><div id=\"scene\" class=\"scene swiper-container swiper-container-vertical swiper-container-3d swiper-container-coverflow\"><div class=\"page-list swiper-wrapper\" style=\"transition-duration: 0ms; transform: translate3d(0px, -480px, 0px);\"><section class=\"page-item swiper-slide swiper-slide-duplicate swiper-slide-prev\" data-swiper-slide-i…ation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 316px; height: 73px; color: #000000; opacity: 1; background-color: rgba(255,255,255,0); border-radius: 320px; box-shadow: 0px 0px 7px #ffffff; border: 0px solid #eeeeee;\"><div id=\"text-compnt-1428406878827-88811\" class=\"ng-binding\"><span style=\"color: rgb(255, 165, 0); font-size: 32px;\"><b>水</b></span><span style=\"color: rgb(255, 165, 0); font-size: 22px;\">不在深，有龙&nbsp;</span><span style=\"color: rgb(0, 139, 139); font-size: 40px; background-color: rgb(255, 255, 0);\">则灵！</span></div></div></div></form></div><div class=\"swiper-slide-shadow-top\" style=\"opacity: 0; transition-duration: 0ms;\"></div><div class=\"swiper-slide-shadow-bottom\" style=\"opacity: 2; transition-duration: 0ms;\"></div></section><section class=\"page-item swiper-slide swiper-slide-duplicate\" data-swiper-slide-index=\"0\" style=\"height: 480px; transform: translate3d(0px, 0px, -300px) rotateX(150deg) rotateY(0deg); z-index: -2; transition-duration: 0ms;\"><div class=\"page-bg\" style=\"background-image: url(http:/192.168.1.2:49907/uploads/7410-1e137jp.jpg);\"></div><span class=\"arrow\"></span><div class=\"page-content\"><form id=\"0\" action=\"?unset\" target=\"_blank\" class=\"ng-pristine ng-valid\"><div class=\"component\" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 137px; left: 32px; z-index: 0;\"><div class=\"component-content text-tools-container animate-zoomInLeft\" style=\"overflow:hidden; -webkit-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 39px; width: 243px; height: 244px; color: #ffffff; opacity: 1; background-color: rgba(197,8,150,0.63); border-radius: 320px; box-shadow: 0px 0px 13px #000000; border: 1px solid #ff008e;\"><div id=\"text-components-xxxx-00020\" class=\"ng-binding\"><div class=\"wysiwyg-text-align-center\"><br><br><br>Hallo, <span style=\"font-size: 32px;\"><b>World！</b></span></div></div></div></div><div class=\"component\" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 68.796875px; left: 182.59375px; z-index: 1;\"><div class=\"component-content text-tools-container animate-zoomIn\" style=\"overflow:hidden; -webkit-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 108px; height: 110px; color: #000000; opacity: 1; background-color: rgba(255,170,0,0.59); border-radius: 320px; box-shadow: 0px 0px 0px #000000; border: 1px solid #ffbf31;\"><div id=\"text-compnt-1428405572644-7221\" class=\"ng-binding\"></div></div></div></form></div><div class=\"swiper-slide-shadow-top\" style=\"opacity: 0; transition-duration: 0ms;\"></div><div class=\"swiper-slide-shadow-bottom\" style=\"opacity: 3; transition-duration: 0ms;\"></div></section></div></div></div><script src=\"/js/client-min.js?ver=1434352694277\"></script><!-- mockjs --><!-- 以下mockjs注释块内的引用在build后将会自动删除 --><link rel=\"stylesheet\" href=\"/css/scene.css\"><link rel=\"stylesheet\" href=\"/swiper/dist/css/swiper.css\" /><script src=\"/swiper/dist/js/swiper.js\"></script><script src=\"/scripts/client/a-tools.js\"></script><script src=\"/scripts/client/ajax.js\"></script><script src=\"/scripts/client/device.js\"></script><script src=\"/scripts/client/swipe.js\"></script><script src=\"/scripts/client/form.js\"></script><script src=\"/scripts/client/audio.js\"></script><script src=\"/scripts/client/init.js\"></script><script ssrc=\"http:/192.168.1.5:8089",
+		"/6s ease-in-out 0.6s 1 backwards; -moz-animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 316px; height: 73px; color: #000000; opacity: 1; background-color: rgba(255,255,255,0); border-radius: 320px; box-shadow: 0px 0px 7px #ffffff; border: 0px solid #eeeeee; \"><div id=\"text-compnt-1428406878827-88811 \" class=\"ng-binding \"><span style=\"color: rgb(255, 165, 0); font-size: 32px; \"><b>水</b></span><span style=\"color: rgb(255, 165, 0); font-size: 22px; \">不在深，有龙&nbsp;</span><span style=\"color: rgb(0, 139, 139); font-size: 40px; background-color: rgb(255, 255, 0); \">则灵！</span></div></div></div></form></div><div class=\"swiper-slide-shadow-top \" style=\"opacity: 0; transition-duration: 0ms; \"></div><div class=\"swiper-slide-shadow-bottom \" style=\"opacity: 2; transition-duration: 0ms; \"></div></section><section class=\"page-item swiper-slide swiper-slide-duplicate \" data-swiper-slide-index=\"0 \" style=\"height: 480px; transform: translate3d(0px, 0px, -300px) rotateX(150deg) rotateY(0deg); z-index: -2; transition-duration: 0ms; \"><div class=\"page-bg \" style=\"background-image: url(http:/192.168.1.2:49907/uploads/7410-1e137jp.jpg); \"></div><span class=\"arrow \"></span><div class=\"page-content \"><form id=\"0 \" action=\"?unset \" target=\"_blank \" class=\"ng-pristine ng-valid \"><div class=\"component \" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 137px; left: 32px; z-index: 0; \"><div class=\"component-content text-tools-container animate-zoomInLeft \" style=\"overflow:hidden; -webkit-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 39px; width: 243px; height: 244px; color: #ffffff; opacity: 1; background-color: rgba(197,8,150,0.63); border-radius: 320px; box-shadow: 0px 0px 13px #000000; border: 1px solid #ff008e; \"><div id=\"text-components-xxxx-00020 \" class=\"ng-binding \"><div class=\"wysiwyg-text-align-center \"><br><br><br>Hallo, <span style=\"font-size: 32px; \"><b>World！</b></span></div></div></div></div><div class=\"component \" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 68.796875px; left: 182.59375px; z-index: 1; \"><div class=\"component-content text-tools-container animate-zoomIn \" style=\"overflow:hidden; -webkit-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 108px; height: 110px; color: #000000; opacity: 1; background-color: rgba(255,170,0,0.59); border-radius: 320px; box-shadow: 0px 0px 0px #000000; border: 1px solid #ffbf31; \"><div id=\"text-compnt-1428405572644-7221 \" class=\"ng-binding \"></div></div></div></form></div><div class=\"swiper-slide-shadow-top \" style=\"opacity: 0; transition-duration: 0ms; \"></div><div class=\"swiper-slide-shadow-bottom \" style=\"opacity: 3; transition-duration: 0ms; \"></div></section></div></div></div><script src=\"/js/client-min.js?ver=\"></script><!-- mockjs --><!-- 以下mockjs注释块内的引用在build后将会自动删除 --><link rel=\" stylesheet \" href=\"/css/scene.css \"><link rel=\"stylesheet \" href=\"/swiper/dist/css/swiper.css \" /><script src=\"/swiper/dist/js/swiper.js \"></script><script src=\"/scripts/client/a-tools.js \"></script><script src=\"/scripts/client/ajax.js \"></script><script src=\"/scripts/client/device.js \"></script><script src=\"/scripts/client/swipe.js \"></script><script src=\"/scripts/client/form.js \"></script><script src=\"/scripts/client/audio.js \"></script><script src=\"/scripts/client/init.js \"></script><script ssrc=\"http:/192.168.1.5:8089",
+		"/85, maximum-scale=1.0, user-scalable=0\">');} else {document.write('<meta id=\"viewport\" name=\"viewport\" content=\"width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">');}var h5Domain = '';var siteDomain = '';var accountKey = 'test';var sceneId = 'xxx';function onpageload() {var loading = document.getElementById('ms-loading'),content = document.getElementById('ms-content');loading.style.opacity = 0;content.style.opacity = 1;setTimeout(function() {loading.style.display = 'none';loading = content = null;}, 1000);}setTimeout(onpageload, 10000);</script><title>抢红包啦</title><meta name=\"description\" content=\"\"><meta name=\"keywords\" content=\"场景应用,Magic Scenes,魔窗\"><link href=\"/css/scene-min.css?ver=\" rel=\"stylesheet\"><style type=\"text/css\">/* 为了避免在页面加载前显示空白，把loading所需样式直接写在这里 */.rotate,.rotate-ccw {-webkit-animation:rotate 2s infinite linear;animation: rotate 2s infinite linear;}.rotate-ccw {animation-direction: reverse;}.msFadeOut {-webkit-animation:fadeOut .4s 1 linear;animation: fadeOut .4s 1 linear;}.ms-loading {position: fixed;z-index: 999999999;background-color: rgba(0,0,0,0.9);left: 0;top: 0;width: 100%;height: 100%;-webkit-transition: opacity 1s;transition: opacity 1s;}.ms-loading .loading {position: absolute;left: 50%;top: 50%;box-sizing: border-box;width: 80px;height: 80px;padding: 0px;margin: -64px 0 0 -40px;border-radius: 100%;overflow: hidden;background-color: rgba(255,255,255,0.2);background-repeat: no-repeat;background-size: cover;background-position: center center;}.ms-loading .loading::after,.ms-loading .loading .rotating {content: ' ';width: 80px;height:80px;display: block;box-sizing: border-box;border-radius: 100%;border: 4px solid rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.8);-webkit-animation:rotate 1s infinite linear;animation: rotate 1s infinite linear;}.ms-loading .loading figure,.ms-loading .loading figure img {box-sizing: border-box;width: 100%;height: 100%;}@-webkit-keyframes rotate {0% {-webkit-transform: rotate(0deg);}50% {-webkit-transform: rotate(180deg);}100% {-webkit-transform: rotate(360deg);}}@-moz-keyframes rotate {0% {-moz-transform: rotate(0deg);}50% {-moz-transform: rotate(180deg);}100% {-moz-transform: rotate(360deg);}}@keyframes rotate {0% {transform: rotate(0deg);}50% {transform: rotate(180deg);}100% {transform: rotate(360deg);}}</style>↵</head>↵<body onload=\"onpageload()\"><div class=\"ms-loading\" id=\"ms-loading\"><div class=\"loading\"style=\"background-image: url(/uploads/7410-1e137jp.jpg);\" ><div class=\"rotating\"></div></div></div><div id=\"musicplayer\" class=\"animated rotate infinite\" style=\"display: block\"><audio id=\"bg-music\" m=\"res/music/平凡之路.mp3\" src=\"/res/music/平凡之路.mp3\" loop autobuffer autoplay preload></audio><span class=\"icon bg-music-handle\"><img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iMzJweCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMzI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDM3X19tdXNpY19ub2RlIj48cGF0aCBkPSJNMjUuMjcxLDE5LjEwMmMwLjAwNi0wLjAxNiwwLjAxMy0wLjAyOSwwLjAyMS0wLjA0M2MwLjAwNC0wLjA1LDAuMDA4LTAuMTAxLDAuMDE1LTAuMTUyICAgYy0wLjAxMS0wLjAyOC0wLjAyMy0wLjA1Ni0wLjAzNC0wLjA4NGMtNC43NjItMi45NDMtNC4wODgtMTEuNjUxLTkuNjIzLTE0LjczN2MtMC4xODEtMC4xMDMtMC4zNTgtMC4xNC0wLjUzNC0wLjE1MyAgIGMtMC4wNjEtMC4wMTUtMC4xMTktMC4wMzgtMC4xODYtMC4wMzhjLTAuNDQyLDAtMC44MDIsMC4zNi0wLjgwMiwwLjgwM3YxNy40NjZjLTAuNzg5LTAuNTAyLTEuNzk4LTAuODE2LTIuOTE2LTAuODE2ICAgYy0yLjQ5NiwwLTQuNTIxLDEuNTE0LTQuNTIxLDMuMzhzMi4wMjQsMy4zOCw0LjUyMSwzLjM4YzIuNDk3LDAsNC41MjEtMS41MTQsNC41MjEtMy4zOGMwLTAuMDE0LTAuMDA1LTAuMDI1LTAuMDA1LTAuMDM5ICAgYzAuMDAxLTAuMDEsMC4wMDUtMC4wMTcsMC4wMDUtMC4wMjZWMTEuMDg0YzIuNjI2LDEuNjQ2LDIuNjkxLDYuMjAyLDYuMjM5LDcuNzY1YzAuNDc0LDAuMjE3LDEuMzI0LDAuMzY4LDIuMTg5LDAuNDg2ICAgYzAuMTA0LTAuMDA1LDAuMi0wLjAxNSwwLjMwNS0wLjAxNWMwLjA2LDAsMC4xMTIsMC4wMDYsMC4xNjksMC4wMDhjMC4wODgtMC4wMTcsMC4xODQtMC4wMjUsMC4yNzMtMC4wMzkgICBDMjUuMDI1LDE5LjIyMiwyNS4xNDcsMTkuMTYsMjUuMjcxLDE5LjEwMnoiLz48L2c+PC9zdmc+\"></span></div><div id=\"ms-content\" style=\"opacity:0; transition: opacity 0.3s;\"><div id=\"scene\" class=\"scene swiper-container swiper-container-vertical swiper-container-3d swiper-container-coverflow\"><div class=\"page-list swiper-wrapper\" style=\"transition-duration: 0ms; transform: translate3d(0px, -480px, 0px);\"><section class=\"page-item swiper-slide swiper-slide-duplicate swiper-slide-prev\" data-swiper-slide-index=\"2\" styl… -webkit-animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 316px; height: 73px; color: #000000; opacity: 1; background-color: rgba(255,255,255,0); border-radius: 320px; box-shadow: 0px 0px 7px #ffffff; border: 0px solid #eeeeee;\"><div id=\"text-compnt-1428406878827-88811\" class=\"ng-binding\"><span style=\"color: rgb(255, 165, 0); font-size: 32px;\"><b>水</b></span><span style=\"color: rgb(255, 165, 0); font-size: 22px;\">不在深，有龙&nbsp;</span><span style=\"color: rgb(0, 139, 139); font-size: 40px; background-color: rgb(255, 255, 0);\">则灵！</span></div></div></div></form></div><div class=\"swiper-slide-shadow-top\" style=\"opacity: 0; transition-duration: 0ms;\"></div><div class=\"swiper-slide-shadow-bottom\" style=\"opacity: 2; transition-duration: 0ms;\"></div></section><section class=\"page-item swiper-slide swiper-slide-duplicate\" data-swiper-slide-index=\"0\" style=\"height: 480px; transform: translate3d(0px, 0px, -300px) rotateX(150deg) rotateY(0deg); z-index: -2; transition-duration: 0ms;\"><div class=\"page-bg\" style=\"background-image: url(http:/192.168.1.2:49907/uploads/7410-1e137jp.jpg);\"></div><span class=\"arrow\"></span><div class=\"page-content\"><form id=\"0\" action=\"?unset\" target=\"_blank\" class=\"ng-pristine ng-valid\"><div class=\"component\" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 137px; left: 32px; z-index: 0;\"><div class=\"component-content text-tools-container animate-zoomInLeft\" style=\"overflow:hidden; -webkit-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 39px; width: 243px; height: 244px; color: #ffffff; opacity: 1; background-color: rgba(197,8,150,0.63); border-radius: 320px; box-shadow: 0px 0px 13px #000000; border: 1px solid #ff008e;\"><div id=\"text-components-xxxx-00020\" class=\"ng-binding\"><div class=\"wysiwyg-text-align-center\"><br><br><br>Hallo, <span style=\"font-size: 32px;\"><b>World！</b></span></div></div></div></div><div class=\"component\" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 68.796875px; left: 182.59375px; z-index: 1;\"><div class=\"component-content text-tools-container animate-zoomIn\" style=\"overflow:hidden; -webkit-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 108px; height: 110px; color: #000000; opacity: 1; background-color: rgba(255,170,0,0.59); border-radius: 320px; box-shadow: 0px 0px 0px #000000; border: 1px solid #ffbf31;\"><div id=\"text-compnt-1428405572644-7221\" class=\"ng-binding\"></div></div></div></form></div><div class=\"swiper-slide-shadow-top\" style=\"opacity: 0; transition-duration: 0ms;\"></div><div class=\"swiper-slide-shadow-bottom\" style=\"opacity: 3; transition-duration: 0ms;\"></div></section></div></div></div><script src=\"/js/client-min.js?ver=\"></script><!-- mockjs --><!-- 以下mockjs注释块内的引用在build后将会自动删除 --><link rel=\"stylesheet\" href=\"/css/scene.css\"><link rel=\"stylesheet\" href=\"/swiper/dist/css/swiper.css\" /><script src=\"/swiper/dist/js/swiper.js\"></script><script src=\"/scripts/client/a-tools.js\"></script><script src=\"/scripts/client/ajax.js\"></script><script src=\"/scripts/client/device.js\"></script><script src=\"/scripts/client/swipe.js\"></script><script src=\"/scripts/client/form.js\"></script><script src=\"/scripts/client/audio.js\"></script><script src=\"/scripts/client/init.js\"></script><script ssrc=\"http:/192.168.1.5:8089",
+		"/Users/colin/Projects/magicscenes/bower.json",
+		"/Users/colin/Projects/magicscenes/package.json",
+		"/Users/colin/Projects/magicscenes/libs/angular-md5/package.json",
+		"/168.1.5:8089",
+		"/Users/colin/Projects/magicscenes/app/configs/components-template.json",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/swipe.js",
+		"/Users/colin/Projects/magicscenes/app/scripts/playground.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/index.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/app.js",
+		"/Users/colin/Projects/magicscenes/app/configs/page-translate.json",
+		"/Users/colin/Projects/magicscenes/app/styles/scene.scss",
+		"/168.8.4:60460",
+		"/85, maximum-scale=1.0, user-scalable=0\">');} else {document.write('<meta id=\"viewport\" name=\"viewport\" content=\"width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">');}var h5Domain = '';var siteDomain = '';var accountKey = 'test';var sceneId = 'xxx';function onpageload() {var loading = document.getElementById('ms-loading'),content = document.getElementById('ms-content');loading.style.opacity = 0;content.style.opacity = 1;setTimeout(function() {loading.style.display = 'none';loading = content = null;}, 1000);}setTimeout(onpageload, 10000);</script><title>抢红包啦</title><meta name=\"description\" content=\"\"><meta name=\"keywords\" content=\"场景应用,Magic Scenes,魔窗\"><link href=\"/css/scene-min.css\" rel=\"stylesheet\"><style type=\"text/css\">/* 为了避免在页面加载前显示空白，把loading所需样式直接写在这里 */.rotate,.rotate-ccw {-webkit-animation:rotate 2s infinite linear;animation: rotate 2s infinite linear;}.rotate-ccw {animation-direction: reverse;}.msFadeOut {-webkit-animation:fadeOut .4s 1 linear;animation: fadeOut .4s 1 linear;}.ms-loading {position: fixed;z-index: 999999999;background-color: rgba(0,0,0,0.9);left: 0;top: 0;width: 100%;height: 100%;-webkit-transition: opacity 1s;transition: opacity 1s;}.ms-loading .loading {position: absolute;left: 50%;top: 50%;box-sizing: border-box;width: 80px;height: 80px;padding: 0px;margin: -32px 0 0 -32px;border-radius: 100%;overflow: hidden;background-color: #13C5C5;background-repeat: no-repeat;background-size: cover;background-position: center center;}.ms-loading .loading::after,.ms-loading .loading .rotating {content: ' ';width: 80px;height:80px;display: block;box-sizing: border-box;border-radius: 100%;border: 4px solid rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.8);-webkit-animation:rotate 1s infinite linear;animation: rotate 1s infinite linear;}.ms-loading .loading figure,.ms-loading .loading figure img {box-sizing: border-box;width: 100%;height: 100%;}@-webkit-keyframes rotate {0% {-webkit-transform: rotate(0deg);}50% {-webkit-transform: rotate(180deg);}100% {-webkit-transform: rotate(360deg);}}@-moz-keyframes rotate {0% {-moz-transform: rotate(0deg);}50% {-moz-transform: rotate(180deg);}100% {-moz-transform: rotate(360deg);}}@keyframes rotate {0% {transform: rotate(0deg);}50% {transform: rotate(180deg);}100% {transform: rotate(360deg);}}</style>↵</head>↵<body onload=\"onpageload()\"><div class=\"ms-loading\" id=\"ms-loading\"><div class=\"loading\"style=\"background-image: url(/uploads/7410-1e137jp.jpg);\" ><div class=\"rotating\"></div></div></div><div id=\"musicplayer\" class=\"animated rotate infinite\" ng-if=\"sceneData.music\"><audio id=\"bg-music\" m=\"res/music/平凡之路.mp3\" src=\"/res/music/平凡之路.mp3\" loop autobuffer autoplay preload></audio><span class=\"icon bg-music-handle\"><img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iMzJweCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMzI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDM3X19tdXNpY19ub2RlIj48cGF0aCBkPSJNMjUuMjcxLDE5LjEwMmMwLjAwNi0wLjAxNiwwLjAxMy0wLjAyOSwwLjAyMS0wLjA0M2MwLjAwNC0wLjA1LDAuMDA4LTAuMTAxLDAuMDE1LTAuMTUyICAgYy0wLjAxMS0wLjAyOC0wLjAyMy0wLjA1Ni0wLjAzNC0wLjA4NGMtNC43NjItMi45NDMtNC4wODgtMTEuNjUxLTkuNjIzLTE0LjczN2MtMC4xODEtMC4xMDMtMC4zNTgtMC4xNC0wLjUzNC0wLjE1MyAgIGMtMC4wNjEtMC4wMTUtMC4xMTktMC4wMzgtMC4xODYtMC4wMzhjLTAuNDQyLDAtMC44MDIsMC4zNi0wLjgwMiwwLjgwM3YxNy40NjZjLTAuNzg5LTAuNTAyLTEuNzk4LTAuODE2LTIuOTE2LTAuODE2ICAgYy0yLjQ5NiwwLTQuNTIxLDEuNTE0LTQuNTIxLDMuMzhzMi4wMjQsMy4zOCw0LjUyMSwzLjM4YzIuNDk3LDAsNC41MjEtMS41MTQsNC41MjEtMy4zOGMwLTAuMDE0LTAuMDA1LTAuMDI1LTAuMDA1LTAuMDM5ICAgYzAuMDAxLTAuMDEsMC4wMDUtMC4wMTcsMC4wMDUtMC4wMjZWMTEuMDg0YzIuNjI2LDEuNjQ2LDIuNjkxLDYuMjAyLDYuMjM5LDcuNzY1YzAuNDc0LDAuMjE3LDEuMzI0LDAuMzY4LDIuMTg5LDAuNDg2ICAgYzAuMTA0LTAuMDA1LDAuMi0wLjAxNSwwLjMwNS0wLjAxNWMwLjA2LDAsMC4xMTIsMC4wMDYsMC4xNjksMC4wMDhjMC4wODgtMC4wMTcsMC4xODQtMC4wMjUsMC4yNzMtMC4wMzkgICBDMjUuMDI1LDE5LjIyMiwyNS4xNDcsMTkuMTYsMjUuMjcxLDE5LjEwMnoiLz48L2c+PC9zdmc+\"></span></div><div id=\"ms-content\" style=\"opacity:0; transition: opacity 0.3s;\"><div id=\"scene\" class=\"scene swiper-container swiper-container-vertical swiper-container-3d swiper-container-cube\"><div class=\"page-list swiper-wrapper\" style=\"transform-origin: 50% 50% -240px; transform: translate3d(0px, 0px, 0px) rotateX(90deg) rotateY(0deg); transition-duration: 0ms;\"><section class=\"page-item swiper-slide swiper-slide-duplicate swiper-slide-p…n-out 0.6s 1 backwards; animation: bounceIn 1.6s ease-in-out 0.6s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 316px; height: 73px; color: #000000; opacity: 1; background-color: rgba(255,255,255,0); border-radius: 320px; box-shadow: 0px 0px 7px #ffffff; border: 0px solid #eeeeee;\"><div id=\"text-compnt-1428406878827-88811\" class=\"ng-binding\"><span style=\"color: rgb(255, 165, 0); font-size: 32px;\"><b>水</b></span><span style=\"color: rgb(255, 165, 0); font-size: 22px;\">不在深，有龙&nbsp;</span><span style=\"color: rgb(0, 139, 139); font-size: 40px; background-color: rgb(255, 255, 0);\">则灵！</span></div></div></div></form></div><div class=\"swiper-slide-shadow-top\" style=\"transition-duration: 0ms; opacity: 2;\"></div><div class=\"swiper-slide-shadow-bottom\" style=\"transition-duration: 0ms; opacity: -2;\"></div></section><section class=\"page-item swiper-slide swiper-slide-duplicate\" data-swiper-slide-index=\"0\" style=\"height: 480px; transform: rotateX(-360deg) rotateY(0deg) translate3d(0px, -1920px, 0px); transition-duration: 0ms;\"><div class=\"page-bg\" style=\"background-image: url(http:/192.168.8.4:60460/uploads/7410-1e137jp.jpg);\"></div><span class=\"arrow\"></span><div class=\"page-content\"><form id=\"0\" action=\"?unset\" target=\"_blank\" class=\"ng-pristine ng-valid\"><div class=\"component\" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 137px;left: 32px;z-index: 0;\"><div class=\"component-content text-tools-container animate-zoomInLeft\" style=\"overflow:hidden; -webkit-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; animation: zoomInLeft 1.8s ease-in-out 1s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 39px; width: 243px; height: 244px; color: #ffffff; opacity: 1; background-color: rgba(197,8,150,0.63); border-radius: 320px; box-shadow: 0px 0px 13px #000000; border: 1px solid #ff008e;\"><div id=\"text-components-xxxx-00020\" class=\"ng-binding\"><div class=\"wysiwyg-text-align-center\"><br><br><br>Hallo, <span style=\"font-size: 32px;\"><b>World！</b></span></div></div></div></div><div class=\"component\" style=\"-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); top: 68.796875px;left: 182.59375px;z-index: 1;\"><div class=\"component-content text-tools-container animate-zoomIn\" style=\"overflow:hidden; -webkit-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation: zoomIn 1.5s ease-in-out 0s 1 backwards; animation: zoomIn 1.5s ease-in-out 0s 1 backwards; -moz-animation-direction: ease-in-out; -moz-animation-direction: ease-in-out; animation-direction: ease-in-out; -moz-animation-play-state: running; -moz-animation-play-state: running; animation-play-state: running; padding: 10px; width: 108px; height: 110px; color: #000000; opacity: 1; background-color: rgba(255,170,0,0.59); border-radius: 320px; box-shadow: 0px 0px 0px #000000; border: 1px solid #ffbf31;\"><div id=\"text-compnt-1428405572644-7221\" class=\"ng-binding\"></div></div></div></form></div><div class=\"swiper-slide-shadow-top\" style=\"transition-duration: 0ms; opacity: 3;\"></div><div class=\"swiper-slide-shadow-bottom\" style=\"transition-duration: 0ms; opacity: -3;\"></div></section></div><div class=\"swiper-cube-shadow\" style=\"transform: scale3d(0.94, 1, 0.94) translate3d(0px, 260px, -255.319px) rotateX(-90deg); transition-duration: 0ms;\"></div></div></div><script src=\"/js/client-min.js\"></script><!-- mockjs --><link rel=\"stylesheet\" href=\"/css/scene.css\"><link rel=\"stylesheet\" href=\"/swiper/dist/css/swiper.css\" /><script src=\"/swiper/dist/js/swiper.js\"></script><script src=\"/scripts/client/a-tools.js\"></script><script src=\"/scripts/client/ajax.js\"></script><script src=\"/scripts/client/device.js\"></script><script src=\"/scripts/client/swipe.js\"></script><script src=\"/scripts/client/form.js\"></script><script src=\"/scripts/client/audio.js\"></script><script src=\"/scripts/client/init.js\"></script><script ssrc=\"http:/192.168.1.5:8089",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/swipe.origin.js",
+		"/Users/colin/Projects/magicscenes/app/configs/animations.json",
+		"/Users/colin/Projects/magicscenes/app/components/video-tools/editor.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/scene.svc.js",
+		"/Users/colin/Projects/magicscenes/.tuiconf",
+		"/Users/colin/Projects/magicscenes/.sshconf",
+		"/Users/colin/.oh-my-zsh/oh-my-zsh.sh",
+		"/Users/colin/Projects/magicscenes/app/configs/apis.js",
+		"/tmpl.html\",controller:[\"$scope\",function(a){a.$root.templateMode=!1,a.$root.role=\"null\"}]}).state(\"scene\",{url:\"/scene/:sceneId\",views:{\"\":{templateUrl:\"views/scene.tmpl.html\",controller:[\"$rootScope\",\"$scope\",\"$stateParams\",\"$state\",function(a,b,c){b.$root.templateMode=!1,b.$root.sceneId=APP.sceneId=c.sceneId,a.loadScene(c.sceneId)}]},\"hint@\":{template:' This is contacts.detail.item overriding the \"hint\" ui-view'}}})}]),\"undefined\"!=typeof Mock&&\"function\"==typeof Mock.mockjax&&Mock.mockjax(APP),angular.module(\"ms.sceneService\",[\"ngResource\"]).factory(\"sceneService\",[\"$resource\",function(a){var b={},c=APIS.staticTemplatePath,d=APIS.dynamicTemplatePath,e=APIS.formsTemplatePath,f=APIS.myImagesUrl,g=APIS.myBgImagesUrl,h=APIS.myMusicUrl,i=APIS.toolsPath,j=APIS.animationsUrl,k=APIS.imageLibUrl,l=APIS.bgImageLibUrl,m=APIS.componentsTplUrl,n=APIS.musicLibUrl,o=(APIS.h5SiteDomain,APIS.serverConfig),p=(APIS.h5Domain,APIS.sceneUrl);return b.tools=a(i,{},{query:{method:\"GET\",params:{geekId:\"list\"},isArray:!0}}),b.animationsSrc=a(j,{},{query:{method:\"GET\",params:{geekId:\"list\"},isArray:!1}}),b.serverConfig=a(o,{},{query:{method:\"GET\",isArray:!1}}),b.animationsSrc=a(j,{},{query:{method:\"GET\",params:{geekId:\"list\"},isArray:!1}}),b.componentsTplSrc=a(m,{},{query:{method:\"GET\",params:{},isArray:!1}}),b.staticTemplates=a(c,{},{query:{method:\"GET\",params:{geekId:\"list\"},isArray:!0}}),b.dynamicTemplates=a(d,{},{query:{method:\"GET\",params:{geekId:\"list\"},isArray:!0}}),b.formsTemplates=a(e,{},{query:{method:\"GET\",params:{geekId:\"list\"},isArray:!0}}),b.dataPoster=function(b){var c=p.replace(\"{SCENE_ID}\",b);return c+=\"?accountKey=\"+APP.getParams(\"accountKey\"),a(c,{},{query:{method:\"GET\",params:{},isArray:!1}})},b.myImagesSrc=a(f,{},{query:{method:\"GET\",params:{accountKey:APP.getParams(\"accountKey\")},isArray:!0}}),b.imageLibSrc=a(k,{},{query:{method:\"GET\",params:{},isArray:!0}}),b.myBgImagesSrc=a(g,{},{query:{method:\"GET\",params:{accountKey:APP.getParams(\"accountKey\")},isArray:!0}}),b.bgImageLibSrc=a(l,{},{query:{method:\"GET\",params:{},isArray:!0}}),b.myMusicSrc=a(h,{},{query:{method:\"GET\",params:{accountKey:APP.getParams(\"accountKey\")},isArray:!0}}),b.musicLibSrc=a(n,{},{query:{method:\"GET\",params:{},isArray:!0}}),b.createPage=function(b){if(!b)throw new Error(\"misses scene is when create page for it.\");var c=\"/data/scene/\"+b+\"/create-page\";return a(c,{},{query:{method:\"GET\",params:{},isArray:!1}})},b}]),angular.module(\"ms.sceneService\").factory(\"msDialog\",[\"$mdDialog\",\"$http\",\"$templateCache\",function(a,b,c){var d=function(a){this.config=angular.extend({},{title:\"添加组件\",icon:\"\",templateUrl:\"\",actions:!0,ok:\"确定\",cancel:\"取消\",targetEvent:null,template:'<md-dialog class=\"{{ conf.className }} md-default-theme\" md-theme=\"{{ conf.theme }}\" aria-label=\"{{ ariaLabel }}\">  <md-content style=\"min-width:{{ conf.width }}px;\">    <md-subheader class=\"md-sticky-no-effect\">      <ng-md-icon ng-if=\"conf.icon\" icon=\"{{ conf.icon }}\"></ng-md-icon>      <em>{{ conf.title }}</em>    </md-subheader>    [[CONTENT]]  </md-content>  <div ng-if=\"actions\" class=\"md-actions\">    <md-button ng-if=\"conf.cancel!==false\" ng-click=\"closeDialog()\">{{ conf.cancel }}</md-button>    <md-button ng-if=\"conf.ok!==false\" ng-click=\"done()\" class=\"md-primary\">{{ conf.ok }}</md-button>  </div></md-dialog>',controller:angular.noop,onComplete:angular.noop,hasBackdrop:!0,disableParentScroll:!0,clickOutsideToClose:!0,escapeToClose:!0,locals:{ok:\"OK\",cancel:\"CANCEL\"}},a),this.controller=a.controller,delete this.config.controller};return d.prototype={show:function(){var a=this,b=this.config;return b.controller=[\"$scope\",\"$mdDialog\",function(c,d){c.conf=b,c.ok=b.ok,c.title=b.title,c.cancel=b.cancel,c.actions=b.actions,c.closeDialog=function(){d.cancel(),angular.isFunction(b.onCancel)&&b.onCancel(c)},c.done=function(){d.hide(),angular.isFunction(b.onOk)&&b.onOk(c)},angular.isFunction(a.controller)?a.controller.apply(c,arguments):angular.isArray(a.controller)&&angular.isFunction(a.controller[a.controller.length-1])&&a.controller[a.controller.length-1].apply(c,arguments)}],this.template?this.showDialog():this.loadHtmlTemplate(),this},close:function(){a.hide()},hide:function(){a.hide()},showDialog:function(){var b=this.config;b.template=b.template.replace(\"[[CONTENT]]\",this.template),delete b.templateUrl,this.$mdDialog=a.show(b).then(function(){},function(){})[\"finally\"](function(){angular.isFunction(b.onFinally)&&b.onFinally()})},loadHtmlTemplate:function(){var a=this,d=this.config,e=c.get(d.templateUrl);e?(this.template=e,this.showDialog()):b({method:\"GET\",url:d.templateUrl}).success(function(b){c.put(d.templateUrl,b),a.template=b,a.showDialog()}).error(function(){})}},{create:function(a){return new d(a)}}}]),angular.module(\"ms\").controller(\"uploaderController\",[\"$rootScope\",\"$scope\",\"ngDialog\",\"FileUploader\",function(a,b,c,d){var e=b.uploader=new d({alias:\"fileStream\",url:b.uploaderUrl,formData:[{uploadType:a.templateMode?\"$TEMPLATE\":APP.getParams(\"uploadType\")||\"\"},{accountKey:APP.getParams(\"accountKey\")},{type:b.uploaderType||\"img\"}]});e.filters.push({name:\"customFilter\",fn:function(){return this.queue.length<50}}),b.removeItem=function(a){a.isRemoved=!0,setTimeout(function(){a.remove(),b.$apply()},400)},e.onSuccessItem=function(a,c){angular.isFunction(b.onItemUploadSuccess)&&b.onItemUploadSuccess(a,c)},e.onErrorItem=function(){},e.onCompleteAll=function(){c.openConfirm({showClose:!1,template:'  <p>全部图片上传成功.</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">完成</md-button>      <md-button class=\"ngdialog-button md-button md-raised md-dafault-theme\" ng-click=\"confirm(1)\">继续上传</md-button>  </div>',plain:!0,controller:[\"$scope\",function(a){a.confirm=function(c){c?e.clearQueue():(e.clearQueue(),e.destroy(),a.closeThisDialog(),b.closeThisDialog()),a.$parent&&a.$parent.confirm(c)}}]})},b.controller={isImage:function(a){var b=\"|\"+a.type.slice(a.type.lastIndexOf(\"/\")+1)+\"|\";return-1!==\"|jpg|png|jpeg|bmp|gif|\".indexOf(b)}}}]).directive(\"ngThumb\",[\"$window\",function(a){var b={support:!(!a.FileReader||!a.CanvasRenderingContext2D),isFile:function(b){return angular.isObject(b)&&b instanceof a.File},isImage:function(a){var b=\"|\"+a.type.slice(a.type.lastIndexOf(\"/\")+1)+\"|\";return-1!==\"|jpg|png|jpeg|bmp|gif|\".indexOf(b)}};return{restrict:\"A\",template:\"<canvas/>\",link:function(a,c,d){function e(a){var b=new Image;b.onload=f,b.src=a.target.result}function f(){var a,b,c,d,e=g.width||this.width/this.height*g.height,f=g.height||this.height/this.width*g.width,i=g.fillWidth||e/f*g.fillHeight,j=g.fillHeight||f/e*g.fillWidth;i/j>e/f?(a=i,b=i/e*f):(a=j/f*e,b=j),c=0-(a-i)/2,d=0-(b-j)/2,h.attr({width:g.fillWidth||e,height:g.fillHeight||f}),h[0].getContext(\"2d\").drawImage(this,c,d,a,b)}if(b.support){var g=a.$eval(d.ngThumb);if(b.isFile(g.file)&&b.isImage(g.file)){var h=c.find(\"canvas\"),i=new FileReader;i.onload=e,i.readAsDataURL(g.file)}}}}}]),angular.module(\"ms.scene\",[\"ui.router\",\"ngMaterial\",\"angularFileUpload\",\"ngDialog\",\"ngMdIcons\",\"ngMessages\",\"vAccordion\"]).controller(\"sceneController\",[\"$rootScope\",\"$scope\",\"$document\",\"$timeout\",\"$http\",\"$templateCache\",\"$cacheFactory\",\"$mdToast\",\"$mdDialog\",\"ngDialog\",\"sceneService\",\"componentEditorService\",function(a,b,c,d,e,f,g,h,i,j,k,l){a.imageLib=[],a.myImages=[],a.musicLib=[],a.myMusic=[],a.componentsTpl={},a.myImagesMap={},a.componentEditorService=l,a.loadScene=function(b){var c=k.dataPoster(b).get();c.$promise.then(function(b){var c=b.data||b;c.pages=c.pages||[],0===c.pages.length&&c.pages.push({id:a.createPageId(c.id),name:\"未命名页面\",components:[]}),a.sceneData=c,a.cacheComponentContentAsTemplate(c)})},k.animationsSrc.get().$promise.then(function(b){var c=b.data||b;a.animations=c,a.enterAnimations=c.enter,a.leaveAnimations=c.out,a.animationPathLabels=c.animationPathLabels}),k.serverConfig.get().$promise.then(function(b){b.config&&(a.serverConfig=b.config,SERVER.domain=b.config.h5Domain,SERVER.siteDomain=b.config.siteDomain)});var m=k.componentsTplSrc.get();m.$promise.then(function(b){var c,d=b.data||b;a.componentsTplUrl=a.componentsTplUrl||{};for(var e in d)c=e+\"-tpl.html\",a.componentsTplUrl[e]=c;a.componentsTpl=d});var n=k.myImagesSrc.query();n.$promise.then(function(b){a.myImages=b.data||b});var o=k.imageLibSrc.get();o.$promise.then(function(b){a.imageLib=b.data||b});var p=k.myBgImagesSrc.query();p.$promise.then(function(b){a.myBgImages=b.data||b});var q=k.bgImageLibSrc.get();q.$promise.then(function(b){a.bgImageLib=b.data||b});var r=k.myMusicSrc.query();r.$promise.then(function(b){a.myMusicData=b.data||b});var s=k.musicLibSrc.get();s.$promise.then(function(b){a.musicLibData=b.data||b}),a.currentPage=0,angular.extend(a,{toolsAllowedCacheContent:[\"text-tools\",\"video-tools\"],clearHtml:function(b){var c=[],d=[];$.each(b,function(b,e){var f=e.nodeType;8===f?c.push(e):3===f?\"\"===e.nodeValue.replace(/\\s+/,\"\")&&c.push(e):1===f&&(a.clearHtml(e.childNodes),$.each(e.classList,function(a,b){\"ng-scope\"===b&&(1===e.classList.length?e.removeAttribute(\"class\"):e.classList.remove(b))}),\"a\"===e.nodeName.toLowerCase()&&$(e).attr(\"data-href\")&&($(e).attr(\"href\",$(e).attr(\"data-href\")),$(e).removeAttr(\"data-href\")),$.each(e.attributes,function(a,b){(b.nodeName.match(/ng-/)||\"html-include\"===b.nodeName)&&d.push(b)}))}),$.each(c,function(a,b){b.parentNode.removeChild(b)}),$.each(d,function(a,b){b.ownerElement.removeAttribute(b.nodeName)})},showTemplateEditor:function(a){i.show({controller:\"uploadTemplateController\",templateUrl:\"views/upload-template.tpl.html\",targetEvent:a}).then(function(a){b.alert='You said the information was \"'+a+'\".'},function(){b.alert=\"You cancelled the dialog.\"})},savePageAsTemplate:function(){var a=\"/save-template/\";e.post(a,function(){j.openConfirm({plain:!0,template:'  <p>保存模板成功.</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">确定</md-button>  </div>'})})},save:function(b){var c=a.sceneData,d=APIS.sceneSave.replace(\"{SCENE_ID}\",c.id),f=JSON.stringify(c,function(a,b){switch(a){case\"$$hashKey\":return void 0;default:return b}},4);e.post(d,{accountKey:APP.getParams(\"accountKey\"),sceneId:c.id,content:f}).success(function(c){angular.isFunction(b)?b(c):b!==!1&&a.showSaveResult(c)})},showSaveResult:function(a){j.openConfirm({plain:!0,template:\"  <p>\"+(a?a.message||\"保存成功\":\"保存成功\")+'</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">确定</md-button>  </div>'})},preview:function(b){b===!0?(a.scenePreviewMode=!1,$(\".preview-controls\").hide(),$(\".playground>.page-list\").removeClass(\"animated pushOutLeft\").addClass(\"animated pullInLeft\"),$(\".playground>.page-templates\").removeClass(\"animated pushOutRight\").addClass(\"animated pullInRight\")):a.scenePreviewMode||(a.generateHtml(),a.scenePreviewMode=!0,a.previewBox=SCENE.sceneSwipe(),$(\".playground>.page-list\").removeClass(\"animated pullInLeft\").addClass(\"animated pushOutLeft\"),$(\".playground>.page-templates\").removeClass(\"animated pullInRight\").addClass(\"animated pushOutRight\"))},exitPreviewMode:function(){a.preview(!0)},getBgImgAttr:function(a){var b=' style=\"background-image: url({URL});\" ',c=this.fillAbsoluteUrl(a);return b.replace(\"{URL}\",c)},fillAbsoluteUrl:function(a){return a&&(a.match(/^http(s)?:/)||a.match(/^\\/))?a:\"/\"+a},generateHtml:function(){var b=$(\"<div></div>\"),d=c.find(\"#preview-box\").html();return b.html(d),a.clearHtml(b[0].childNodes),d=a.releasedHtml=b.html()},publish:function(){var b,c=a.sceneData,d=APIS.sceneRelease.replace(\"{SCENE_ID}\",c.id);a.generateHtml(),b=$(\"#releasedScene\").val(),b=b.replace(/\\s{2,}/g,\"\").replace(/\\&lt\\;/g,\"<\").replace(/\\&amp\\;/g,\"&\").replace(/\\&gt\\;/g,\">\"),this.save(function(){h.show(h.simple().content(\"Simple Toast!\").position(\"right top\").hideDelay(3e3)),e.post(d,{accountKey:APP.getParams(\"accountKey\"),sceneId:c.id,html:b})})},cacheComponentContentAsTemplate:function(b){var c=a.toolsAllowedCacheContent;angular.forEach(b.pages,function(a){angular.forEach(a.components,function(d){if(-1!==c.indexOf(d.type)){var e=[b.id,a.id,d.id,\"content\"].join(\"/\");f.put(e,d.propertices.text)}})})},updateComponentContentAsTemplate:function(){var b=a.toolsAllowedCacheContent;a.sceneData&&angular.forEach(a.sceneData.pages,function(c){angular.forEach(c.components,function(d){if(-1!==b.indexOf(d.type)){var e=[a.sceneData.id,c.id,d.id,\"content\"].join(\"/\");f.remove(e),f.put(e,d.propertices.text)}})})},putComponentContentAsTemplate:function(b,c){var d=[a.sceneData.id,b.id,c.id,\"content\"].join(\"/\");f.put(d,c.propertices.text)},getComponentTemplateUrl:function(b){var c;return angular.forEach(a.sceneData.pages,function(d){angular.forEach(d.components,function(e){b.id===e.id&&(c=[a.sceneData.id,d.id,e.id,\"content\"].join(\"/\"))})}),c}}),angular.extend(b,{})}]).controller(\"page-templates\",[\"$rootScope\",\"$scope\",\"$http\",\"$mdDialog\",\"sceneService\",function(a,b,c,d,e){var f=e.staticTemplates.get();f.$promise.then(function(a){b.staticTemplates=a.data});var g=e.dynamicTemplates.get();g.$promise.then(function(a){b.dynamicTemplates=a.data});var h=e.formsTemplates.get();h.$promise.then(function(a){b.formsTemplates=a.data}),b.applyTemplate=function(b,e){var f=d.confirm().title(\"请确认\").content(\"是否使用此模版替换当前页面以及页面上的组件?\").ariaLabel(\"是否使用此模版替换当前页面以及页面上的组件?\").ok(\"确定\").cancel(\"取消\").targetEvent(e);d.show(f).then(function(){c.get(b.path).success(function(b){var c=a.currentPage,d=a.sceneData.pages[c];d.components=b.components,d.name=b.name,d.templateId=b.id}).error(function(){})},function(){})}}]),angular.module(\"ms.scene\").controller(\"toolsController\",[\"$rootScope\",\"$scope\",\"$document\",\"$http\",\"$timeout\",\"msDialog\",\"ngDialog\",\"sceneService\",\"textToolbarService\",function(a,b,c,d,e,f,g,h,i){a.toolsAction={onOk:function(b){b.propertices?(angular.extend(b.propertices,b.cache),delete b.propertices):a.appendComponentToPage({type:b.tool.type,propertices:angular.extend({},b.cache)},null,a.edittingTemplate)},\"text-tools\":function(b,d,e,f,g){function h(){var b=j.getData();e.text=b,a.updateComponentContentAsTemplate()}if(angular.isObject(e)){var j,k=\"text-\"+g.id,l=c.find(\"#\"+k),m=l.parents(\"ms-component:first\");if(CKEDITOR.instances[k])return;m.attr(\"data-editable\",!0),l.attr(\"contenteditable\",!0),CKEDITOR.instances[k]&&CKEDITOR.instances[k].destroy(),j=CKEDITOR.inline(k),j.on(\"blur\",function(a){l.removeAttr(\"contenteditable\"),a.editor.destroy()}),j.on(\"destroy\",function(){m.removeAttr(\"data-editable\"),h()})}else i.cache={text:\"请输入文本\"},a.appendComponentToPage({type:d.type,propertices:angular.extend({},i.cache),styles:{color:\"#000000\",\"background-color\":\"rgba(255, 255, 255, 0.3)\",padding:10}})},\"image-tools\":function(b,c,e,h){var i=\"components/\"+c.type+\"/editor.html\";h[c.type]?h[c.type].close():h[c.type]=f.create({width:500,icon:c.icon,title:\"添加\"+c.name,targetEvent:b,templateUrl:i,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:a.toolsAction.onOk,onCancel:angular.noop,controller:[\"$scope\",function(b){angular.extend(b,{cache:angular.extend({imgLib:\"myImages\"},e),tool:c,propertices:e,currentImgLib:\"myImages\",changeImgLib:function(a){b.currentImgLib=a,b.cache.imgLib=a},checkImg:function(a){var c=b.checkedImg;c&&c.path===a.path?b.checkedImg=null:(b.checkedImg=a,b.cache.url=a.path)},deleteImg:function(b){g.openConfirm({showClose:!0,template:'  <p>确定要删除图片吗？</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-accent md-dafault-theme\" ng-click=\"confirm(1)\">删除</md-button>      <md-button class=\"ngdialog-button md-button md-raised md-dafault-theme\" ng-click=\"confirm(0)\">取消</md-button>  </div>',plain:!0,controller:[\"$scope\",function(c){c.confirm=function(e){e&&d.post(APIS.deleteImg,{type:\"img\",accountKey:APP.getParams(\"accountKey\"),path:b.path}).success(function(){var c=[];angular.forEach(a.myImages,function(a){a.path!==b.path&&c.push(a)}),a.myImages=c,g.openConfirm({showClose:!0,template:'  <p>删除成功！</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">关闭</md-button>  </div>',plain:!0})}).error(function(){g.openConfirm({showClose:!0,template:'  <p>抱歉，删除失败！请再试一次吧</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">关闭</md-button>  </div>',plain:!0})}),c.closeThisDialog()}}]})},upload:function(){var c=\"views/uploader.tpl.html\";g.open({template:c,scope:b,className:\"uploader-dialog ngdialog-theme-default \",controller:[\"$scope\",function(b){b.uploaderType=\"img\",b.uploaderUrl=APIS.uploadImg,b.onItemUploadSuccess=function(b,c){a.myImages.push(c)}}]})}})}],onFinally:function(){h[c.type]=null},onComplete:angular.noop}).show()},\"bg-tools\":function(b,c,e,h){function i(a){\"bgColor\"===a.cache.imgLib?(l.backgroundColor=a.cache.backgroundColor,l.backgroundImage=\"\"):l.backgroundImage=a.cache.url,h[c.type].close(),angular.extend(l,a.cache),delete a.propertices}var j=\"components/\"+c.type+\"/editor.html\",k=a.currentPage,l=a.sceneData.pages[k];h[c.type]?h[c.type].close():h[c.type]=f.create({width:500,icon:c.icon,title:\"设置\"+c.name,targetEvent:b,templateUrl:j,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:i,onCancel:angular.noop,controller:[\"$scope\",function(b){angular.extend(b,{cache:angular.extend({url:l.backgroundImage,imgLib:l.imgLib||\"myBgImages\",backgroundColor:l.backgroundColor},e),tool:c,propertices:e,currentImgLib:\"myBgImages\",changeImgLib:function(a){b.currentImgLib=a,b.cache.imgLib=a},checkImg:function(a,c){var d=a.type;angular.isObject(c)?(b.checkedImg=c,b.cache.url=c.path):(b.checkedImg=null,b.cache.backgroundColor=c),\"dblclick\"===d&&i(b)},deleteImg:function(b){g.openConfirm({showClose:!0,template:'  <p>确定要删除图片吗？</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-accent md-dafault-theme\" ng-click=\"confirm(1)\">删除</md-button>      <md-button class=\"ngdialog-button md-button md-raised md-dafault-theme\" ng-click=\"confirm(0)\">取消</md-button>  </div>',plain:!0,controller:[\"$scope\",function(c){c.confirm=function(e){e&&d.post(APIS.deleteImg,{type:\"bg\",accountKey:APP.getParams(\"accountKey\"),path:b.path}).success(function(){var c=[];angular.forEach(a.myBgImages,function(a){a.path!==b.path&&c.push(a)}),a.myBgImages=c,g.openConfirm({showClose:!0,template:'  <p>删除成功！</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary  md-dafault-theme\" ng-click=\"confirm(0)\">关闭</md-button>  </div>',plain:!0})}).error(function(){g.openConfirm({showClose:!0,template:'  <p>抱歉，删除失败！请再试一次吧</p>  <div class=\"ngdialog-buttons\">      <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">关闭</md-button>  </div>',plain:!0})}),c.closeThisDialog()}}]})},upload:function(){var c=\"views/uploader.tpl.html\";g.open({template:c,scope:b,className:\"uploader-dialog ngdialog-theme-default \",controller:[\"$scope\",function(b){b.uploaderType=\"bg\",b.uploaderUrl=APIS.uploadImg,b.onItemUploadSuccess=function(b,c){a.myBgImages.push(c)}}]})}})}],onFinally:function(){h[c.type]=null},onComplete:angular.noop}).show()},\"music-tools\":function(b,c,d,e){var g=\"components/\"+c.type+\"/editor.html\";e[c.type]?e[c.type].close():e[c.type]=f.create({width:600,icon:c.icon,title:\"设置背景\"+c.name,targetEvent:b,templateUrl:g,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:function(b){a.sceneData.music=b.cache.url,b.propertices?(angular.extend(b.propertices,b.cache),delete b.propertices):(a.sceneData.music=b.cache.url,a.sceneData.musicTabIndex=b.cache.selectedTabIndex)},onCancel:angular.noop,controller:[\"$scope\",function(b){b.cache=angular.extend({selectedTabIndex:a.sceneData.musicTabIndex||0,url:a.sceneData.music}),b.tool=c}],onFinally:function(){e[c.type]=null},onComplete:angular.noop}).show()},\"input-tools\":function(b,c,d,e){var g=\"components/\"+c.type+\"/editor.html\";e[c.type]?e[c.type].close():e[c.type]=f.create({width:600,icon:c.icon,title:\"添加\"+c.name,targetEvent:b,templateUrl:g,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:a.toolsAction.onOk,onCancel:angular.noop,controller:[\"$scope\",function(a){a.cache=angular.extend({},d),a.propertices=d,a.tool=c}],onFinally:function(){e[c.type]=null},onComplete:angular.noop}).show()},\"button-tools\":function(b,c,d,e){if(e[c.type])return void e[c.type].close();if(d){var g=\"components/\"+c.type+\"/editor.html\";e[c.type]=f.create({width:600,icon:c.icon,title:\"添加\"+c.name,targetEvent:b,templateUrl:g,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:a.toolsAction.onOk,onCancel:angular.noop,controller:[\"$scope\",function(a){a.cache=angular.extend({},d),a.propertices=d,a.tool=c}],onFinally:function(){e[c.type]=null},onComplete:angular.noop}).show()}else a.appendComponentToPage({type:c.type,styles:{width:\"200px\",height:\"50px\"},propertices:{text:\"按钮\"}},null,a.edittingTemplate)},\"albums-tools\":function(b,c,d,e){var g=\"components/\"+c.type+\"/editor.html\";e[c.type]?e[c.type].close():e[c.type]=f.create({width:500,icon:c.icon,title:\"添加\"+c.name,targetEvent:b,templateUrl:g,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:a.toolsAction.onOk,onCancel:angular.noop,controller:[\"$scope\",function(a){a.cache=angular.extend({},d),a.propertices=d,a.tool=c}],onFinally:function(){e[c.type]=null},onComplete:angular.noop}).show()},\"video-tools\":function(b,c,d,e){var g=\"components/\"+c.type+\"/editor.html\";e[c.type]?e[c.type].close():e[c.type]=f.create({width:500,icon:c.icon,title:\"添加\"+c.name,targetEvent:b,templateUrl:g,className:c.type+\"-dialog tools-dialog\",actions:!0,onOk:function(b){var c,d,e;b.propertices?(angular.extend(b.propertices,b.cache),a.updateComponentContentAsTemplate(),delete b.propertices):(c=a.createComponentId(),d=a.sceneData.pages[a.currentPage],e={id:c,type:b.tool.type,propertices:angular.extend({},b.cache)},a.putComponentContentAsTemplate(d,e),a.appendComponentToPage(e))},onCancel:angular.noop,controller:[\"$scope\",function(a){a.cache=angular.extend({},d),a.propertices=d,a.tool=c}],onFinally:function(){e[c.type]=null},onComplete:angular.noop}).show()}},h.tools.get().$promise.then(function(a){b.tools=a.data}),angular.extend(a,{getToolByType:function(a){var c;return angular.forEach(b.tools,function(b){return b.type===a?(c=b,!1):void 0}),c},openToolsEditor:function(b,c,d,e){var f,g=angular.isString(c)?c:c.type,h=a.toolsAction[g];c=a.getToolByType(g),a.dialogCache=f=a.dialogCache||{},angular.isFunction(h)&&h(b,c,d,f,e)}})}]),angular.module(\"ms.scene\").controller(\"textToolbarController\",[\"$rootScope\",\"$scope\",\"$document\",\"msDialog\",\"textToolbarService\",function(a,b,c,d,e){var f=b.toolSvc=e;angular.extend(b,{setCustomColor:function(a,b){f.customColor=b,f.editor.composer.commands.exec(\"foreColorStyle\",b)},setCustomBgColor:function(a,b){f.customBgColor=b,f.editor.composer.commands.exec(\"bgColorStyle\",b)},setCustomFontSize:function(a,b){f.customFontSize=b,f.editor.composer.commands.exec(\"fontSizeStyle\",b+\"px\")},saveColor:function(a,b){var c,d=$(a.target).parents(\".tool-drop-menu\");b&&(c=f.customColor),d.toggle()},saveBgColor:function(a,b){var c,d=$(a.target).parents(\".tool-drop-menu\");b&&(c=f.customBgColor),d.toggle()},saveFontSize:function(a,b){var c,d=$(a.target).parents(\".tool-drop-menu\");b&&(c=f.customFontSize),d.toggle()},fontSize:14,fontSizePx:b.fontSize+\"px\"}),b.$watch(function(){return f.customFontSize},function(a,b){a!==b&&(f.customFontSizePx=a+\"px\")})}]),angular.module(\"ms.textToolbarService\",[]).factory(\"textToolbarService\",[\"$mdDialog\",\"$http\",\"$templateCache\",function(){return{fontColors:[\"#FF0000\",\"#FFA500\",\"#FFFF00\",\"#008000\",\"#008B8B\",\"#00FFFF\",\"#0000FF\",\"#800080\",\"#000000\",\"#222222\",\"#444444\",\"#666666\",\"#888888\",\"#AAAAAA\",\"#CCCCCC\",\"#EEEEEE\"],bgColors:[\"#FF0000\",\"#FFA500\",\"#FFFF00\",\"#008000\",\"#008B8B\",\"#00FFFF\",\"#0000FF\",\"#800080\",\"#000000\",\"#222222\",\"#444444\",\"#666666\",\"#888888\",\"#AAAAAA\",\"#CCCCCC\",\"#EEEEEE\"],fontSize:[12,14,16,18,20,22,24,28,32,40,48],visible:!1,show:function(){this.visible=!0},hide:function(){this.visible=!1}}}]),angular.module(\"ms.scene\").controller(\"musicToolController\",[\"$rootScope\",\"$scope\",\"FileUploader\",\"msDialog\",\"ngDialog\",function(a,b,c,d,e){var f=b.musicUploader=new c({alias:\"fileStream\",url:APIS.uploadMusic,autoUpload:!0,formData:[{uploadType:a.templateMode?\"$TEMPLATE\":APP.getParams(\"uploadType\")},{accountKey:APP.getParams(\"accountKey\")}]});f.filters.push({name:\"customFilter\",fn:function(){return this.queue.length<2}}),f.onSuccessItem=function(c,d){var e=d.path.substring(d.path.lastIndexOf(\"/\")+1),f={category:\"rock\",name:e,url:d.path};b.$parent.cache.url=f.url,a.myMusicData.push(f)},f.onCompleteAll=function(){f.clearQueue(),e.openConfirm({showClose:!1,template:'  <p>上传成功.</p>  <div class=\"ngdialog-buttons\">     <md-button class=\"ngdialog-button md-button md-raised md-primary md-dafault-theme\" ng-click=\"confirm(0)\">完成</md-button>  </div>',plain:!0,controller:[\"$scope\",function(a){a.confirm=function(b){b||(f.destroy(),a.closeThisDialog())}}]})}}]),angular.module(\"ms.scene\").run([\"$rootScope\",\"$templateCache\",\"md5\",\"ComponentsConfigService\",\"componentEditorService\",function(a,b,c,d,e){angular.extend(a,{createMd5Id:function(a){var b=+new Date,d=Math.floor(1e4*Math.random()),e=APP.getParams(\"accountKey\"),f=[a||\"MS\",e,b,d].join(\"-\");return c.createHash(f)},createComponentId:function(){return a.createMd5Id(\"component\")},createPageId:function(){return a.createMd5Id(\"page\")},createSceneId:function(){return a.createMd5Id(\"scene\")},appendComponentToPage:function(c,f,g){var h=a.sceneData.pages,i=g||(angular.isObject(f)?f:angular.isNumber(f)?h[f]:h[a.currentPage]),j={id:a.createComponentId(),type:null,styles:{},animation:{},propertices:{}},k=angular.extend({},j),l=c.type||k.type,m=d[l]||d.defaults;angular.forEach(k,function(a,b){switch(b){case\"styles\":k[b]=angular.extend({},m.styles,a,c[b],{zIndex:i.components.length});break;case\"animation\":k[b]=angular.extend({},m.animation,a,c[b]);break;case\"propertices\":k[b]=angular.extend({},m.propertices,a,c[b]);break;default:angular.isObject(a)?k[b]=angular.extend({},a,c[b]):k[b]=c[b]||j[b]}});var n=[a.sceneData.id,i.id,k.id,\"content\"].join(\"/\");b.put(n,k.propertices.text),i.components.push(k),a.checkedComponent=k,e.component=k,k=j=c=null}})}]).controller(\"playgroundController\",[\"$rootScope\",\"$scope\",\"$document\",\"$interval\",\"$timeout\",\"$animate\",\"ngDialog\",\"msDialog\",\"componentEditorService\",function(a,b,c,d,e,f,g,h,i){b.currentTime=\"凌晨 00:00\",b.wifiState=\"signal_wifi_2_bar\",b.batteryState=\"battery_full\",d(function(){var a=new Date,c=a.getHours(),d=a.getMinutes(),e=5>c?\"凌晨\":9>c?\"早上\":12>c?\"上午\":14>c&&30>=d?\"中午\":17>c?\"下午\":21>c?\"晚上\":23",
+		"/Users/colin/Projects/magicscenes/app/styles/_playground.scss",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/audio.js",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/init.js",
+		"/Users/colin/Projects/magicscenes/app/exclude.list",
+		"/Users/colin/Projects/magicscenes/.jshintrc",
+		"/Users/colin/Projects/magicscenes/app/components/image-tools/editor.html",
+		"/Users/colin/Projects/magicscenes/app/components/music-tools/editor.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/pages.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/components/bg-tools/editor.html",
+		"/Users/colin/Projects/magicscenes/app/styles/client/_animate-settings.scss",
+		"/Users/colin/Projects/magicscenes/app/styles/style.scss",
+		"/Users/colin/Projects/magicscenes/.gitignore",
+		"/Users/colin/Projects/magicscenes/config.codekit",
+		"/Users/colin/Projects/magicscenes/app/configs/bgimg-lib.json",
+		"/Users/colin/Projects/magicscenes/app/configs/img-lib.json",
+		"/Users/colin/Projects/magicscenes/app/configs/music-lib.json",
+		"/Users/colin/Projects/magicscenes/app/configs/templates-dynamic.json",
+		"/Users/colin/Projects/magicscenes/app/configs/templates-static.json",
+		"/Users/colin/Projects/magicscenes/app/configs/templates-static.json.backup",
+		"/Users/colin/Projects/magicscenes/dist/views/scenes-generator.html",
+		"/Users/colin/Projects/magicscenes/app/configs/templates-form.json",
+		"/Users/colin/Projects/magicscenes/libs/.gitignore",
+		"/Users/colin/Projects/magicscenes/app/styles/client/_mw-dynamic-logo.scss",
+		"/Users/colin/Projects/magicscenes/app/styles/_ckeditor-reset.scss",
+		"/Users/colin/Projects/magicscenes/libs/ckeditor/config.js",
+		"/Users/colin/Projects/magicscenes/libs/ckeditor/samples/inlinebycode.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/text-toolbar.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/styles/_component-editor.scss",
+		"/Users/colin/Projects/magicscenes/libs/ckeditor/styles.js",
+		"/Users/colin/Projects/magicscenes/libs/ckeditor/samples/inlineall.html",
+		"/Users/colin/Projects/magicscenes/libs/ckeditor/samples/index.html",
+		"/Users/colin/Projects/magicscenes/libs/wysihtml/bower.json",
+		"/Users/colin/Projects/magicscenes/app/scripts/template-manager.ctrl.js",
+		"/Users/colin/Projects/magicscenes/app/styles/_variables.scss",
+		"/Users/colin/Projects/magicscenes/mocks/scene.js",
+		"/Users/colin/Projects/magicscenes/app/styles/_common.scss",
+		"/Users/colin/Projects/magicscenes/app/styles/client/_animate-fadeFlashDown.scss",
+		"/Users/colin/Projects/ng2demo/app.js",
+		"/Users/colin/Projects/magicscenes/app/scripts/directives.js",
+		"/Users/colin/ubuntu/github/angular.io/app.js",
+		"/Users/colin/Desktop/untitled.html",
+		"/Users/colin/Projects/magicscenes/app/configs/tools.json",
+		"/Users/colin/Projects/magicscenes/app/styles/client/_components.scss",
+		"/Users/colin/Projects/magicscenes/app/styles/_preview.scss",
+		"/Users/colin/Projects/magicscenes/app/styles/_palette.sass",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/device.js",
+		"/Users/colin/Projects/magicscenes/app/configs/templates-undefined.json",
+		"/Users/colin/Projects/magicscenes/mocks/scene.settings.js",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/ajax.js",
+		"/ng2demo/app.js:13",
+		"/angular.io/app.js:13",
+		"/client/form.js:22",
+		"/Users/colin/Projects/magicscenes/client/form.js:22",
+		"/Users/colin/Projects/magicscenes/client/client/form.js:22",
+		"/Users/colin/Library/Application Support/Sublime Text 3/Packages/SublimeTodoReview/Main.sublime-menu",
+		"/Users/colin/Projects/magicscenes/dist/index.html",
+		"/Users/colin/Projects/magicscenes/app/scripts/client/wechat.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+			"/Users/colin/Projects/magicscenes/app/scripts",
+			"/Users/colin/Projects/magicscenes/",
+			"/Users/colin/Projects/magicscenes/app/",
+			"/Users/colin/Projects/magicscenes/app/styles",
+			"/Users/colin/Projects/magicscenes/app/scripts",
+			"<project>",
+			"/Users/colin/Projects/magicscenes/",
+			"/Users/colin/Projects/magicscenes",
+			"/Users/colin/Projects/magicscenes/app/scripts",
+			"/Users/colin/Projects/magicscenes/app/styles/",
+			"/Users/colin/Projects/magicscenes/app/styles"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"it('should work', function () {\n    s.assert.equal(sample, 'sample');\n  });",
+			"dist/",
+			"\n      js: {\n        files: {\n          'dist/piwik-mw.min.js': ['dist/mw-tracking.js'],\n          'dist/mw-tracking.min.js': ['dist/mw-tracking.js']\n        }\n      }",
+			"\n        files: {\n          'dist/piwik-mw.min.js': ['dist/mw-tracking.js']\n        }",
+			"'\n",
+			"a_k",
+			"A_K",
+			"a_k",
+			"apiMap",
+			" : ",
+			":",
+			"newParams",
+			"HttpRe",
+			"httpre",
+			"http",
+			"iframe",
+			"request",
+			"http",
+			"ajax",
+			"src=",
+			";",
+			"');\n",
+			"swiper-slide-active ",
+			"//",
+			"jsonp",
+			"');\n",
+			"',\n",
+			"script",
+			"4",
+			"effect",
+			"initSwiper",
+			"longSwipesRatio",
+			"longSwipes",
+			"touchEvents",
+			"touchend",
+			"coverflow",
+			"form.id",
+			"serializeJson",
+			"submitForm",
+			");\n",
+			"save",
+			"\"",
+			"\n        SERVER.domain = res.config.h5Domain;\n        SERVER.siteDomain = res.config.siteDomain;\n",
+			"SERVER",
+			"md5",
+			":",
+			"newList",
+			"comp",
+			"zIndexBehindComponent",
+			"comment",
+			"effec",
+			"active",
+			"ng",
+			"$components",
+			"$rootScope.checkedComponent",
+			"componentEditorService",
+			"debugger",
+			"\n              <md-select placeholder=\"请选择\" ng-model=\"$root.checkedComponent.animation.path\">\n                <md-option\n                  ng-repeat=\"path in $root.getAnimationByName($root.checkedComponent.animation.name).path\"\n                  ng-selected=\"((path===$root.checkedComponent.animation.path)\n                          || (!$root.isOwnerPath($root.checkedComponent.animation.name, path)&&$index===0))\"\n                  value=\"{{path}}\"\n                >\n                  {{ $root.animationPathLabels[path] }}\n                </md-option>\n              </md-select>",
+			"path",
+			"animation.path",
+			"getAnimationPath",
+			"cesvc",
+			"path",
+			"checkedComponent.animation.path",
+			"generateHtml",
+			"previewBox",
+			"swiper",
+			"slide",
+			": ",
+			"/>\n",
+			"swiper",
+			"text",
+			"app",
+			"wire",
+			"cssmin",
+			"{geekId: 'list'}",
+			"{},",
+			"sceneUrl",
+			"myBgImagesUrl",
+			"toolsPath",
+			"',\n",
+			"\n    {\n      \"name\": \"fade\",\n      \"text\": \"淡入\"\n    }",
+			"publish",
+			"removeAttr",
+			":after",
+			"components",
+			"sceneIdInput",
+			"submitForm",
+			"stingify",
+			"input",
+			"[type]",
+			"page",
+			"serializeForm",
+			"forms",
+			"rotate.png",
+			"h5Domain",
+			"h5SiteDomain",
+			"APIS",
+			"imageLib",
+			"img",
+			"[type]",
+			"libs",
+			"zip",
+			";\n",
+			"infinite",
+			"fadeOut",
+			"rotate",
+			"1s",
+			"text/css",
+			"0.5s",
+			"img",
+			"sceneData.thumb",
+			"1s",
+			"% {",
+			"\";\n",
+			"'-'",
+			"data-editable",
+			" {\n          src: '<%= config.tmp %>/concat/js/client-min.js',\n          dest: '<%= config.jsDist %>/client.js'\n        }, ",
+			"editable",
+			"0",
+			"ont-size: 20px;",
+			"0",
+			"transition: opacity 0.3s;",
+			",\n",
+			": '#",
+			"'50' : '#E0F2F1',\n      '100' : '#B2DFDB',\n      '200' : '#80CBC4',\n      '300' : '#4DB6AC',\n      '400' : '#26A69A',\n      '500' : '#009688',\n      '600' : '#00897B',\n      '700' : '#00796B',\n      '800' : '#00695C',\n      '900' : '#004D40',\n      'A100' : '#A7FFEB',\n      'A200' : '#64FFDA',\n      'A400' : '#1DE9B6',\n      'A700' : '#00BFA5',",
+			"light-green",
+			"$"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								381,
+								381
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/glacier.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/colin/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								829,
+								829
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/test.conf.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 81,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/glacier.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test/karma.conf.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								570,
+								570
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/glacier.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/mw-sdk.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								701,
+								701
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/glacier.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "test/spec/mw-sdk.spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								429,
+								429
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/glacier.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MarGo-output":
+	{
+		"height": 110.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mw-jssdk.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"g",
+				"Gruntfile.js"
+			],
+			[
+				"play",
+				"app/scripts/playground.ctrl.js"
+			],
+			[
+				"comp-ed",
+				"app/views/component-editor.tpl.html"
+			],
+			[
+				"com",
+				"app/configs/components-template.json"
+			],
+			[
+				"too",
+				"app/scripts/tools.ctrl.js"
+			],
+			[
+				"scene",
+				"app/scripts/scene.ctrl.js"
+			],
+			[
+				"swi",
+				"app/scripts/client/swipe.js"
+			],
+			[
+				"index",
+				"app/index.html"
+			],
+			[
+				"scene.htm",
+				"app/views/scene.tmpl.html"
+			],
+			[
+				"apis",
+				"app/configs/apis.js"
+			],
+			[
+				"pre",
+				"app/views/preview.tpl.html"
+			],
+			[
+				"form",
+				"app/scripts/client/form.js"
+			],
+			[
+				"bow",
+				"bower.json"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"svc.",
+				"app/scripts/scene.svc.js"
+			],
+			[
+				"scene.tpl",
+				"app/views/scene.tmpl.html"
+			],
+			[
+				"tool",
+				"app/scripts/tools.ctrl.js"
+			],
+			[
+				"swipe",
+				"app/scripts/client/swipe.js"
+			],
+			[
+				".jsh",
+				".jshintrc"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"direc",
+				"app/scripts/directives.js"
+			],
+			[
+				"client/form.js",
+				"app/scripts/client/form.js"
+			],
+			[
+				"scene.h",
+				"app/views/scene.tmpl.html"
+			],
+			[
+				"gen.html",
+				"app/views/scenes-generator.html"
+			],
+			[
+				"tools",
+				"app/scripts/tools.ctrl.js"
+			],
+			[
+				"ctrl.js",
+				"app/scripts/scene.ctrl.js"
+			],
+			[
+				"up",
+				"app/scripts/uploader.svc.js"
+			],
+			[
+				"",
+				"app/scripts/scene.ctrl.js"
+			],
+			[
+				"page",
+				"app/scripts/pages.ctrl.js"
+			],
+			[
+				"pla",
+				"app/scripts/playground.ctrl.js"
+			],
+			[
+				"gru",
+				"Gruntfile.js"
+			],
+			[
+				"uploa",
+				"app/scripts/uploader.svc.js"
+			],
+			[
+				"uplo",
+				"app/scripts/uploader.svc.js"
+			],
+			[
+				"scene.sv",
+				"app/scripts/scene.svc.js"
+			],
+			[
+				"comp",
+				"app/scripts/component.editor.svc.js"
+			],
+			[
+				"tools.c",
+				"app/scripts/tools.ctrl.js"
+			],
+			[
+				"scene.js",
+				"mocks/scene.js"
+			],
+			[
+				"u",
+				"app/scripts/uploader.svc.js"
+			],
+			[
+				"text",
+				"app/scripts/text-toolbar.svc.js"
+			],
+			[
+				"con",
+				"app/scripts/contextmenu.js"
+			],
+			[
+				"mocks/",
+				"mocks/scene.js"
+			],
+			[
+				"scene.ctrl",
+				"app/scripts/scene.ctrl.js"
+			],
+			[
+				"rules",
+				"app/scripts/wysihtml5-parser-rules.js"
+			],
+			[
+				"rule",
+				"app/scripts/wysihtml5-parser-rules.js"
+			],
+			[
+				"dia",
+				"app/scripts/dialog.svc.js"
+			],
+			[
+				"app.",
+				"app/scripts/app.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Projects/magicscenes/magic-scenes.sublime-project"
+			],
+			[
+				"webo",
+				"~/ubuntu/works/tui/tui-workspace/desktop/desktop.sublime-project"
+			],
+			[
+				"a",
+				"~/Projects/animate.3d/animate.3d.sublime-project"
+			],
+			[
+				"us",
+				"~/Projects/usergroup/usergroup.sublime-project"
+			],
+			[
+				"ami",
+				"~/Projects/animate.3d/animate.3d.sublime-project"
+			],
+			[
+				"ip",
+				"~/Projects/wysihtml/wysihtml.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 290.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
