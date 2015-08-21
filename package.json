@@ -9,16 +9,19 @@
     "grunt-cli": "~0.1",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compress": "~0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-jsdoc": "^0.5.7",
+    "grunt-jsduck": "^1.0.1",
     "grunt-jslint": "~1.1.5",
     "grunt-karma": "^0.11.1",
     "grunt-notify": "^0.4.1",
     "grunt-shell": "~0.6.4",
+    "grunt-version": "^1.0.0",
     "istanbul": "~0.2.7",
     "jquery": "^2.1.1",
     "jshint-stylish": "^1.0.0",
@@ -38,6 +41,5 @@
     "sinon": "^1.10.3",
     "time-grunt": "^1.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

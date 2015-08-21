@@ -25,6 +25,6 @@
     "after": false,
     "afterEach": false,
     "window": true,
-    "mw-jssdk": true
+    "mw": true
   }
 }

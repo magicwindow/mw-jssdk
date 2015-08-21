@@ -22,27 +22,27 @@ describe('common.js.', function(){
     });
 
     it("isObject(Object)", function () {
-      expect(mw.sdk.isObject({a:2})).equals(true);
+      expect(mw.isObject({a:2})).equals(true);
     });
 
     it("isObject(Element)", function () {
-      expect(mw.sdk.isObject(document.body)).equals(false);
+      expect(mw.isObject(document.body)).equals(false);
     });
 
     it("isObject(Array)", function () {
-      expect(mw.sdk.isObject([1,2,3,4])).equals(false);
+      expect(mw.isObject([1,2,3,4])).equals(false);
     });
 
     it("isObject(Boolean)", function () {
-      expect(mw.sdk.isObject(true)).equals(false);
+      expect(mw.isObject(true)).equals(false);
     });
 
     it("isObject(Number)", function () {
-      expect(mw.sdk.isObject(2)).equals(false);
+      expect(mw.isObject(2)).equals(false);
     });
 
     it("isObject(Number)", function () {
-      expect(mw.sdk.isObject(0)).equals(false);
+      expect(mw.isObject(0)).equals(false);
     });
   });
 
@@ -59,31 +59,31 @@ describe('common.js.', function(){
     });
 
     it("isArray(Object)", function () {
-      expect(mw.sdk.isArray({a:2})).equals(false);
+      expect(mw.isArray({a:2})).equals(false);
     });
 
     it("isArray(Element)", function () {
-      expect(mw.sdk.isArray(document.body)).equals(false);
+      expect(mw.isArray(document.body)).equals(false);
     });
 
     it("isArray(Array[...])", function () {
-      expect(mw.sdk.isArray([1,2,3,4])).equals(true);
+      expect(mw.isArray([1,2,3,4])).equals(true);
     });
 
     it("isArray(Array[])", function () {
-      expect(mw.sdk.isArray([])).equals(true);
+      expect(mw.isArray([])).equals(true);
     });
 
     it("isArray(Boolean)", function () {
-      expect(mw.sdk.isArray(true)).equals(false);
+      expect(mw.isArray(true)).equals(false);
     });
 
     it("isArray(Number)", function () {
-      expect(mw.sdk.isArray(2)).equals(false);
+      expect(mw.isArray(2)).equals(false);
     });
 
     it("isArray(Number)", function () {
-      expect(mw.sdk.isArray(0)).equals(false);
+      expect(mw.isArray(0)).equals(false);
     });
   });
 
@@ -100,31 +100,31 @@ describe('common.js.', function(){
     });
 
     it("isNumeric()(Object)", function () {
-      expect(mw.sdk.isNumeric({a:2})).equals(false);
+      expect(mw.isNumeric({a:2})).equals(false);
     });
 
     it("isNumeric()(Element)", function () {
-      expect(mw.sdk.isNumeric(document.body)).equals(false);
+      expect(mw.isNumeric(document.body)).equals(false);
     });
 
     it("isNumeric()(Array[...])", function () {
-      expect(mw.sdk.isNumeric([1,2,3,4])).equals(false);
+      expect(mw.isNumeric([1,2,3,4])).equals(false);
     });
 
     it("isNumeric()(Array[])", function () {
-      expect(mw.sdk.isNumeric([])).equals(false);
+      expect(mw.isNumeric([])).equals(false);
     });
 
     it("isNumeric()(Boolean)", function () {
-      expect(mw.sdk.isNumeric(true)).equals(false);
+      expect(mw.isNumeric(true)).equals(false);
     });
 
     it("isNumeric()(Number)", function () {
-      expect(mw.sdk.isNumeric(2)).equals(true);
+      expect(mw.isNumeric(2)).equals(true);
     });
 
     it("isNumeric()(Number)", function () {
-      expect(mw.sdk.isNumeric(0)).equals(true);
+      expect(mw.isNumeric(0)).equals(true);
     });
   });
 
@@ -142,40 +142,75 @@ describe('common.js.', function(){
     });
 
     it("isElement()(Object)", function () {
-      expect(mw.sdk.isElement({a:2})).equals(false);
+      expect(mw.isElement({a:2})).equals(false);
     });
 
     it("isElement()(Element)", function () {
-      expect(mw.sdk.isElement(document.body)).equals(true);
+      expect(mw.isElement(document.body)).equals(true);
     });
 
     it("isElement()(Element)", function () {
-      expect(mw.sdk.isElement(document.createElement('div'))).equals(true);
+      expect(mw.isElement(document.createElement('div'))).equals(true);
     });
 
     it("isElement()(Element)", function () {
-      expect(mw.sdk.isElement(document.createComment('Comments!'))).equals(true);
+      expect(mw.isElement(document.createComment('Comments!'))).equals(true);
     });
 
     it("isElement()(Array[...])", function () {
-      expect(mw.sdk.isElement([1,2,3,4])).equals(false);
+      expect(mw.isElement([1,2,3,4])).equals(false);
     });
 
     it("isElement()(Array[])", function () {
-      expect(mw.sdk.isElement([])).equals(false);
+      expect(mw.isElement([])).equals(false);
     });
 
     it("isElement()(Boolean)", function () {
-      expect(mw.sdk.isElement(true)).equals(false);
+      expect(mw.isElement(true)).equals(false);
     });
 
     it("isElement()(Number)", function () {
-      expect(mw.sdk.isElement(2)).equals(false);
+      expect(mw.isElement(2)).equals(false);
     });
 
     it("isElement()(Number)", function () {
-      expect(mw.sdk.isElement(0)).equals(false);
+      expect(mw.isElement(0)).equals(false);
     });
+  });
+
+  /*
+   * extend
+   */
+  describe('extend', function(){
+
+    beforeEach(function () {
+      _clock = sinon.useFakeTimers();
+    });
+    afterEach(function () {
+      _clock.restore();
+    });
+
+    it("extend({a:1,b:2}, {x:3,b:4})", function () {
+      var a = {a:1, b:2};
+      var b = {x:3, b:4};
+      mw.extend(a, b);
+
+      expect(a.x).equals(3);
+      expect(a.b).equals(4);
+      expect(b.b).equals(4);
+      expect(b.x).equals(3);
+    });
+
+    it("extend(true, {m:{x:1,y:2}}, {m:{x:9}})", function () {
+      var a = {m:{x:1,y:2}};
+      var b = {m:{x:9}};
+      mw.extend(true, a, b);
+
+      expect(a.m.x).equals(9);
+      expect(a.m.y).equals(2);
+      expect(b.m.x).equals(9);
+    });
+
   });
 
 });

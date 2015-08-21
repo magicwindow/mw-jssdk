@@ -67,8 +67,7 @@ module.exports = function (grunt) {
       main: {
         // source paths with your code
         src: [
-          '<%= config.app %>/*.js',
-          '<%= config.app %>/**/*.js'
+          '<%= config.app %>/*.js'
         ],
 
         // docs output dir
@@ -76,43 +75,47 @@ module.exports = function (grunt) {
 
         // extra options
         options: {
-          'builtin-classes': true,
+          //'builtin-classes': true,
           'warnings': ['-no_doc', '-dup_member', '-link_ambiguous'],
           'external': ['XMLHttpRequest']
         }
       }
     },
 
-    copy: {
-      dist: {
-        src: '<%= config.app %>/<%= pkg.name %>.js',
-        dest: '<%= config.dist %>/<%= pkg.name %>-<%= pkg.version %>.js',
-        options: {
-          process: function (content) {
-            return '/* ' + pkg.name + ' v' + pkg.version + ' ' + grunt.template.today("yyyy-mm-dd") + ' - Copyright 2014, SMART Technologies Inc */\n' + content;
-          },
-        },
-      }
-    },
+    //copy: {
+    //  dist: {
+    //    src: '<%= config.dist %>/<%= pkg.name %>.js',
+    //    dest: '<%= config.dist %>/<%= pkg.name %>-<%= pkg.version %>.js',
+    //    options: {
+    //      process: function (content) {
+    //        return content;
+    //      },
+    //    },
+    //  }
+    //},
 
     concat: {
       client: {
         src: [
-          '<%= config.app %>/common.js',
-          '<%= config.app %>/config.js',
-          '<%= config.app %>/mw-sdk.js'
+          '<%= config.app %>/sdk.header',
+          '<%= config.app %>/**/*.js',
+          '<%= config.app %>/sdk.footer'
         ],
-        dest: '<%= config.tmp %>/<%= pkg.name %>.js'
+        dest: '<%= config.dist %>/<%= pkg.name %>.js'
       }
     },
 
     uglify: {
       options: {
-        banner: '/* <%= pkg.name %> v<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> - Copyright 2014, SMART Technologies Inc */\n'
+        banner: '/* \n'+
+            ' <%= pkg.name %> v<%= pkg.version %>\n'+
+            ' <%= grunt.template.today("yyyy-mm-dd") %>\n'+
+            ' Copyright 2015, magicwindow.cn\n'+
+            ' */\n'
       },
       build: {
-        src: '<%= config.app %>/<%= pkg.name %>.js',
-        dest: '<%= config.dist %>/<%= pkg.name %>-<%= pkg.version %>.min.js'
+        src: '<%= config.dist %>/<%= pkg.name %>.js',
+        dest: '<%= config.dist %>/<%= pkg.name %>.min.js'
       }
     },
 
@@ -148,6 +151,12 @@ module.exports = function (grunt) {
         singleRun: true,
         browsers: ['PhantomJS'],
         reporters: ['dots', 'coverage']
+      }
+    },
+
+    version: {
+      project: {
+        src: ['package.json', 'bower.json']
       }
     },
 
@@ -191,11 +200,13 @@ module.exports = function (grunt) {
   // Build
   grunt.registerTask('build', [
     'clean',
+    'version',
     'jshint',
     'karma:unit_phantomjs',
-    'copy:dist',
+    'concat',
+    //'copy:dist',
     'uglify',
-    'jsdoc'
+    'jsduck'
   ]);
 
   // Setup default task that runs when you just run 'grunt'

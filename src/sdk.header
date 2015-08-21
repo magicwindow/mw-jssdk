@@ -1,0 +1,6 @@
+(function (global) { // initializes namepsace if neccessary
+
+  /**
+   * @class mw
+   */
+  var mw = global.mw = global.mw || {};

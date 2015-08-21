@@ -21,7 +21,8 @@ module.exports = function (config) {
 
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/jquery/dist/jquery.js',
-      {pattern: 'src/*.js'},
+
+      {pattern: 'src/**/*.js'},
       {pattern: 'test/**/*.spec.js'}
     ],
 

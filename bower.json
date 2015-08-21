@@ -1,6 +1,10 @@
 {
   "name": "mw.sdk",
+  "version": "1.0.0",
   "private": true,
+  "main": [
+    "dist/mw-sdk.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "chai": "~3.0.0"
