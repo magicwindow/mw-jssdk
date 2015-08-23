@@ -1,8 +1,10 @@
 build
+doc
 docs
 .DS_Store
 *.log
 coverage
-doc
-node_modules
+node_modules/
+bower_components/
+.tmp/
 .idea/
