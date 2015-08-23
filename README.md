@@ -3,7 +3,7 @@
 Magicwindow Javascript SDK.
 
 ```
-npm install mw-sdk
+bower install mw-sdk
 ```
 
 [![Build Status](https://travis-ci.org/git@github.com:luozhihua/mw-jssdk.git.svg?branch=master)](https://travis-ci.org/git@github.com:luozhihua/mw-jssdk.git)
