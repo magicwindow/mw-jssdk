@@ -1,4 +1,4 @@
-
+/*global ActiveXObject,escape*/
 mw.extend(mw, {
 
   /**
@@ -23,24 +23,26 @@ mw.extend(mw, {
    //* @param {String} options.target        Element ID that will receive http.responseText
    * @param {Number} options.tries         在请求失败时重新尝试请求的次数
    * @param {Object} options.params        附加的URL后面或者POST数据的参数，如果method=='GET'，则拼接到URL后；如果method=='POST'=='POST',则以POST数据发送。
-   * @param {Function} options.callback    请求回调方法
+   * @param {Function} options.success     请求成功的回调方法
    * @param {Function} options.filter      过滤向服务器发送的参数
-   * @param {Function} options.onload
-   * @param {Function} options.onrequest
+   * @param {Function} options.complete    请求完成时的回调方法，无论请求成功都会被调研；
+   * @param {Function} options.beforeSend  发送请求前调用，返回false时http请求将会被终止；
    * @param {Function} options.xtra        Callback arguments
    */
   ajax : function(options) {
 
-    var http = this.create(),
+    var http = mw.ajax.create(),
       self = this,
       tried = 0,
       tmp, i, j,
-      onload = options.onload,
-      onrequest = options.onrequest,
       filter = options.filter,
-      callback = options.callback || options.success,
+      onBeforeSend = options.beforeSend,
+      onSuccess = options.success || options.callback,
+      onError = options.error,
+      onComplete = options.complete,
       tries = options.tries,
       target = options.target,
+      timeout = options.timeout || 100000,
       url = options.url,
       method = options.method,
       xtra = options.xtra,
@@ -68,18 +70,25 @@ mw.extend(mw, {
 
     if (dataType && dataType.toLowerCase() === 'jsonp') {
       var cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
-        script = document.createElement('script');
+          script = document.createElement('script');
 
       url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
 
-
       window[cbHandler] = function (data) {
-        if (typeof callback === 'function') {
-          callback(data);
+        if (typeof onSuccess === 'function') {
+          onSuccess(data);
         }
         delete window[cbHandler];
         document.head.removeChild(script);
       };
+
+      if (timeout>0) {
+        setTimeout(function() {
+          if (window[cbHandler]) {
+
+          }
+        }, timeout);
+      }
 
       document.head.appendChild(script);
       script.src = url;
@@ -101,8 +110,8 @@ mw.extend(mw, {
         return;
       }
 
-      if (typeof onload === 'function') {
-        onload.call(null);
+      if (typeof onComplete === 'function') {
+        onComplete.call(null);
       }
 
       if (http.status === 200) {
@@ -112,10 +121,16 @@ mw.extend(mw, {
           var text = http.responseText;
 
           /*jslint evil: true*/
-          var json = new Function('return ' + text)();
+          try {
+            var json = new Function('return ' + text)();
 
-          if (json && typeof callback === 'function') {
-            callback.call(null, json, http, xtra);
+            if (json && typeof onSuccess === 'function') {
+              onSuccess.call(null, json, http, xtra);
+            }
+          } catch(e) {
+            if (mw.isFunction(onError)) {
+
+            }
           }
 
           return;
@@ -127,8 +142,8 @@ mw.extend(mw, {
           }
         }
 
-        if (typeof callback === 'function') {
-          callback.call(null, true, http, xtra);
+        if (typeof onSuccess === 'function') {
+          onSuccess.call(null, true, http, xtra);
         }
       } else {
         if (tries > 0) {
@@ -137,17 +152,15 @@ mw.extend(mw, {
             http.abort();
             http.send(params);
           }
-        } else if (typeof callback === 'function') {
-          callback.call(null, false, http, xtra);
+        } else if (typeof onError === 'function') {
+          onError.call(null, false, http, xtra);
         }
       }
     };
 
-    if (typeof onrequest === 'function') {
-      onrequest.call(null);
+    if (typeof beforeSend !== 'function' || beforeSend.call(http)!==false) {
+      http.send(params);
     }
-
-    http.send(params);
 
     return http;
   },

@@ -22,8 +22,12 @@ module.exports = function (config) {
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/jquery/dist/jquery.js',
 
+      {pattern: 'src/mw.sdk.com'},
       {pattern: 'src/**/*.js'},
-      {pattern: 'test/**/*.spec.js'}
+      {pattern: 'test/**/*.spec.js'},
+
+      // fixtures
+      {pattern: 'test/mocks/*.json', watched: true, served: true, included: false}
     ],
 
     // list of files to exclude

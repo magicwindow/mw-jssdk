@@ -5,7 +5,7 @@ describe('common.js.', function(){
   /*
    * isObject
    */
-  describe('isObject', function(){
+  describe('config', function(){
 
     beforeEach(function () {
       _clock = sinon.useFakeTimers();

@@ -54,8 +54,30 @@ mw.extend = function extend() {
 
 mw.extend(mw, {
   /**
+   * 判断变量是否为Function
+   * @member mw.isFunction
+   * @method
+   * @param obj
+   * @returns {boolean}
+   */
+  isFunction : function isFunction(obj) {
+    return typeof obj === 'function';
+  },
+
+  /**
+   * @member mw.isFunc
+   * @method
+   * @alias isFunction
+   * @param obj
+   * @returns {boolean}
+   */
+  isFunc: function(obj) {
+    return this.isFunction(obj);
+  },
+
+  /**
    * 判断变量是否为Object
-   * @member mw.sdk
+   * @member mw.isObject
    * @method
    * @param obj
    * @returns {boolean}
@@ -66,7 +88,7 @@ mw.extend(mw, {
 
   /**
    * 判断变量是否为Array
-   * @member mw.sdk
+   * @member mw.isArray
    * @method
    * @param obj
    * @returns {boolean}
@@ -77,7 +99,7 @@ mw.extend(mw, {
 
   /**
    * 判断变量是否为数字
-   * @member mw.sdk
+   * @member mw.isNumeric
    * @method
    * @param obj
    * @returns {*|boolean}
@@ -88,7 +110,7 @@ mw.extend(mw, {
 
   /**
    * 判断变量是否为HTML Elements
-   * @member mw.sdk
+   * @member mw.isElement
    * @method
    * @param obj
    * @returns {boolean}
