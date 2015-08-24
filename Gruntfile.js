@@ -99,10 +99,9 @@ module.exports = function (grunt) {
     concat: {
       client: {
         src: [
-          '<%= config.app %>/sdk.header',
-          '<%= config.app %>/module.com',
+          '<%= config.app %>/header',
           '<%= config.app %>/**/*.js',
-          '<%= config.app %>/sdk.footer'
+          '<%= config.app %>/footer'
         ],
         dest: '<%= config.dist %>/<%= pkg.name %>.js'
       }
