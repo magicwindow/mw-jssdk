@@ -44,9 +44,9 @@ mw.extend(mw, {
       target = options.target,
       timeout = options.timeout || 100000,
       url = options.url,
-      method = options.method,
+      method = options.method || options.type || 'GET',
       xtra = options.xtra,
-      dataType = options.dataType || 'html',
+      dataType = options.dataType || 'text',
       params = options.params || options.data;
 
     method = method.toLowerCase();
@@ -167,23 +167,47 @@ mw.extend(mw, {
 
   /**
    * @method
+   * @alias mw.ajax
    * @member mw.get
    */
-  'get': function(options) {
-    options.method = 'GET';
-    options.dataType = options.dataType === 'jsonp' ? 'json' : options.dataType;
-    this.request(options);
+  'get': function(url, data, callback, type) {
+    if ( jQuery.isFunction( data ) ) {
+      type = type || callback;
+      callback = data;
+      data = undefined;
+    }
+
+    return this.ajax({
+      url: url,
+      method: 'GET',
+      dataType: type,
+      data: data,
+      success: callback
+    });
   },
 
   /**
    * @method
+   * @alias mw.ajax
    * @member mw.post
    */
-  'post': function(options) {
-    options.method = 'POST';
-    options.dataType = options.dataType === 'jsonp' ? 'json' : options.dataType;
-    this.request(options);
-  },
+  'post': function(url, data, callback, type) {
+
+    if ( jQuery.isFunction( data ) ) {
+      type = type || callback;
+      callback = data;
+      data = undefined;
+    }
+
+    return this.ajax({
+      url: url,
+      method: 'POST',
+      dataType: type,
+      data: data,
+      success: callback
+    });
+  }
+
 });
 
 

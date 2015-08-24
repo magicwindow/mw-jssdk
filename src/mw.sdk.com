@@ -87,6 +87,17 @@ mw.extend(mw, {
   },
 
   /**
+   * 判断变量是否为String
+   * @member mw.isString
+   * @method
+   * @param obj
+   * @returns {boolean}
+   */
+  isString : function isString(obj) {
+    return typeof obj === 'string';
+  },
+
+  /**
    * 判断变量是否为Array
    * @member mw.isArray
    * @method
