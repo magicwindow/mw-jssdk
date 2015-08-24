@@ -1,6 +1,6 @@
 {
   "name": "mw.sdk",
-  "version": "1.0.0-prebuild",
+  "version": "1.0.1",
   "main": [
     "dist/mw-sdk.js"
   ],

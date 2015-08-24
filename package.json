@@ -1,7 +1,7 @@
 {
   "name": "mw-sdk",
   "description": "Javascript API",
-  "version": "1.0.0-prebuild",
+  "version": "1.0.1",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-check-dependencies": "~0.3.0",
