@@ -151,7 +151,7 @@ module.exports = function (grunt) {
         browsers: ['PhantomJS'],
         reporters: ['progress']
       },
-      unit: {
+      unit_phantomjs: {
         configFile: '<%= config.test %>/karma.conf.js',
         singleRun: true,
         browsers: ['PhantomJS'],
@@ -199,7 +199,7 @@ module.exports = function (grunt) {
   grunt.registerTask('verify', ['checkDependencies']);
 
   // Unit test
-  grunt.registerTask('test', ['karma:unit']);
+  grunt.registerTask('test', ['karma:unit_phantomjs']);
   grunt.registerTask('test:chrome', ['karma:unit']);
 
   // Build
@@ -207,7 +207,7 @@ module.exports = function (grunt) {
     'clean',
     'version',
     'jshint',
-    'karma:unit',
+    'karma:unit_phantomjs',
     'concat',
     //'copy:dist',
     'uglify',

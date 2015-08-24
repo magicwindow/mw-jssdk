@@ -158,7 +158,7 @@ mw.extend(mw, {
       }
     };
 
-    if (typeof beforeSend !== 'function' || beforeSend.call(http)!==false) {
+    if (typeof onBeforeSend !== 'function' || onBeforeSend.call(http)!==false) {
       http.send(params);
     }
 
@@ -171,7 +171,7 @@ mw.extend(mw, {
    * @member mw.get
    */
   'get': function(url, data, callback, type) {
-    if ( jQuery.isFunction( data ) ) {
+    if ( this.isFunction( data ) ) {
       type = type || callback;
       callback = data;
       data = undefined;
@@ -193,7 +193,7 @@ mw.extend(mw, {
    */
   'post': function(url, data, callback, type) {
 
-    if ( jQuery.isFunction( data ) ) {
+    if ( this.isFunction( data ) ) {
       type = type || callback;
       callback = data;
       data = undefined;
