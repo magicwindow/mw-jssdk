@@ -100,6 +100,7 @@ module.exports = function (grunt) {
       client: {
         src: [
           '<%= config.app %>/header',
+          '<%= config.app %>/mw.sdk.com',
           '<%= config.app %>/**/*.js',
           '<%= config.app %>/footer'
         ],
