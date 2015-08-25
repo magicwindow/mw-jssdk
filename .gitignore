@@ -8,3 +8,5 @@ node_modules/
 bower_components/
 .tmp/
 .idea/
+mw-jssdk.sublime-project
+mw-jssdk.sublime-workspace
