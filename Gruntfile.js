@@ -67,7 +67,9 @@ module.exports = function (grunt) {
       main: {
         // source paths with your code
         src: [
-          '<%= config.app %>/*.js'
+          '<%= config.app %>/mw.sdk.com',
+          '<%= config.app %>/*.js'/*,
+          '<%= config.app %>/!*.com'*/
         ],
 
         // docs output dir
@@ -97,9 +99,10 @@ module.exports = function (grunt) {
     concat: {
       client: {
         src: [
-          '<%= config.app %>/sdk.header',
+          '<%= config.app %>/header',
+          '<%= config.app %>/mw.sdk.com',
           '<%= config.app %>/**/*.js',
-          '<%= config.app %>/sdk.footer'
+          '<%= config.app %>/footer'
         ],
         dest: '<%= config.dist %>/<%= pkg.name %>.js'
       }
@@ -126,14 +129,15 @@ module.exports = function (grunt) {
         },
         all: [
             'Gruntfile.js',
-            '<%= config.app %>/{,*/}*.js'
+            '<%= config.app %>/{,*/}*.js',
+            '<%= config.app %>/{,*/}*.com'
         ]
     },
 
     karma: {
       unit: {
         configFile: '<%= config.test %>/karma.conf.js',
-        singleRun: true,
+        singleRun: false,
         autoWatch: false,
         keepalive: true,
         colors: false,
@@ -144,6 +148,7 @@ module.exports = function (grunt) {
         options: {
           configFile: '<%= config.test %>/karma.conf.js'
         },
+        browsers: ['PhantomJS'],
         reporters: ['progress']
       },
       unit_phantomjs: {

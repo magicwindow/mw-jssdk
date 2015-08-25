@@ -1,9 +1,32 @@
 {
   "name": "mw.sdk",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.5",
   "main": [
     "dist/mw-sdk.js"
+  ],
+  "ignore": [
+    ".eslintrc",
+    ".idea",
+    ".git",
+    ".jshintrc",
+    ".coveralls.yml",
+    ".gitignore",
+    ".travis.yml",
+    ".editorconfig",
+    ".hgignore",
+    "README.md",
+    "bower_components",
+    "lib",
+    "node_modules",
+    "RELEASE.md",
+    "mw-jssdk.iml",
+    "package.json",
+    "bin",
+    "docs",
+    "src",
+    "Gruntfile.js",
+    "jsduck.json",
+    "test"
   ],
   "dependencies": {},
   "devDependencies": {
