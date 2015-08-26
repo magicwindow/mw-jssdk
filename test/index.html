@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Unit Test Report for mw-sdk</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+
+  <link rel="stylesheet" type="text/css" href="../bower_components/mocha/mocha.css" />
+  <style type="text/css">
+    body{font: 20px/1.8 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    h1#title{margin: 0px 0px; padding-left: 65px; border-bottom: 1px dotted #aaa; color: #9FC6D3; font-size: 32px; position: fixed; top: 0; left: 0; right: 0; z-index: 1; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      background-color: #0E4658;
+      background-image: -moz-linear-gradient(#061F27, #0E4658);
+      background-image: -webkit-linear-gradient(#061F27, #0E4658);
+      background-image: linear-gradient(#061F27, #0E4658);
+    }
+    #mocha{margin:100px 50px 60px !important; _margin-top:48px;}
+    #mocha .test{margin-left: 20px !important;}
+    #mocha .test h2{ -webkit-transition: 0.2s; -moz-transition: 0.2s; -o-transition: 0.2s; -ms-transition: 0.2s; transition: 0.2s;
+      -webkit-transform-origin:left; -moz-transform-origin:left; -o-transform-origin:left; -ms-transform-origin:left; transform-origin:left;
+      color:#666; border-radius: 100px; line-height: 16px; white-space: nowrap; word-break:keep-all; text-overflow:ellipsis; padding-right: 48px;}
+    #mocha .test h2:hover{ background-color:#BEF0F8; color:#000;
+      /*
+      -webkit-transform: scale(1.2);-moz-transform: scale(1.2);-o-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2);
+      */
+    }
+    #mocha .test a.replay {top:1px; right:1px; background-color: #122E34;}
+    #mocha #mocha-stats{ top: 0 !important; color:#878B8B !important; +text-align:right; _margin-top:-100px; }
+    #mocha-stats li{ font-size:14px; +display:inline; +zoom:1; +float:none;}
+    #mocha-stats li em{ font-size:24px;}
+    #mocha-stats .passes em{color:#09BB09; font-weight: bold;}
+    #mocha-stats .failures em{color:#FB0600; font-weight: bold;}
+    #mocha-stats .duration em{color:#04CDFF; font-weight: bold;}
+    #mocha-stats canvas{ margin-top: 10px !important; background: #B0D8B0; border-radius: 50%; border: 1px solid #C9D4B8;}
+    #mocha-report>.suite{ border-top:1px solid #eee; margin-top: 10px; padding: 0 10px 10px;}
+    .suite{ list-style-type: square; list-style-position: inside; }
+    .suite .suite{ list-style-type: disc; list-style-position: inside; }
+
+    #mocha h1{ font-size: 1.5em; margin-top:2px; }
+    #mocha .suite .suite h1{ font-size: 0.9em;}
+  </style>
+
+  <script type="text/javascript" src="../bower_components/mocha/mocha.js"></script>
+  <script type="text/javascript" src="../bower_components/chai/chai.js"></script>
+  <script type="text/javascript" src="../test/test.conf.js"></script>
+  <script type="text/javascript" src="../node_modules/sinon/pkg/sinon.js"></script>
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+
+  <script type="text/javascript" src="../src/mw.sdk.com"></script>
+  <script type="text/javascript" src="../src/config.js"></script>
+  <script type="text/javascript" src="../src/ajax.js"></script>
+  <script type="text/javascript" src="../src/mw-sdk.js"></script>
+
+  <script>
+    var BASE = "/";
+    mocha.setup({ ui: 'bdd', globals: ['script*'] });
+  </script>
+
+  <script type="text/javascript" src="../test/spec/ajax.spec.js"></script>
+  <script type="text/javascript" src="../test/spec/common.spec.js"></script>
+  <script type="text/javascript" src="../test/spec/config.spec.js"></script>
+  <script type="text/javascript" src="../test/spec/mw-sdk.spec.js"></script>
+
+</head>
+<body>
+<h1 id="title">Unit Test Report for mw-sdk</h1>
+<div id="mocha"></div>
+</body>
+<script type="text/javascript">
+  setTimeout(function(){
+    mocha.checkLeaks();
+    mocha.globals(['jQuery', 'describe']);
+    mocha.run();
+  }, 1000);
+</script>
+</html>

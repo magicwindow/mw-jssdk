@@ -1,6 +1,7 @@
 describe('ajax.js.', function() {
 
   var _clock;
+  var base = window.BASE === '/' ? '/' : '/base/';
 
   /*
    * isObject
@@ -14,10 +15,10 @@ describe('ajax.js.', function() {
       _clock.restore();
     });
 
-    it("mw.ajax.success", function (done) {
+    it("mw.ajax.success.", function (done) {
       //this.timeout(1000*15);
       mw.ajax({
-        url: '/base/test/mocks/ajax.json',
+        url: base + 'test/mocks/ajax.json',
         method: 'GET',
         success: function () {
           done();
@@ -30,7 +31,7 @@ describe('ajax.js.', function() {
     it("mw.ajax.complete", function (done) {
       //this.timeout(1000*15);
       mw.ajax({
-        url: '/base/test/mocks/ajax.json',
+        url: base + 'test/mocks/ajax.json',
         method: 'GET',
         success: function () {
         },
@@ -44,7 +45,7 @@ describe('ajax.js.', function() {
     it("mw.ajax.error", function (done) {
       //this.timeout(1000*15);
       mw.ajax({
-        url: '/base/test/mocks/404.json',
+        url: base + 'test/mocks/404.json',
         method: 'GET',
         success: function () {
         },
@@ -56,14 +57,14 @@ describe('ajax.js.', function() {
 
     it("mw.ajax.get", function (done) {
       //this.timeout(1000*15);
-      mw.get('/base/test/mocks/ajax.json', function () {
+      mw.get(base + 'test/mocks/ajax.json', function () {
         done();
       });
     });
 
     it("mw.ajax.post", function (done) {
       //this.timeout(1000*15);
-      mw.post('/base/test/mocks/ajax.json', {}, function () {
+      mw.post(base + 'test/mocks/ajax.json', {}, function () {
         done();
       });
     });
