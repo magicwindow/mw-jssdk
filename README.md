@@ -1,24 +1,22 @@
-# mw-jssdk
+# mw-jssdk [![Build Status](https://travis-ci.org/magicwindow/mw-jssdk.svg)](https://travis-ci.org/magicwindow/mw-jssdk)
 
 Magic Window Javascript SDK.
 
-[![Build Status](https://travis-ci.org/magicwindow/mw-jssdk.svg)](https://travis-ci.org/magicwindow/mw-jssdk)
-
-# 引用mw-sdk.js
+### 引用mw-sdk.js
 您可以直接通过URL引用我们的JS SDK；如果您的App使用Bower，也可以使用Bower安装魔窗的JS SDK；
 
-1. 通过URL引用：
+通过URL引用：
 ```
 http://magicwindow.cn/sdk/jssdk/mw-sdk.js
 http://magicwindow.cn/sdk/jssdk/mw-sdk.min.js
 ```
 
-2. 使用Bower安装：
+使用Bower安装：
 ```
 bower install mw-sdk --save
 ```
 
-# 初始化SDK
+### 初始化SDK
 
 在您的页面底部，和引用mw-sdk.js的script标签之后，加入以下SDK的初始化代码：
 ```
@@ -30,7 +28,7 @@ mw.sdk.init({
 });
 ```
 
-# 设置活动入口
+### 设置活动入口
 
 在您需要显示活动入口的位置加入下方的标签，此标签默认的宽度和高度以您在魔窗后台上传的活动展示图片尺寸一致，最大宽度为100%，高度会根据最大宽度的比例缩放，_当然，您可以使用CSS代码自定义显示样式_。
 ```
