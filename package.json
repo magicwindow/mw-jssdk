@@ -1,7 +1,10 @@
 {
   "name": "mw-sdk",
   "description": "Javascript API",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "scripts": {
+    "test": "grunt test"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-check-dependencies": "~0.3.0",
@@ -13,7 +16,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-jsdoc": "^0.5.7",
     "grunt-jsduck": "^1.0.1",
     "grunt-jslint": "~1.1.5",

@@ -53,6 +53,20 @@ module.exports = function (grunt) {
       },
       links: ["dist/**", "coverage/**"]
     },
+    // 监视项目内的文件，若有更改则自动执行编译或刷新浏览器
+    watch: {
+      js: {
+        files: [
+          '<%= config.app %>/**/*.com',
+          '<%= config.app %>/**/*.js'
+        ],
+        tasks: ['concat', 'uglify']
+      },
+      package: {
+        files: ['package.json', 'bower.json'],
+        tasks: ['version']
+      }
+    },
 
     jsdoc : {
       dist : {
@@ -67,8 +81,8 @@ module.exports = function (grunt) {
       main: {
         // source paths with your code
         src: [
-          '<%= config.app %>/mw.sdk.com',
-          '<%= config.app %>/*.js'/*,
+          '<%= config.app %>/**/*.com',
+          '<%= config.app %>/**/*.js'/*,
           '<%= config.app %>/!*.com'*/
         ],
 
@@ -101,7 +115,9 @@ module.exports = function (grunt) {
         src: [
           '<%= config.app %>/header',
           '<%= config.app %>/mw.sdk.com',
-          '<%= config.app %>/**/*.js',
+          '<%= config.app %>/*.js',
+          '<%= config.app %>/apis/api.com',
+          '<%= config.app %>/apis/*.js',
           '<%= config.app %>/footer'
         ],
         dest: '<%= config.dist %>/<%= pkg.name %>.js'
@@ -129,8 +145,8 @@ module.exports = function (grunt) {
         },
         all: [
             'Gruntfile.js',
-            '<%= config.app %>/{,*/}*.js',
-            '<%= config.app %>/{,*/}*.com'
+            '<%= config.app %>/**/*.js',
+            '<%= config.app %>/**/*.com'
         ]
     },
 
@@ -200,7 +216,7 @@ module.exports = function (grunt) {
   grunt.registerTask('verify', ['checkDependencies']);
 
   // Unit test
-  grunt.registerTask('test', ['karma:unit_phantomjs']);
+  grunt.registerTask('test', ['verify', 'jshint', 'karma:unit_phantomjs']);
   grunt.registerTask('test:chrome', ['karma:unit']);
 
   // Build

@@ -23,7 +23,9 @@ module.exports = function (config) {
       'node_modules/jquery/dist/jquery.js',
 
       {pattern: 'src/mw.sdk.com'},
-      {pattern: 'src/**/*.js'},
+      {pattern: 'src/*.js'},
+      {pattern: 'src/apis/api.com'},
+      {pattern: 'src/apis/*.js'},
       {pattern: 'test/**/*.spec.js'},
 
       // fixtures

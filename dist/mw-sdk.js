@@ -1,4 +1,4 @@
-(function (global) { // initializes namepsace if neccessary
+(function (global) {
 
   /**
    * @class mw
@@ -471,75 +471,124 @@ mw.config.get = function (key) {
   var sdk = mw.sdk,
       readyQueue = [];
 
-  /**
-   * @member mw.sdk.connect
-   * @method
-   * @ignore
-   * @protected
-   * @param {Function} onConnected
-   */
-  sdk.connect = function(onConnected) {
+  mw.extend(sdk, {
 
-  };
+    /**
+     * 是否已经初始化，此属性初始值为false，在调用mw.sdk.init()方法后，其值则会变成true，
+     * 第二次调用mw.sdk.init()时会被阻止。
+     * @member mw.sdk.initialized
+     * @type {boolean}
+     */
+    initialized : false,
 
-  /**
-   * 是否已经初始化，此属性初始值为false，在调用mw.sdk.init()方法后，其值则会变成true，
-   * 第二次调用mw.sdk.init()时会被阻止。
-   * @member mw.sdk.initialized
-   * @type {boolean}
-   */
-  sdk.initialized = false;
+    /**
+     * 初始化SDK，
+     * @member mw.sdk.init
+     * @method
+     * @param {Object} configs
+     * @param {String} configs.server SDK服务器地址
+     * @param {String} configs.appkey 您在魔窗后台应用配置里面填写的AppKey
+     */
+    init : function(configs) {
 
-  /**
-   * 初始化SDK，
-   * @member mw.sdk.init
-   * @method
-   * @param {Object} configs
-   * @param {String} configs.server SDK服务器地址
-   * @param {String} configs.appkey 您在魔窗后台应用配置里面填写的AppKey
-   */
-  sdk.init = function(configs) {
+      if (sdk.initialized) {
+        return;
+      }
 
-    if (sdk.initialized) {
-      return;
-    }
+      var defaults = {
+        server: 'sdk.magicwindow.cn',
+        appkey: 'com.webapp.com'
+      },
+      options = mw.extend(defaults, configs);
 
-    var defaults = {
-      server: 'sdk.magicwindow.cn',
-      appkey: 'com.webapp.com'
+      for (var k in options) {
+        mw.config(k, options[k]);
+      }
+
+      sdk.initialized = true;
+      sdk.onReady();
     },
-    options = mw.extend(defaults, configs);
 
-    for (var k in options) {
-      mw.config(k, options[k]);
-    }
+    /**
+     * @member mw.sdk.onReady
+     * @method
+     * @param {Function} callback
+     */
+    onReady : function(callback) {
+      var action;
 
-    sdk.initialized = true;
-    sdk.onReady();
-  };
+      if (mw.isFunction(callback)) {
+        readyQueue.push(callback);
+      }
 
-  /**
-   * @member mw.sdk.onReady
-   * @method
-   * @param {Function} callback
-   */
-  sdk.onReady = function(callback) {
-    var action;
-
-    if (mw.isFunction(callback)) {
-      readyQueue.push(callback);
-    }
-
-    if (sdk.initialized) {
-      while (readyQueue.length) {
-        action = readyQueue.shift();
-        if (mw.isFunction(action)) {
-          action();
+      if (sdk.initialized) {
+        while (readyQueue.length) {
+          action = readyQueue.shift();
+          if (mw.isFunction(action)) {
+            action();
+          }
         }
       }
+    },
+
+    /**
+     *
+     */
+    watch : function() {
+
     }
-  };
+  });
 
 }(mw));
+
+mw.namespace('mw.sdk.api');
+
+/**
+ * @class
+ * @member mw.sdk.api
+ * @static
+ */
+mw.extend(mw.sdk.api, {
+
+  getParams: function() {
+    return {
+      server: mw.config('server'),
+      ak: mw.config('appkey'),
+      av: mw.config('av'),
+      sv: mw.config('sv')
+    };
+  },
+
+  applyParams : function(url, params) {
+    if (url) {
+      for (var k in params) {
+        url = url.replace('{'+ k.toUpperCase() +'}', params[k]);
+      }
+    }
+    return url;
+  }
+});
+
+
+(function(mw){
+
+  mw.sdk.getMacketing = function(callback) {
+
+    // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
+    var server = mw.var('server'),
+      macketingUrl = 'macketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}',
+      params = mw.sdk.api.getParams(),
+      url = mw.sdk.api.applyParams(macketingUrl, params);
+
+    mw.get(url, function(data, a,b,c) {
+
+      if (mw.isFunction(callback)) {
+        callback(data);
+      }
+    });
+  };
+
+}(this.mw));
+
 
 }(this));

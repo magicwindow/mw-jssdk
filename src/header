@@ -1,4 +1,4 @@
-(function (global) { // initializes namepsace if neccessary
+(function (global) {
 
   /**
    * @class mw
