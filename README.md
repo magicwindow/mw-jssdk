@@ -20,7 +20,7 @@ bower install mw-sdk --save
 
 # 初始化SDK
 
-在您的页面底部，和引用mw-sdk.js的<script/>标签之后，加入以下SDK的初始化代码：
+在您的页面底部，和引用mw-sdk.js的script标签之后，加入以下SDK的初始化代码：
 ```
 mw.sdk.init({
   'server'  : 'http://stats.magicwindow.cn/',     // 读取数据的服务器（不用修改）
