@@ -2,8 +2,7 @@
 
 Magic Window Javascript SDK.
 
-[![Build Status](https://travis-ci.org/git@github.com:magicwindow/mw-jssdk.git.svg?branch=master)](https://travis-ci.org/git@github.com:magicwindow/mw-jssdk.git)
-
+[![Build Status](https://travis-ci.org/magicwindow/mw-jssdk.svg)](https://travis-ci.org/magicwindow/mw-jssdk)
 
 # 引用mw-sdk.js
 您可以直接通过URL引用我们的JS SDK；如果您的App使用Bower，也可以使用Bower安装魔窗的JS SDK；
