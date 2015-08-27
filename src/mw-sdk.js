@@ -21,7 +21,7 @@
      * @param {String} configs.server SDK服务器地址
      * @param {String} configs.appkey 您在魔窗后台应用配置里面填写的AppKey
      */
-    init : function(configs) {
+    init : function (configs) {
 
       if (sdk.initialized) {
         return;
@@ -61,13 +61,43 @@
           }
         }
       }
+
+      this.getMarketing(function(data){
+        sdk.api.data = data.data;
+        this.watch();
+      }.bind(this));
     },
 
     /**
      *
      */
     watch : function() {
+      var api = sdk.api;
 
+      if (api.data && api.data.length>0) {
+        api.data.forEach(function (img) {
+          var id = img.k,
+            banner = document.getElementById(id);
+
+          if (banner && !banner.getAttribute('render')) {
+            banner.setAttribute('data-au', img.au);
+            banner.innerHTML = '<img src="'+ img.iu +'"/>';
+            sdk.initBannerEvent(banner);
+          }
+        });
+      }
+
+      setTimeout(function() {
+        sdk.watch();
+      }, 1000);
+    },
+
+    initBannerEvent: function (banner) {
+      if (!banner.getAttribute('render')) {
+        banner.addEventListener('click', function() {
+          window.location = decodeURIComponent(banner.getAttribute('data-au'));
+        });
+      }
     }
   });
 

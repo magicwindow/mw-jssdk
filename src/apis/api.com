@@ -7,9 +7,11 @@ mw.namespace('mw.sdk.api');
  */
 mw.extend(mw.sdk.api, {
 
+  data: [],
+
   getParams: function() {
     return {
-      server: mw.config('server'),
+      server: (mw.config('server')||'').replace(/\/$/, ''),
       ak: mw.config('appkey'),
       av: mw.config('av'),
       sv: mw.config('sv')
@@ -22,6 +24,8 @@ mw.extend(mw.sdk.api, {
         url = url.replace('{'+ k.toUpperCase() +'}', params[k]);
       }
     }
+
+    url = url.replace(/\{(\w)*\}/g, '');
     return url;
   }
 });

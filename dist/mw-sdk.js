@@ -489,7 +489,7 @@ mw.config.get = function (key) {
      * @param {String} configs.server SDK服务器地址
      * @param {String} configs.appkey 您在魔窗后台应用配置里面填写的AppKey
      */
-    init : function(configs) {
+    init : function (configs) {
 
       if (sdk.initialized) {
         return;
@@ -529,13 +529,43 @@ mw.config.get = function (key) {
           }
         }
       }
+
+      this.getMarketing(function(data){
+        sdk.api.data = data.data;
+        this.watch();
+      }.bind(this));
     },
 
     /**
      *
      */
     watch : function() {
+      var api = sdk.api;
 
+      if (api.data && api.data.length>0) {
+        api.data.forEach(function (img) {
+          var id = img.k,
+            banner = document.getElementById(id);
+
+          if (banner && !banner.getAttribute('render')) {
+            banner.setAttribute('data-au', img.au);
+            banner.innerHTML = '<img src="'+ img.iu +'"/>';
+            sdk.initBannerEvent(banner);
+          }
+        });
+      }
+
+      setTimeout(function() {
+        sdk.watch();
+      }, 1000);
+    },
+
+    initBannerEvent: function (banner) {
+      if (!banner.getAttribute('render')) {
+        banner.addEventListener('click', function() {
+          window.location = decodeURIComponent(banner.getAttribute('data-au'));
+        });
+      }
     }
   });
 
@@ -550,9 +580,11 @@ mw.namespace('mw.sdk.api');
  */
 mw.extend(mw.sdk.api, {
 
+  data: [],
+
   getParams: function() {
     return {
-      server: mw.config('server'),
+      server: (mw.config('server')||'').replace(/\/$/, ''),
       ak: mw.config('appkey'),
       av: mw.config('av'),
       sv: mw.config('sv')
@@ -565,6 +597,8 @@ mw.extend(mw.sdk.api, {
         url = url.replace('{'+ k.toUpperCase() +'}', params[k]);
       }
     }
+
+    url = url.replace(/\{(\w)*\}/g, '');
     return url;
   }
 });
@@ -572,11 +606,10 @@ mw.extend(mw.sdk.api, {
 
 (function(mw){
 
-  mw.sdk.getMacketing = function(callback) {
+  mw.sdk.getMarketing = function(callback) {
 
     // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
-    var server = mw.var('server'),
-      macketingUrl = 'macketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}',
+    var macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}',
       params = mw.sdk.api.getParams(),
       url = mw.sdk.api.applyParams(macketingUrl, params);
 
@@ -585,7 +618,7 @@ mw.extend(mw.sdk.api, {
       if (mw.isFunction(callback)) {
         callback(data);
       }
-    });
+    }, 'jsonp');
   };
 
 }(this.mw));

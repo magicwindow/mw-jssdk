@@ -2,6 +2,8 @@
 
 Magic Window Javascript SDK.
 
+# 使用指南
+
 ### 引用mw-sdk.js
 您可以直接通过URL引用我们的JS SDK；如果您的App使用Bower，也可以使用Bower安装魔窗的JS SDK；
 
@@ -28,11 +30,11 @@ mw.sdk.init({
 });
 ```
 
-### 设置活动入口
+### 显示活动图片
 
 在您需要显示活动入口的位置加入下方的标签，此标签默认的宽度和高度以您在魔窗后台上传的活动展示图片尺寸一致，最大宽度为100%，高度会根据最大宽度的比例缩放，_当然，您可以使用CSS代码自定义显示样式_。
 ```
-<mw-image data-key="xxxx"></mw-image>
+<mw-image id="xxxx"></mw-image>
 ```
 其中data-key属性值请按此方法获取：
 
