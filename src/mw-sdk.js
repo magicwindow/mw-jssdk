@@ -81,8 +81,9 @@
 
           if (banner && !banner.getAttribute('render')) {
             banner.setAttribute('data-au', img.au);
-            banner.innerHTML = '<img src="'+ img.iu +'"/>';
+            banner.innerHTML = '<img src="'+ img.iu +'" style="max-width:100%;"/>';
             sdk.initBannerEvent(banner);
+            banner.setAttribute('render', true);
           }
         });
       }
@@ -94,9 +95,12 @@
 
     initBannerEvent: function (banner) {
       if (!banner.getAttribute('render')) {
-        banner.addEventListener('click', function() {
+        var handle = function() {
           window.location = decodeURIComponent(banner.getAttribute('data-au'));
-        });
+        };
+
+        banner.addEventListener('click', handle);
+        banner.addEventListener('touchend', handle);
       }
     }
   });
