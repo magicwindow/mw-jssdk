@@ -62,7 +62,7 @@
         }
       }
 
-      this.getMarketing(function(data){
+      this.getMarketing(function(data) {
         sdk.api.data = data.data;
         this.watch();
       }.bind(this));

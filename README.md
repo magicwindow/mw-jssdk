@@ -20,11 +20,11 @@ bower install mw-sdk --save
 
 ### 初始化SDK
 
-在您的页面底部，和引用mw-sdk.js的script标签之后，加入以下SDK的初始化代码：
+在您的页面底部，引用mw-sdk.js的script标签之后，加入以下SDK的初始化代码：
 ```
 mw.sdk.init({
   'server'  : 'http://stats.magicwindow.cn/',     // 读取数据的服务器（不用修改）
-  'appkey'  : 'XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X', // 从哪里获取appkey？答：魔窗后台 》应用设置 》应用管理 》（你关联的应用里面的appkey）
+  'appkey'  : 'XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X', // 从哪里获取appkey？魔窗后台 》应用设置 》应用管理 》（你关联的应用里面的appkey）
   'appVersion'  : '2.3',
   'Version' : '2.3'
 });
@@ -34,9 +34,9 @@ mw.sdk.init({
 
 在您需要显示活动入口的位置加入下方的标签，此标签默认的宽度和高度以您在魔窗后台上传的活动展示图片尺寸一致，最大宽度为100%，高度会根据最大宽度的比例缩放，_当然，您可以使用CSS代码自定义显示样式_。
 ```
-<mw-image id="xxxx"></mw-image>
+<mw-image id="xxxx" class="mw-banner"></mw-image>
 ```
-其中data-key属性值请按此方法获取：
+其中上一行中id的属性值请按此方法获取：
 
 1. 进入魔窗后台；
 2. 在魔窗左侧边栏中点击“应用配置” 》 “应用配置”；
