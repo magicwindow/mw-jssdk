@@ -545,10 +545,11 @@ mw.config.get = function (key) {
       if (api.data && api.data.length>0) {
         api.data.forEach(function (img) {
           var id = img.k,
-            banner = document.getElementById(id);
+            banner = document.getElementById(id),
+            url = img.au || '';
 
           if (banner && !banner.getAttribute('render')) {
-            banner.setAttribute('data-au', img.au);
+            banner.setAttribute('data-au', url.replace(/[&\?]?mw=1[\?$]?/g, ''));
             banner.innerHTML = '<img src="'+ img.iu +'" style="max-width:100%;"/>';
             sdk.initBannerEvent(banner);
             banner.setAttribute('render', true);
