@@ -75,17 +75,9 @@
       var api = sdk.api;
 
       if (api.data && api.data.length>0) {
-        api.data.forEach(function (img) {
-          var id = img.k,
-            banner = document.getElementById(id),
-            url = img.au || '';
-
-          if (banner && !banner.getAttribute('render')) {
-            banner.setAttribute('data-au', url.replace(/[&\?]?mw=1[\?$]?/g, ''));
-            banner.innerHTML = '<img src="'+ img.iu +'" style="max-width:100%;"/>';
-            sdk.initBannerEvent(banner);
-            banner.setAttribute('render', true);
-          }
+        api.data.forEach(function (data) {
+          var blocks = sdk.getMwBlocks(data.k);
+          sdk.render(data, blocks);
         });
       }
 
@@ -94,10 +86,42 @@
       }, 1000);
     },
 
+    /**
+     *
+     * @param id
+     * @returns {Array}
+     */
+    getMwBlocks: function(id) {
+      var list = document.getElementsByTagName('mw-block');
+      var blocks = [];
+      for (var i= 0,l=list.length; i<l; i++) {
+        if (list[i].getAttribute('id') === id) {
+          blocks.push(list[i]);
+        }
+      }
+      return blocks;
+    },
+
+
+    render: function(data, blocks) {
+      for (var i = 0,l=blocks.length; i<l; i++) {
+        sdk.renderBlock(data, blocks[i]);
+      }
+    },
+
+    renderBlock: function(data, block) {
+      var id = block.getAttribute('id');
+      block.setAttribute('data-au', data.au);
+      block.innerHTML = '<img src="'+ data.iu +'" style="max-width:100%;"/>';
+      sdk.initBannerEvent(block);
+      block.setAttribute('render', true);
+    },
+
     initBannerEvent: function (banner) {
       if (!banner.getAttribute('render')) {
         var handle = function() {
-          window.location = decodeURIComponent(banner.getAttribute('data-au'));
+          var url = decodeURIComponent(banner.getAttribute('data-au'));
+          window.location = url.replace(/[&\?]?mw=1[\?$]?/g, '');
         };
 
         banner.addEventListener('click', handle);
