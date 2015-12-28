@@ -570,7 +570,6 @@ mw.config.get = function (key) {
       return blocks;
     },
 
-
     render: function(data, blocks) {
       for (var i = 0,l=blocks.length; i<l; i++) {
         sdk.renderBlock(data, blocks[i]);
