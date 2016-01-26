@@ -1,22 +1,15 @@
-var activityName = 'misc';
 var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
 
     entry: {
-        "main": "./app/scripts/main.js",
-        "start": "./app/scripts/start.js",
-        "end": "./app/scripts/end.js",
-        "register": "./app/scripts/register.js",
-        "choice": "./app/scripts/choice.js",
-        "rank": "./app/scripts/rank.js",
-        "share": "./app/scripts/share.js"
+        "mw-sdk": "./src/core/main.js"
     },
 
     output: {
-        path: path.join(__dirname, "./app/js/"),
-        publicPath: "./app/js/",
+        path: path.join(__dirname, "./dist/"),
+        publicPath: "./dist/",
         filename: '[name].js'
     },
 
@@ -27,12 +20,12 @@ module.exports = {
         //    loader: 'jshint'
         //}],
         loaders:[
-            { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel' },
-            { test: /\.(jpg|png|gif)$/, loader: "url?limit=8192"},
+            { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel?presets[]=react,presets[]=es2015' },
+            //{ test: /\.(jpg|png|gif)$/, loader: "url?limit=8192"},
             { test: /\.css$/, loader: 'style!css?:global' },
-            { test: /\.scss$/, loader: 'style!css?modules!autoprefixer?browsers=last 10 versions!' },
-            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url?limit=10000&minetype=application/font-woff" },
-            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file" }
+            { test: /\.scss$/, loader: 'style!css?modules!autoprefixer?browsers=last 10 versions!' }
+            //{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url?limit=10000&minetype=application/font-woff" },
+            //{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file" }
         ]
     },
     resolve: {

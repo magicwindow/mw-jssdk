@@ -2,7 +2,7 @@
   "name": "mw.sdk",
   "version": "1.1.4",
   "main": [
-    "dist/mw-sdk.js"
+    "dist/js/mw-sdk.js"
   ],
   "ignore": [
     ".eslintrc",

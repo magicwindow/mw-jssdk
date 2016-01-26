@@ -117,10 +117,17 @@
     },
 
     initBannerEvent: function (banner) {
+      var data = this.api.data;
       if (!banner.getAttribute('render')) {
         var handle = function() {
           var url = decodeURIComponent(banner.getAttribute('data-au'));
-          window.location = url.replace(/[&\?]?mw=1[\?$]?/g, '');
+
+          if (data.dt === 4) {
+            //Deep link
+
+          } else {
+            window.location = url.replace(/[&\?]?mw=1[\?$]?/g, '');
+          }
         };
 
         banner.addEventListener('click', handle);
