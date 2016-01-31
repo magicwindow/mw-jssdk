@@ -4,7 +4,7 @@ var webpack = require("webpack");
 module.exports = {
 
     entry: {
-        "mw-sdk": "./src/core/main.js"
+        "mw-sdk": "./src/main.js"
     },
 
     output: {

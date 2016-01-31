@@ -1,5 +1,14 @@
-/*global ActiveXObject,escape*/
-mw.extend(mw, {
+import Common from './common.js';
+
+export default class Ajax {
+
+  /**
+   * Constructor
+   * @returns {*}
+   */
+  constructor() {
+
+  }
 
   /**
    * 发起一个Ajax请求，从服务器加载JSON数据或HTML片段，支持JSONP请求。
@@ -7,7 +16,7 @@ mw.extend(mw, {
    * 代码实例：
    *
    *     @example
-   *     mw.ajax({
+   *     new Ajax({
    *         url: 'api/list',
    *         method: 'GET',
    *         params: {cat:'123', userId:'kjfjrek132454nnfsdj'},
@@ -16,7 +25,7 @@ mw.extend(mw, {
    *         }
    *     });
    *
-   * @member mw.ajax
+   * @class Ajax
    * @param {Object} options               Ajax请求配置对象
    * @param {String} options.method        请求类型：GET 或 POST
    * @param {String} options.url           请求地址（URL），如果URL的domain与目前domain不一致，会导致跨域问题
@@ -29,25 +38,25 @@ mw.extend(mw, {
    * @param {Function} options.beforeSend  发送请求前调用，返回false时http请求将会被终止；
    * @param {Function} options.xtra        Callback arguments
    */
-  ajax : function(options) {
+   http(options={}) {
 
-    var http = mw.ajax.create(),
-      self = this,
-      tried = 0,
-      tmp, i, j,
-      filter = options.filter,
-      onBeforeSend = options.beforeSend,
-      onSuccess = options.success || options.callback,
-      onError = options.error,
-      onComplete = options.complete,
-      tries = options.tries,
-      target = options.target,
-      timeout = options.timeout || 100000,
-      url = options.url,
-      method = options.method || options.type || 'GET',
-      xtra = options.xtra,
-      dataType = options.dataType || 'text',
-      params = options.params || options.data;
+    let http = Ajax.create(),
+        self = this,
+        tried = 0,
+        tmp, i, j,
+        filter = options.filter,
+        onBeforeSend = options.beforeSend,
+        onSuccess = options.success || options.callback,
+        onError = options.error,
+        onComplete = options.complete,
+        tries = options.tries,
+        target = options.target,
+        timeout = options.timeout || 100000,
+        url = options.url,
+        method = options.method || options.type || 'GET',
+        xtra = options.xtra,
+        dataType = options.dataType || 'text',
+        params = options.params || options.data;
 
     method = method.toLowerCase();
 
@@ -70,7 +79,7 @@ mw.extend(mw, {
 
     if (dataType && dataType.toLowerCase() === 'jsonp') {
       var cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
-          script = document.createElement('script');
+        script = document.createElement('script');
 
       url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
 
@@ -128,7 +137,7 @@ mw.extend(mw, {
               onSuccess.call(null, json, http, xtra);
             }
           } catch(e) {
-            if (mw.isFunction(onError)) {
+            if (Common.isFunction(onError)) {
 
             }
           }
@@ -163,14 +172,14 @@ mw.extend(mw, {
     }
 
     return http;
-  },
+  }
+
 
   /**
    * @method
-   * @alias mw.ajax
-   * @member mw.get
+   * @member fetch
    */
-  'get': function(url, data, callback, type) {
+  fetch (url, data, callback, type) {
     if ( this.isFunction( data ) ) {
       type = type || callback;
       callback = data;
@@ -184,14 +193,13 @@ mw.extend(mw, {
       data: data,
       success: callback
     });
-  },
+  }
 
   /**
    * @method
-   * @alias mw.ajax
-   * @member mw.post
+   * @member post
    */
-  'post': function(url, data, callback, type) {
+  post (url, data, callback, type) {
 
     if ( this.isFunction( data ) ) {
       type = type || callback;
@@ -199,7 +207,7 @@ mw.extend(mw, {
       data = undefined;
     }
 
-    return this.ajax({
+    return ajax({
       url: url,
       method: 'POST',
       dataType: type,
@@ -208,31 +216,30 @@ mw.extend(mw, {
     });
   }
 
-});
 
+  /**
+   * Creates XMLHttpRequest
+   * @static
+   * @member create
+   * @return {XMLHttpRequest}
+   */
+  static create() {
+    var http;
 
-/**
- * Creates XMLHttpRequest
- * @static
- * @member mw.ajax.create
- * @return {XMLHttpRequest}
- */
-mw.ajax.create = function() {
-  var http;
-
-  try {
-    http = new XMLHttpRequest();
-  } catch (e) {
     try {
-      http = new ActiveXObject('Msxml2.XMLHTTP');
-    } catch (f) {
+      http = new XMLHttpRequest();
+    } catch (e) {
       try {
-        http = new ActiveXObject('Microsoft.XMLHTTP');
-      } catch (g) {
-        console.log(g);
+        http = new ActiveXObject('Msxml2.XMLHTTP');
+      } catch (f) {
+        try {
+          http = new ActiveXObject('Microsoft.XMLHTTP');
+        } catch (g) {
+          console.log(g);
+        }
       }
     }
-  }
 
-  return http;
-};
+    return http;
+  }
+}

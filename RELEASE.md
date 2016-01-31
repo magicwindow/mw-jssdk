@@ -1,6 +1,14 @@
-# Release log of Magicwindow Javascript SDK
+# 魔窗JSSDK更新日志
 
 ------
 
 ## v1.0.0
 1. 加载魔窗位数据；
+2. 在魔窗位渲染已开启的活动；
+
+## v2.0.0
+1. 兼容ES6标准；
+2. 增加setPhoneNumber接口，用于传递App当前用户的手机号给活动；
+3. 增加setUserProfile接口，用于传递App中已登录的用户信息给活动；
+4. 修复批量魔窗位渲染只显示第一个魔窗位的Bug;
+5. 

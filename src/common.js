@@ -91,6 +91,7 @@ export default class Common {
    * 判断App运行环境是否为魔窗SDK
    * @member isWm
    * @method
+   * @version v2.0.0
    * @returns {boolean}
    */
   static isWm() {

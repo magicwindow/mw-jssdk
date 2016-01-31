@@ -1,6 +1,0 @@
-(function (global) {
-
-  /**
-   * @class mw
-   */
-  var mw = global.mw = global.mw || {};
