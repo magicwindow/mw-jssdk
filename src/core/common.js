@@ -81,10 +81,20 @@ export default class Common {
    * 判断App运行环境是否为微信
    * @member isWeixin
    * @method
-   * @param obj
    * @returns {boolean}
    */
-  static isWeixin(obj) {
+  static isWeixin() {
     return window.navigator.userAgent.match(/Micromessag/);
   }
+
+  /**
+   * 判断App运行环境是否为魔窗SDK
+   * @member isWm
+   * @method
+   * @returns {boolean}
+   */
+  static isWm() {
+    return window.navigator.userAgent.match(/magicwindow/) || window.location.href.match(/[&\?]mw=1[#&$]/);
+  }
+
 }

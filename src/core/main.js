@@ -3,13 +3,18 @@ import common from './common.js';
 import config from './config.js';
 import Marketing from './marketing.js';
 import Render from './render.js';
+import Profile from './profile.js';
 
 var initialized;
 var readyQueue = [];
 
 class Mwsdk {
 
-  constructor(configs) {
+  /**
+   * 初始化SDK
+   */
+  init (configs) {
+    var marketing = new Marketing();
 
     // Apply configs
     for (var k in configs) {
@@ -18,29 +23,21 @@ class Mwsdk {
 
     // Initialize once;
     if (!initialized) {
-      this.init();
+      marketing.load().then(
+        (response) => {
+
+          this.onReady(()=>{
+            new Render(response.data);
+          });
+
+        },
+        (msg) => {
+          console.log(msg);
+        }
+      );
+
       initialized = true;
     }
-  }
-
-  /**
-   * 初始化SDK
-   */
-  init () {
-    var marketing = new Marketing();
-
-    marketing.load().then(
-      (response) => {
-
-        this.onReady(()=>{
-          new Render(response.data);
-        });
-
-      },
-      (msg) => {
-        console.log(msg);
-      }
-    );
   }
 
   /**
