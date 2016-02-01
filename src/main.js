@@ -40,6 +40,21 @@ class Mwsdk {
     }
   }
 
+
+  /**
+   * 公开接口
+   * @param phoneNumber
+   */
+  setPhoneNumber (phoneNumber) { Profile.setPhoneNumber(phoneNumber); }
+  getPhoneNumber () { return Profile.getPhoneNumber(); }
+
+  setCityCode (cityCode) { Profile.setCityCode(cityCode); }
+  getCityCode () { return Profile.getCityCode(); }
+
+  setUserProfile (userProfile) { Profile.setUserProfile(userProfile); }
+  getUserProfile () { return Profile.getUserProfile(); }
+
+
   /**
    * @member mw.sdk.onReady
    * @method
@@ -74,10 +89,6 @@ class Mwsdk {
   }
 }
 
-window.mwsdk = window.mwsdk || {
-    init: function(options) {
-      return new Mwsdk(options);
-    }
-  };
+window.mwsdk = window.mwsdk || new Mwsdk();
 
 export default Mwsdk;
