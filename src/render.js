@@ -80,7 +80,7 @@ export default class Render {
         if (data.dt == 4) {
 
         } else {
-          window.location = url.replace(/[&\?]?mw=1[\?$]?/g, '');
+          window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
         }
 
       };
