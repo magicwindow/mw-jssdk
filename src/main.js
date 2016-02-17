@@ -23,16 +23,13 @@ class Mwsdk {
 
     // Initialize once;
     if (!initialized) {
-      marketing.load().then(
+
+      marketing.load(
         (response) => {
 
           this.onReady(()=>{
             new Render(response.data);
           });
-
-        },
-        (msg) => {
-          console.log(msg);
         }
       );
 
@@ -68,11 +65,11 @@ class Mwsdk {
     }
 
     if (window.document.readyState === 'complete') {
-      this.excuteReadyQUeue();
+      this.excuteReadyQueue();
     } else {
       window.document.addEventListener('readystatechange', () => {
         if (window.document.readyState === 'complete') {
-          this.excuteReadyQUeue();
+          this.excuteReadyQueue();
         }
       });
     }
@@ -81,7 +78,7 @@ class Mwsdk {
   /**
    * 执行所有排队的方法
    */
-  excuteReadyQUeue () {
+  excuteReadyQueue () {
 
     while (readyQueue.length) {
       readyQueue.shift()();
