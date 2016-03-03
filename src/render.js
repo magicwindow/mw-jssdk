@@ -1,10 +1,16 @@
-var marketingData;
+import Mlink from './mlink';
+import Common from './common';
+
+let marketingData;
+let mlink = new Mlink();
 
 export default class Render {
 
   constructor (data) {
     marketingData = data;
+
     this.watch();
+    mlink.loadDPLs();
   }
 
   /**
@@ -60,38 +66,56 @@ export default class Render {
     block.setAttribute('data-au', data.au);
     block.innerHTML = '<img src="'+ data.iu +'" style="max-width:100%;"/>';
 
-    this.initBannerEvent(data, block);
+    this.initMwBlockEvent(data, block);
     block.setAttribute('render', true);
   }
 
   /**
-   * 魔窗位事件渲染
+   * 绑定魔窗位事件
    * @param data
    * @param banner
    */
-  initBannerEvent (data, banner) {
+  initMwBlockEvent (data, mwBlock) {
 
-    if (!banner.getAttribute('render')) {
+    if (!mwBlock.getAttribute('render')) {
 
-      var handle = () => {
-        var url = decodeURIComponent(banner.getAttribute('data-au'));
+
+      mwBlock.addEventListener('click', () => {
+        let url = decodeURIComponent(mwBlock.getAttribute('data-au'));
+
+        this.showLoading(mwBlock);
 
         //mLink
-        if (data.dt == 4) {
-
+        if (new Number(data.dt) === 4) {
+          let params = Common.parseJson(mwBlock.getAttribute('data-mlink-params'));
+          mlink.redirect(url, data, params);
         } else {
           window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
         }
-
-      };
-
-      if (window.document.ontouchstart) {
-        banner.addEventListener('touchend', handle);
-      } else {
-        banner.addEventListener('click', handle);
-      }
+      });
 
     }
+  }
+
+  showLoading (mwBlock) {
+    let loading = document.createElement('div');
+    let icon = document.createElement('div');
+
+    loading.classList.add('mw-loading');
+    loading.addEventListener('click', (event)=>{
+      event.stopPropagation();
+
+      loading.removeChild(icon);
+      mwBlock.removeChild(loading);
+      loading = null;
+      icon = null;
+      mwBlock = null;
+    });
+
+    mwBlock.appendChild(loading);
+
+    icon.classList.add('mw-loading-icon');
+    loading.appendChild(icon);
   }
 
 }

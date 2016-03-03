@@ -1,4 +1,6 @@
 var path = require("path");
+var fs = require("fs");
+var package = JSON.parse(fs.readFileSync("package.json"));
 var webpack = require("webpack");
 
 module.exports = {
@@ -21,6 +23,10 @@ module.exports = {
         //}],
         loaders:[
             { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel?presets[]=react,presets[]=es2015' },
+            {test: /\.jsx?$/, loader: 'string-replace', query: {
+              search: '[[VERSION]]',
+              replace: package.version
+            }},
             //{ test: /\.(jpg|png|gif)$/, loader: "url?limit=8192"},
             { test: /\.css$/, loader: 'style!css?:global' },
             { test: /\.scss$/, loader: 'style!css?modules!autoprefixer?browsers=last 10 versions!' }

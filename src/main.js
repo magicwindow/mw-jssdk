@@ -1,14 +1,23 @@
-import Test from './test.js';
-import common from './common.js';
-import config from './config.js';
-import Marketing from './marketing.js';
-import Render from './render.js';
-import Profile from './profile.js';
+import common from './common';
+import config from './config';
+import Marketing from './marketing';
+import Render from './render';
+import Profile from './profile';
+import device from './device';
+
+require('./styles/main.css');
 
 var initialized;
 var readyQueue = [];
 
 class Mwsdk {
+
+  constructor() {
+    this.version = "[[VERSION]]";
+    this.device = device;
+
+    device.appVersion = this.version;
+  }
 
   /**
    * 初始化SDK
@@ -24,9 +33,8 @@ class Mwsdk {
     // Initialize once;
     if (!initialized) {
 
-      marketing.load(
+      marketing.load().then(
         (response) => {
-
           this.onReady(()=>{
             new Render(response.data);
           });
@@ -76,7 +84,7 @@ class Mwsdk {
   }
 
   /**
-   * 执行所有排队的方法
+   * 执行队列中所有的方法
    */
   excuteReadyQueue () {
 

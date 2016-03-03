@@ -4,6 +4,7 @@
 // use this if you want to match all subfolders:
 // 'test/spec/**/*.js'
 module.exports = function (grunt) {
+
   // show elapsed time at the end
   require('time-grunt')(grunt);
   // load all grunt tasks
@@ -207,6 +208,22 @@ module.exports = function (grunt) {
         //   }
         // }
     },
+
+    replace: {
+      res: {
+        options: {
+          patterns: [
+            {
+              match: /\[\[VERSION\]\]/g,
+              replacement: 'var STATIC_DIR = "/general/unitedturntable/dist/"'
+            }
+          ]
+        },
+        files: [
+          {expand: true, flatten: true, src: ['<%= config.dist %>/*.html'], dest: '<%= config.dist %>/'}
+        ]
+      }
+    }
   });
 
   // Print help

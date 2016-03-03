@@ -1,5 +1,5 @@
-var configs = {};
-var readonlyList = {};
+let configs = {};
+let readonlyList = {};
 
 class Config {
 
@@ -17,9 +17,9 @@ class Config {
     } else if (typeof key === 'string') {
       return Config.get(key);
     } else if (typeof key === 'undefined') {
-      var allConf = {};
+      let allConf = {};
 
-      for (var k in configs) {
+      for (let k in configs) {
         allConf[k] = configs[k];
       }
       return allConf;
@@ -43,7 +43,7 @@ class Config {
 
   /**
    * 设置和获取变量
-   * @member mw.var
+   * @member variable
    * @param key
    * @param value
    * @alias mw.config
@@ -56,7 +56,7 @@ class Config {
   /**
    * 设置配置信息
    * @static
-   * @member mw.config.set
+   * @member config.set
    * @param key 配置key
    * @param value 值
    * @param readonly 是否只读
@@ -79,7 +79,7 @@ class Config {
 
   /**
    * @static
-   * @member mw.config.get
+   * @member config.get
    * @param key {String}
    * @returns {*}
    */
