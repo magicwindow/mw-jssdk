@@ -62,7 +62,7 @@ class Device {
    * @returns {boolean}
    */
   isIos() {
-    return !!ua.match(/iPhone|iPad|iPod/);
+    return !!UA.match(/iPhone|iPad|iPod/);
   }
 
   /**
@@ -71,7 +71,7 @@ class Device {
    */
   isIos9() {
     let exp = /iPhone\s?OS\s?(\d+)_(\d*)/;
-    let matched = ua.match(exp);
+    let matched = UA.match(exp);
     let version = matched ? new Number(matched[1]+'.'+matched[2]) : 0;
 
     return version >= 9;
@@ -82,7 +82,7 @@ class Device {
    * @returns {boolean}
    */
   isAndroid() {
-    return !!ua.match(/Android/);
+    return !!UA.match(/Android/);
   }
 
   /**
@@ -92,7 +92,7 @@ class Device {
    * @returns {boolean}
    */
   isWeixin() {
-    return ua.match(/[Mm]icro[Mm]essenger/);
+    return UA.match(/[Mm]icro[Mm]essenger/);
   }
 
   /**
@@ -104,7 +104,7 @@ class Device {
    */
   isWm() {
     var params = URI.getParams();
-    return !!ua.match(/[Mm]agic[Ww]indow/) || params.mw;
+    return !!UA.match(/[Mm]agic[Ww]indow/) || params.mw;
   }
 
   /**

@@ -86,7 +86,7 @@ export default class Render {
         this.showLoading(mwBlock);
 
         //mLink
-        if (new Number(data.dt) === 4) {
+        if (Number(data.dt) === 4) {
           let params = Common.parseJson(mwBlock.getAttribute('data-mlink-params'));
           mlink.redirect(url, data, params);
         } else {

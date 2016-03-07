@@ -51,7 +51,7 @@ export default class Mlink {
     hash = this.replacePathParams(hash, params);
     realUriBuilder.push('#'+ hash);
 
-    return realUriBuilder.join('')
+    return realUriBuilder.join('');
   }
 
   /**
@@ -128,7 +128,7 @@ export default class Mlink {
 
       this.sendDplEvent(failUrl);
 
-      if (hidden == false) {
+      if (hidden === false) {
         window.location.href = failUrl;
       }
     }, 1500);
@@ -223,7 +223,7 @@ export default class Mlink {
         sr  : device.screen
     };
 
-    deeplinksPromise = ajax.http({
+    deeplinksPromise = ajax.request({
       url: url,
       type: 'POST',
       dataType: 'json',
@@ -272,7 +272,7 @@ export default class Mlink {
       sr  : device.screen
     };
 
-    deeplinksPromise = ajax.http({
+    deeplinksPromise = ajax.request({
       url: url,
       type: 'POST',
       dataType: 'json',
@@ -315,7 +315,7 @@ export default class Mlink {
       sr  : device.screen
     };
 
-    ajax.http({
+    ajax.request({
       url: url,
       type: 'POST',
       dataType: 'json',

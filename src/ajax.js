@@ -1,4 +1,5 @@
-import Common from './common.js';
+import Common from './common';
+import Promise from './promise';
 
 export default class Ajax {
 
@@ -25,11 +26,9 @@ export default class Ajax {
    *         }
    *     });
    *
-   * @class Ajax
    * @param {Object} options               Ajax请求配置对象
    * @param {String} options.method        请求类型：GET 或 POST
    * @param {String} options.url           请求地址（URL），如果URL的domain与目前domain不一致，会导致跨域问题
-   //* @param {String} options.target        Element ID that will receive http.responseText
    * @param {Number} options.tries         在请求失败时重新尝试请求的次数
    * @param {Object} options.params        附加的URL后面或者POST数据的参数，如果method=='GET'，则拼接到URL后；如果method=='POST'=='POST',则以POST数据发送。
    * @param {Function} options.success     请求成功的回调方法
@@ -37,145 +36,165 @@ export default class Ajax {
    * @param {Function} options.complete    请求完成时的回调方法，无论请求成功都会被调研；
    * @param {Function} options.beforeSend  发送请求前调用，返回false时http请求将会被终止；
    * @param {Function} options.xtra        Callback arguments
+   *
+   * @returns {Promise}
    */
-   http(options={}) {
+  request(options={}) {
 
-    let http = Ajax.create(),
-        self = this,
-        tried = 0,
-        tmp, i, j,
-        filter = options.filter,
-        onBeforeSend = options.beforeSend,
-        onSuccess = options.success || options.callback,
-        onError = options.error,
-        onComplete = options.complete,
-        tries = options.tries,
-        target = options.target,
-        timeout = options.timeout || 100000,
-        url = options.url,
-        method = options.method || options.type || 'GET',
-        xtra = options.xtra,
-        dataType = options.dataType || 'text',
-        params = options.params || options.data;
+    let http,
+      filter = options.filter,
+      onBeforeSend = options.beforeSend,
+      onSuccess = options.success || options.callback,
+      onError = options.error,
+      onComplete = options.complete,
+      timeout = options.timeout || 100000,
+      url = options.url,
+      method = options.method || options.type || 'GET',
+    //xtra = options.xtra,
+      dataType = options.dataType || 'text',
+      params = options.params || options.data,
+      ContentType = options.ContentType || 'application/x-www-form-urlencoded';
 
     method = method.toLowerCase();
 
-    if (params) {
-      if (typeof params === 'object') {
-        tmp = [];
+    return new Promise((resolve, reject)=>{
 
-        for (i in params) {
-          j = params[i];
-          tmp.push(i + '=' + (typeof filter === 'function' ? filter.call(null, j) : escape(j)));
+      let successHandler = (data)=> {
+        typeof onSuccess === 'function' && onSuccess(data);
+        resolve(data);
+      }
+
+      let errorHandler = (msg) => {
+        typeof onError === 'function' && onError(msg);
+        reject(msg);
+      }
+
+      // Load jsonp
+      if (dataType && dataType.toLowerCase() === 'jsonp') {
+        url += (url.indexOf('?') === -1 ? '?' : '&') + this.seriesParams(params, filter);
+        this.loadJsonp(url, successHandler, errorHandler, timeout);
+      } else {
+
+        http = Ajax.create();
+
+        if (method === 'post') {
+          params = (ContentType === 'application/json') ? JSON.stringify(params) : this.seriesParams(params, filter);
+        } else {
+          url += (url.indexOf('?') === -1 ? '?' : '&') + this.seriesParams(params, filter);
+          params = null;
         }
 
-        params = tmp.join('&');
-      }
+        http.open(method, url, true);
+        http.setRequestHeader('Method', method.toUpperCase() + ' ' + url + ' HTTP/1.1');
+        http.setRequestHeader('Content-type', ContentType);
 
-      if (method === 'get') {
-        url += url.indexOf('?') === -1 ? '?' + params : '&' + params;
-      }
-    }
-
-    if (dataType && dataType.toLowerCase() === 'jsonp') {
-      var cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
-        script = document.createElement('script');
-
-      url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
-
-      window[cbHandler] = function (data) {
-        if (typeof onSuccess === 'function') {
-          onSuccess(data);
+        http.onreadystatechange = ()=> {
+          this.onReadyStatusChange(http, dataType, successHandler, onComplete, errorHandler);
         }
-        delete window[cbHandler];
-        document.head.removeChild(script);
-      };
 
-      if (timeout>0) {
-        setTimeout(function() {
-          if (window[cbHandler]) {
-
-          }
-        }, timeout);
+        if (typeof onBeforeSend !== 'function' || onBeforeSend.call(http)!==false) {
+          http.send(params);
+        }
       }
+    });
+  }
 
-      document.head.appendChild(script);
-      script.src = url;
+  /**
+   * Http Request status change listener
+   * @param http
+   * @param xtra
+   * @param dataType
+   * @param onSuccess
+   * @param onComplete
+   * @param onError
+   */
+  onReadyStatusChange (http, dataType, onSuccess, onComplete, onError) {
+
+    if (http.readyState !== 4) {
       return;
     }
 
-    http.open(method, url, true);
-
-    if (method === 'post') {
-      http.setRequestHeader('Method', 'POST ' + url + ' HTTP/1.1');
-      http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    } else {
-      params = null;
+    if (typeof onComplete === 'function') {
+      onComplete.call(null);
     }
 
-    http.onreadystatechange = function () {
+    if (http.status === 200) {
 
-      if (http.readyState !== 4) {
-        return;
+      let responseText = http.responseText;
+
+      // JSON
+      if (dataType.toUpperCase() === 'JSON') {
+
+        /*jslint evil: true*/
+        try {
+          var json = new Function('return ' + responseText)();
+
+          if (json && typeof onSuccess === 'function') {
+            onSuccess(json);
+          }
+        } catch(e) {}
+      } else if (typeof onSuccess === 'function') {
+        onSuccess(responseText);
       }
 
-      if (typeof onComplete === 'function') {
-        onComplete.call(null);
+    } else {
+      onError('Error code:'+ http.status, http);
+    }
+  }
+
+  /**
+   * 拼接参数
+   * @param {Object} params
+   * @returns {string}
+   */
+  seriesParams (params, filter) {
+    let tmp = [];
+    let j;
+
+    if (params) {
+      for (let i in params) {
+        j = params[i];
+        tmp.push(i + '=' + (typeof filter === 'function' ? filter.call(null, j) : escape(j)));
       }
+    }
 
-      if (http.status === 200) {
+    return tmp.join('&');
+  }
 
-        // JSON
-        if (dataType.toUpperCase() === 'JSON') {
-          var text = http.responseText;
+  /**
+   * request use jsonp
+   * @param url
+   * @param onSuccess
+   */
+  loadJsonp (url, onSuccess, onError, timeout) {
+    let cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
+      script = document.createElement('script');
 
-          /*jslint evil: true*/
-          try {
-            var json = new Function('return ' + text)();
+    url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
 
-            if (json && typeof onSuccess === 'function') {
-              onSuccess.call(null, json, http, xtra);
-            }
-          } catch(e) {
-            if (Common.isFunction(onError)) {
-
-            }
-          }
-
-          return;
-        }
-
-        if (target) {
-          if (http.getResponseHeader('content-type').match(/(html|plain)/)) {
-            self.parseHTML(target, http.responseText);
-          }
-        }
-
-        if (typeof onSuccess === 'function') {
-          onSuccess.call(null, true, http, xtra);
-        }
-      } else {
-        if (tries > 0) {
-          if (tried < tries) {
-            tried++;
-            http.abort();
-            http.send(params);
-          }
-        } else if (typeof onError === 'function') {
-          onError.call(null, false, http, xtra);
-        }
+    window[cbHandler] = function (data) {
+      if (typeof onSuccess === 'function') {
+        onSuccess(data);
       }
+      delete window[cbHandler];
+      document.head.removeChild(script);
     };
 
-    if (typeof onBeforeSend !== 'function' || onBeforeSend.call(http)!==false) {
-      http.send(params);
+    if (timeout>0) {
+      setTimeout(function() {
+        if (window[cbHandler]) {
+          typeof onError === 'function' && onError();
+        }
+      }, timeout);
     }
 
-    return http;
+    document.head.appendChild(script);
+    script.src = url;
   }
 
 
   /**
+   *
    * @method
    * @member fetch
    */
@@ -186,7 +205,7 @@ export default class Ajax {
       data = undefined;
     }
 
-    return this.ajax({
+    return this.http({
       url: url,
       method: 'GET',
       dataType: type,
@@ -207,7 +226,7 @@ export default class Ajax {
       data = undefined;
     }
 
-    return ajax({
+    return this.http({
       url: url,
       method: 'POST',
       dataType: type,

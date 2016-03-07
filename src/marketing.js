@@ -72,10 +72,10 @@ export default class Marketing {
     let url = this.getServer() + apis.marketing;
     let ajax = new Ajax();
 
-    return ajax.http({
+    return ajax.request({
       url: url,
       type: 'get',
-      dataType: 'jsonp',
+      dataType: 'json',
       params: params,
       success: callback,
       error: (msg) => {
@@ -96,10 +96,10 @@ export default class Marketing {
     let url = this.getServer() + apis.marketing;
     let ajax = new Ajax();
 
-    return ajax.http({
+    return ajax.request({
       url: url,
       type: 'get',
-      dataType: 'jsonp',
+      dataType: 'json',
       params: params
     });
 

@@ -98,4 +98,18 @@ export default class Common {
     return window.navigator.userAgent.match(/magicwindow/) || window.location.href.match(/[&\?]mw=1[#&$]/);
   }
 
+  /**
+   * 格式化JSON字符串
+   * @param String jsonString
+   * @param String isStrict
+   * @returns {Object}
+     */
+  static parseJson(jsonString, isStrict) {
+    if (isStrict) {
+      return JSON.parse(jsonString);
+    } else {
+      return new Function('return ' + jsonString)();
+    }
+  }
+
 }
