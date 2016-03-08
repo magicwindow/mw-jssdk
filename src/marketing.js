@@ -75,7 +75,7 @@ export default class Marketing {
     return ajax.request({
       url: url,
       type: 'get',
-      dataType: 'json',
+      dataType: 'jsonp',
       params: params,
       success: callback,
       error: (msg) => {
@@ -99,7 +99,7 @@ export default class Marketing {
     return ajax.request({
       url: url,
       type: 'get',
-      dataType: 'json',
+      dataType: 'jsonp',
       params: params
     });
 

@@ -10,3 +10,4 @@ bower_components/
 .idea/
 mw-jssdk.sublime-project
 mw-jssdk.sublime-workspace
+*.sublime-*

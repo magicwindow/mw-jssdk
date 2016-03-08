@@ -53,7 +53,17 @@ export default class Ajax {
     //xtra = options.xtra,
       dataType = options.dataType || 'text',
       params = options.params || options.data,
-      ContentType = options.ContentType || 'application/x-www-form-urlencoded';
+      defaultHeaders = {
+        "ContentType": options.ContentType || 'application/x-www-form-urlencoded',
+        "Access-Control-Allow-Origin": "*"
+      },
+      headers = {};
+
+      if (options.headers) {
+        for (let k in options.headers) {
+            headers[k] = options.headers || defaultHeaders[k];
+        }
+      }
 
     method = method.toLowerCase();
 
@@ -78,7 +88,7 @@ export default class Ajax {
         http = Ajax.create();
 
         if (method === 'post') {
-          params = (ContentType === 'application/json') ? JSON.stringify(params) : this.seriesParams(params, filter);
+          params = (headers.ContentType === 'application/json') ? JSON.stringify(params) : this.seriesParams(params, filter);
         } else {
           url += (url.indexOf('?') === -1 ? '?' : '&') + this.seriesParams(params, filter);
           params = null;
@@ -86,7 +96,7 @@ export default class Ajax {
 
         http.open(method, url, true);
         http.setRequestHeader('Method', method.toUpperCase() + ' ' + url + ' HTTP/1.1');
-        http.setRequestHeader('Content-type', ContentType);
+        http.setRequestHeader('Content-type', headers.ContentType);
 
         http.onreadystatechange = ()=> {
           this.onReadyStatusChange(http, dataType, successHandler, onComplete, errorHandler);
@@ -234,7 +244,6 @@ export default class Ajax {
       success: callback
     });
   }
-
 
   /**
    * Creates XMLHttpRequest
