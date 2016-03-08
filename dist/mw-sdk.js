@@ -2519,7 +2519,7 @@
 	      deeplinksPromise = ajax.request({
 	        url: url,
 	        type: 'POST',
-	        dataType: 'json',
+	        dataType: 'jsonp',
 	        ContentType: 'application/json',
 	        params: params
 	      }).then(function (response) {
