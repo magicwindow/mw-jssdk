@@ -59,25 +59,31 @@ export default class Ajax {
       },
       headers = {};
 
-      if (options.headers) {
-        for (let k in options.headers) {
-            headers[k] = options.headers || defaultHeaders[k];
-        }
-      }
+    // Extend defalt headers
+    for (let k in defaultHeaders) {
+        headers[k] = defaultHeaders[k];
+    }
 
-    method = method.toLowerCase();
+    // Extend custom headers
+    if (options.headers) {
+      for (let k in options.headers) {
+          headers[k] = options.headers[k] || defaultHeaders[k];
+      }
+    }
+
+    method = method.toUpperCase();
 
     return new Promise((resolve, reject)=>{
 
       let successHandler = (data)=> {
         typeof onSuccess === 'function' && onSuccess(data);
         resolve(data);
-      }
+      };
 
       let errorHandler = (msg) => {
         typeof onError === 'function' && onError(msg);
         reject(msg);
-      }
+      };
 
       // Load jsonp
       if (dataType && dataType.toLowerCase() === 'jsonp') {
@@ -87,7 +93,7 @@ export default class Ajax {
 
         http = Ajax.create();
 
-        if (method === 'post') {
+        if (method === 'POST') {
           params = (headers.ContentType === 'application/json') ? JSON.stringify(params) : this.seriesParams(params, filter);
         } else {
           url += (url.indexOf('?') === -1 ? '?' : '&') + this.seriesParams(params, filter);
@@ -100,7 +106,7 @@ export default class Ajax {
 
         http.onreadystatechange = ()=> {
           this.onReadyStatusChange(http, dataType, successHandler, onComplete, errorHandler);
-        }
+        };
 
         if (typeof onBeforeSend !== 'function' || onBeforeSend.call(http)!==false) {
           http.send(params);

@@ -757,13 +757,19 @@
 	      },
 	          headers = {};
 
+	      // Extend defalt headers
+	      for (var k in defaultHeaders) {
+	        headers[k] = defaultHeaders[k];
+	      }
+
+	      // Extend custom headers
 	      if (options.headers) {
 	        for (var k in options.headers) {
-	          headers[k] = options.headers || defaultHeaders[k];
+	          headers[k] = options.headers[k] || defaultHeaders[k];
 	        }
 	      }
 
-	      method = method.toLowerCase();
+	      method = method.toUpperCase();
 
 	      return new _promise2.default(function (resolve, reject) {
 
@@ -785,7 +791,7 @@
 
 	          http = Ajax.create();
 
-	          if (method === 'post') {
+	          if (method === 'POST') {
 	            params = headers.ContentType === 'application/json' ? JSON.stringify(params) : _this.seriesParams(params, filter);
 	          } else {
 	            url += (url.indexOf('?') === -1 ? '?' : '&') + _this.seriesParams(params, filter);
@@ -2519,7 +2525,10 @@
 	      deeplinksPromise = ajax.request({
 	        url: url,
 	        type: 'POST',
-	        dataType: 'jsonp',
+	        dataType: 'json',
+	        headers: {
+	          "Access-Control-Allow-Origin": "*"
+	        },
 	        ContentType: 'application/json',
 	        params: params
 	      }).then(function (response) {

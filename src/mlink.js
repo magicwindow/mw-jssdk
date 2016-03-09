@@ -226,7 +226,10 @@ export default class Mlink {
     deeplinksPromise = ajax.request({
       url: url,
       type: 'POST',
-      dataType: 'jsonp',
+      dataType: 'json',
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
       ContentType: 'application/json',
       params: params
     }).then((response)=>{
