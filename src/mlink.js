@@ -5,13 +5,18 @@ import common from './common';
 import config from './config';
 import device from './device';
 import apis from './apis';
+import Markting from './marketing';
 
 let deeplinks;
 let deeplinksPromise;
+let markting = new Markting();
 
 export default class Mlink {
 
-  constructor() {}
+  constructor() {
+    this.cache = {};
+  }
+
 
   /**
    * 拼接成真正的url
@@ -20,15 +25,15 @@ export default class Mlink {
    * @param params        JSONObject 动态参数
    * @return String
    */
-  getRealUrl(url, params) {
+  getRealUrl(url, params, defaultParams) {
 
     if (!url) {
       return "";
     }
 
-    if (!params) {
-      params = {};
-    }
+    params = params || {};
+    defaultParams = defaultParams || {};
+    params = common.mix(defaultParams, params);
 
     let uri = new Uri(url);
     let scheme = uri.scheme;
@@ -135,60 +140,64 @@ export default class Mlink {
   }
 
   /**
-   * 跳转
+   * mLink跳转()
    * @param url
    * @param data
    * @param params
    */
-  redirect(url, data, params) {
+  redirect(mlinkUrl, params) {
 
-    let ack = data.ak;
-    let iosDownloadUrl = 'http://fir.im/mwshowios';
-    let androidDownloadUrl = 'http://fir.im/mwshowandroid';
-    let iosLink = 'mwshow://campaign/'+ ack;
-    let androidLink = iosLink;
-    let ios9Link = 'https://s.mlinks.cc/AAAc?key='+ ack;
+    this.loadDefaultParams().then((defaultParams)=>{
 
-    let realUrl = this.getRealUrl(url, params);
-    //window.location = realUrl;
+      let realUrl = this.getRealUrl(mlinkUrl, params, defaultParams);
 
-    // > IOS 9.0
-    if (device.isWeixin()) {
+      // 微信
+      if (device.isWeixin()) {
 
-      let tips = document.createElement('div');
-      tips.id = 'mw-download-tips';
-
-      let protocol = (ios9Link);
-
-      if (device.isIos9() && (protocol === 'http' || protocol === 'https')) {
-        window.location.href = ios9Link;
-      } else {
-
-        if (device.isAndroid()) {
-          tips.classList.add('android');
-          tips.classList.remove('ios');
-        } else if (isIos()) {
-          tips.classList.add('ios');
-          tips.classList.remove('android');
-        }
-
-      }
-
-    } else {
-
-      if (device.isIos()) {
-        let protocol = new Uri(ios9Link).scheme;
-        if (device.isIos9() && (protocol === 'http' || protocol === 'https')) {
-          window.location.href = ios9Link;
+        // Universal Link直接跳转
+        if (/^https?:\/\//.test(realUrl)) {
+          window.location.href = realUrl;
         } else {
-          window.location.href = iosLink;
-          this.openDownloadUrl(iosDownloadUrl);
+          this.showWeixinDownloadModal();
         }
+
       } else {
-        window.location.href = androidLink;
-        this.openDownloadUrl(androidDownloadUrl);
+          window.location.href = realUrl;
       }
+    });
+  }
+
+  /**
+   * 显示微信下载链接的提示
+   */
+  showWeixinDownloadModal () {
+    let tips = document.createElement('div');
+        tips.id = 'mw-download-tips';
+
+    if (device.isAndroid()) {
+      tips.classList.add('android');
+      tips.classList.remove('ios');
+    } else if (isIos()) {
+      tips.classList.add('ios');
+      tips.classList.remove('android');
     }
+    document.body.appendChild(tips);
+  }
+
+  /**
+   * 从Markting接口加载魔窗默认参数(如果有缓存,返回的将是缓存数据,缓存周期为当前文档的生命周期)
+   */
+  loadDefaultParams () {
+
+    return new Promise(function(resolve, reject) {
+
+      markting.load().then((response)=>{
+        var defaultParams = (response.data||{}).mp;
+        resolve(defaultParams);
+      }, ()=>{
+        reject();
+      });
+    });
   }
 
   /**
@@ -196,15 +205,16 @@ export default class Mlink {
    * @returns {*}
    */
   loadDPLs () {
+    let cache = this.cache;
 
-    if (deeplinks) {
-      // 如果Deeplinks已经加载完成,则直接执行resolve
+    if (cache['deeplinks']) {
+      // 如果Deeplinks已经加载完成, 则直接执行resolve
       return new Promise((resolve)=>{
-        resolve(deeplinks);
+        resolve(cache['deeplinks']);
       });
-    } else if (deeplinksPromise) {
-      // 返回还未处理完成的Promise
-      return deeplinksPromise;
+    } else if (cache['deeplinksPromise']) {
+      // 直接返回还未处理完成的Promise
+      return cache['deeplinksPromise'];
     }
 
     let url = config.constant('server').replace(/\/$/,'') + apis.deeplinks;
@@ -223,7 +233,7 @@ export default class Mlink {
         sr  : device.screen
     };
 
-    deeplinksPromise = ajax.request({
+    cache['deeplinksPromise'] = ajax.request({
       url: url,
       type: 'POST',
       dataType: 'json',
@@ -233,13 +243,13 @@ export default class Mlink {
       ContentType: 'application/json',
       params: params
     }).then((response)=>{
-      deeplinks = response.data;
-      deeplinksPromise = null;
+      cache['deeplinks'] = response.data;
+      cache['deeplinksPromise'] = null;
     }, ()=>{
-      deeplinksPromise = null;
+      cache['deeplinksPromise'] = null;
     });
 
-    return deeplinksPromise;
+    return cache['deeplinksPromise'];
   }
 
 
@@ -247,19 +257,21 @@ export default class Mlink {
    * 加载发送方所有的Deeplinks
    * @returns {*}
    */
-  getDPLs () {
+  getDeferrerInfo () {
 
-    if (deeplinks) {
+    let cache = this.cache;
+
+    if (cache['deferrerCache']) {
       // 如果Deeplinks已经加载完成,则直接执行resolve
       return new Promise((resolve)=>{
-        resolve(deeplinks);
+        resolve(cache['deferrerCache']);
       });
-    } else if (deeplinksPromise) {
-      // 返回还未处理完成的Promise
-      return deeplinksPromise;
+    } else if (cache['deferrerPromise']) {
+      // 返回还未resolve的Promise对象
+      return cache['deferrerPromise'];
     }
 
-    let url = config.constant('server').replace(/\/$/,'') + apis.getDeeplinks;
+    let url = config.constant('server').replace(/\/$/,'') + apis.deferrerInfo;
     let ajax = new Ajax();
     let params = {
       ak  : config.constant('appkey') || config.constant('ak'),
@@ -275,20 +287,20 @@ export default class Mlink {
       sr  : device.screen
     };
 
-    deeplinksPromise = ajax.request({
+    cache['deferrerPromise'] = ajax.request({
       url: url,
       type: 'POST',
       dataType: 'json',
       ContentType: 'application/json',
       params: params
     }).then((response)=>{
-      deeplinks = response.data;
-      deeplinksPromise = null;
+      cache['deferrerCache'] = response.data;
+      delete cache['deferrerPromise'];
     }, ()=>{
-      deeplinksPromise = null;
+      delete cache['deferrerPromise'];
     });
 
-    return deeplinksPromise;
+    return cache['deferrerPromise'];
   }
 
   /**
@@ -326,4 +338,5 @@ export default class Mlink {
       params: params
     });
   }
+
 }

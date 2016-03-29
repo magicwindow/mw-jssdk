@@ -3,6 +3,6 @@ import config from './config';
 export default {
   marketing: '/marketing/v2',
   deeplinks: '/dp/dpls',
-  getDeeplinks: '/dp/getDPL',
+  deferrerInfo: '/dp/getDPL', // 还原参数
   deeplinkEvent: '/dp/event'
 }

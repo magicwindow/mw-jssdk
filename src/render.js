@@ -78,8 +78,6 @@ export default class Render {
   initMwBlockEvent (data, mwBlock) {
 
     if (!mwBlock.getAttribute('render')) {
-
-
       mwBlock.addEventListener('click', () => {
         let url = decodeURIComponent(mwBlock.getAttribute('data-au'));
 
@@ -88,15 +86,18 @@ export default class Render {
         //mLink
         if (Number(data.dt) === 4) {
           let params = Common.parseJson(mwBlock.getAttribute('data-mlink-params'));
-          mlink.redirect(url, data, params);
+          mlink.redirect(url, params);
         } else {
           window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
         }
       });
-
     }
   }
 
+  /**
+   * 点击魔窗位时,在魔窗位上显示Loading效果
+   * @param mwBlock
+     */
   showLoading (mwBlock) {
     let loading = document.createElement('div');
     let icon = document.createElement('div');

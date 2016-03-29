@@ -22,6 +22,7 @@ class Device {
     this.constructor.isVirtual = '';
     this.constructor.serial = '';
     this.constructor.screen = window.screen.width + 'x'+ window.screen.height;
+    this.constructor.deviceId = '';
   }
 
   set sdkVersion(value) { if(value) { this.constructor.sdkVersion = value; }}
@@ -56,6 +57,24 @@ class Device {
 
   set screen(value) { if(value) { this.constructor.screen = value; }}
   get screen()      { return this.constructor.screen; }
+
+  /**
+   * 读取MagicWindow信息
+   * @returns {{}}
+     */
+  getMWMetaData() {
+    // (MagicWindow;d/%@;fp/%@;av/%@;sv/%@;uid/%@;m/%@;c/%@;b/Apple;mf/Apple)
+    let mwUA = UA.match(/\(MagicWindow\s*([\d\.]*)*;([^\)]*)*\)/);
+    let metaStr = mwUA ? mwUA[2] : '';
+    let metaArr = metaStr.split(';');
+    let meta = {};
+
+    metaArr.forEach((value, i)=>{
+      let kv = value.split('/');
+      meta[kv[0]] = kv[1] || '';
+    });
+    return meta;
+  }
 
   /**
    * 判断是否是iOs设备
@@ -97,12 +116,12 @@ class Device {
 
   /**
    * 判断App运行环境是否为魔窗SDK
-   * @member isWm
+   * @member isMw
    * @method
    * @version v2.0.0
    * @returns {boolean}
    */
-  isWm() {
+  isMw() {
     var params = URI.getParams();
     return !!UA.match(/[Mm]agic[Ww]indow/) || params.mw;
   }

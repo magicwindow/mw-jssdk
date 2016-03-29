@@ -4,6 +4,9 @@ import Promise from './promise';
 import device from './device';
 import apis from './apis';
 
+let dataCache = null;
+let dataPromise = null;
+
 export default class Marketing {
 
   /**
@@ -77,7 +80,11 @@ export default class Marketing {
       type: 'get',
       dataType: 'jsonp',
       params: params,
-      success: callback,
+      success: (response)=>{
+        if (typeof callback === 'function') {
+          callback(response);
+        }
+      },
       error: (msg) => {
         console.log(msg);
       }
@@ -96,12 +103,27 @@ export default class Marketing {
     let url = this.getServer() + apis.marketing;
     let ajax = new Ajax();
 
-    return ajax.request({
-      url: url,
-      type: 'get',
-      dataType: 'jsonp',
-      params: params
-    });
-
+    // 如果Markting数据有缓存,则直接使用缓存执行resolve
+    if (dataCache) {
+      return new Promise(function(resolve) {
+        resolve(dataCache);
+      });
+    } else if (dataPromise) {
+      // 如果有未resolve的Promise对象,则直接返回该Promise对象;
+      return dataPromise;
+    } else {
+      // 执行HTTP请求
+      dataPromise = ajax.request({
+        url: url,
+        type: 'get',
+        dataType: 'jsonp',
+        success: function(response) {
+          dataCache = response;
+          dataPromise = null; // 清除用于HTTP请求的Promise对象
+        },
+        params: params
+      });
+      return dataPromise;
+    }
   }
 }

@@ -112,4 +112,31 @@ export default class Common {
     }
   }
 
+  /**
+   * 合并对象
+   * @param p
+   * @param p1
+     */
+  static mix(obj, obj2) {
+    if (!p) {
+      return;
+    }
+
+    if (!p1 && p) {
+      return p;
+    }
+
+    for (let k in obj) {
+      obj[k] = obj2[k];
+
+      for (let j in obj2) {
+        if (!obj[j]) {
+          obj[j] = obj2[j];
+        }
+      }
+    }
+
+    return obj;
+  }
+
 }

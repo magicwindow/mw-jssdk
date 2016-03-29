@@ -54,8 +54,8 @@ export default class Ajax {
       dataType = options.dataType || 'text',
       params = options.params || options.data,
       defaultHeaders = {
-        "ContentType": options.ContentType || 'application/x-www-form-urlencoded',
-        "Access-Control-Allow-Origin": "*"
+        "ContentType": options.ContentType || 'application/x-www-form-urlencoded'
+        // "Access-Control-Allow-Origin": "*"
       },
       headers = {};
 
