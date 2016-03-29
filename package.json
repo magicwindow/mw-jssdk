@@ -5,6 +5,7 @@
   "scripts": {
     "test": "grunt test"
   },
+  "main": "dist/mw-sdk.js",
   "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
