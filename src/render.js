@@ -79,8 +79,6 @@ export default class Render {
     let banner = new BannerHelper(data);
     let defaultTemplate = '<img src="[ $imgUrl ]" style="max-width:100%;"/>';
     let template = config.constant('template');
-    let templateTranslate;
-    let tpl;
     let regExpGlobal = /\[\s*\$(\w+)\s*\]/ig;
     let regExp = /\[\s*\$(\w+)\s*\]/;
 
@@ -102,7 +100,7 @@ export default class Render {
 
       if (matched) {
         matched.forEach((field)=>{
-          fieldName = field.macth(regExp);
+          fieldName = field.match(regExp);
           fieldName = fieldName ? fieldName[1] : '';
           template.replace(field, banner[fieldName]);
         });
