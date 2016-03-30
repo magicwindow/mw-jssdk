@@ -105,10 +105,9 @@ export default class Render {
           template.replace(field, banner[fieldName]);
         });
       }
-
-      return template;
     }
 
+    return template;
   }
 
   /**
