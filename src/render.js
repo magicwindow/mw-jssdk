@@ -102,7 +102,7 @@ export default class Render {
         matched.forEach((field)=>{
           fieldName = field.match(regExp);
           fieldName = fieldName ? fieldName[1] : '';
-          template.replace(field, banner[fieldName]);
+          template  = template.replace(field, banner[fieldName]);
         });
       }
     }
