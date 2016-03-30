@@ -174,7 +174,23 @@
 	  }, {
 	    key: 'router',
 	    value: function router(callback, onError) {
-	      return new _mlink2.default().deferrerRedirect(callback, onError);
+	      var _this2 = this;
+
+	      return new Promise(function (resolve, reject) {
+	        _this2.onReady(function () {
+	          new _mlink2.default().deferrerRedirect(function (result) {
+	            resolve(result);
+	            if (_common2.default.isFunc(callback)) {
+	              callback(result);
+	            }
+	          }, function (err) {
+	            reject(err);
+	            if (_common2.default.isFunc(onError)) {
+	              onError(result);
+	            }
+	          });
+	        });
+	      });
 	    }
 
 	    /**
@@ -186,7 +202,7 @@
 	  }, {
 	    key: 'onReady',
 	    value: function onReady(callback) {
-	      var _this2 = this;
+	      var _this3 = this;
 
 	      // Put callback into queue
 	      if (_common2.default.isFunction(callback)) {
@@ -198,7 +214,7 @@
 	      } else {
 	        window.document.addEventListener('readystatechange', function () {
 	          if (window.document.readyState === 'complete') {
-	            _this2.excuteReadyQueue();
+	            _this3.excuteReadyQueue();
 	          }
 	        });
 	      }

@@ -66,7 +66,21 @@ class Mwsdk {
    * @returns {Promise} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
    */
   router(callback, onError) {
-    return new Mlink().deferrerRedirect(callback, onError);
+    return new Promise((resolve, reject)=>{
+      this.onReady(()=>{
+        new Mlink().deferrerRedirect((result)=>{
+          resolve(result);
+          if (common.isFunc(callback)) {
+            callback(result);
+          }
+        }, (err)=>{
+          reject(err);
+          if (common.isFunc(onError)) {
+            onError(result);
+          }
+        });
+      });
+    });
   }
 
   /**
