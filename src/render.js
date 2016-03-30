@@ -1,6 +1,9 @@
 import Mlink from './mlink';
+import config from './config';
 import Common from './common';
+import BannerHelper from './bannerHelper';
 
+const RENDERED = 'rendered';
 let marketingData;
 let mlink = new Mlink();
 
@@ -25,7 +28,7 @@ export default class Render {
         for (var i = 0,l=blocks.length; i<l; i++) {
           block = blocks[i];
 
-          if (!block.getAttribute('render')) {
+          if (!block.getAttribute(RENDERED)) {
             this.render(data, block);
           }
         }
@@ -61,13 +64,53 @@ export default class Render {
    */
   render(data, block) {
 
-    //var id = block.getAttribute('id');
-
     block.setAttribute('data-au', data.au);
-    block.innerHTML = '<img src="'+ data.iu +'" style="max-width:100%;"/>';
-
+    block.innerHTML = this.parseTemplate(data);
     this.initMwBlockEvent(data, block);
-    block.setAttribute('render', true);
+    block.setAttribute(RENDERED, true);
+  }
+
+  /**
+   * 格式化模板
+   * @param data
+   * @return {String}
+     */
+  parseTemplate(data) {
+    let banner = new BannerHelper(data);
+    let defaultTemplate = '<img src="[ $imgUrl ]" style="max-width:100%;"/>';
+    let template = config.constant('template');
+    let templateTranslate;
+    let tpl;
+    let regExpGlobal = /\[\s*\$(\w+)\s*\]/ig;
+    let regExp = /\[\s*\$(\w+)\s*\]/;
+
+    template = template || defaultTemplate;
+
+    // 如果是Map类型的模板,从Map中读取当前魔窗位的模板,若未定义则使用默认模板
+    if (Common.isObject(template)) {
+      template = template[banner.key] || defaultTemplate;
+    }
+
+    // 如果是自定义渲染方法,则执行开发者自定义的渲染方法
+    if (Common.isFunc(template)) {
+      template = template(banner);
+    }
+
+    if (Common.isString(template)) {
+      let matched = template.match(regExpGlobal);
+      let fieldName;
+
+      if (matched) {
+        matched.forEach((field)=>{
+          fieldName = field.macth(regExp);
+          fieldName = fieldName ? fieldName[1] : '';
+          template.replace(field, banner[fieldName]);
+        });
+      }
+
+      return template;
+    }
+
   }
 
   /**
@@ -77,7 +120,7 @@ export default class Render {
    */
   initMwBlockEvent (data, mwBlock) {
 
-    if (!mwBlock.getAttribute('render')) {
+    if (!mwBlock.getAttribute(RENDERED)) {
       mwBlock.addEventListener('click', () => {
         let url = decodeURIComponent(mwBlock.getAttribute('data-au'));
 
