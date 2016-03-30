@@ -172,8 +172,8 @@
 	     */
 
 	  }, {
-	    key: 'deferrerRoute',
-	    value: function deferrerRoute(callback, onError) {
+	    key: 'router',
+	    value: function router(callback, onError) {
 	      return _mlink2.default.deferreRedirect(callback, onError);
 	    }
 
@@ -387,7 +387,7 @@
 	    }
 
 	    /**
-	     * 合并对象
+	     * 合并对象属性
 	     * @param p
 	     * @param p1
 	       */

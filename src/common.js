@@ -113,7 +113,7 @@ export default class Common {
   }
 
   /**
-   * 合并对象
+   * 合并对象属性
    * @param p
    * @param p1
      */
