@@ -112,37 +112,29 @@
 	    value: function init(configs) {
 	      var _this = this;
 
-	      var INIT_PROMISE = 'initPromise';
-	      this.cache = this.cache || {};
+	      // Initialize once;
+	      if (!initialized) {
 
-	      if (this.cache[INIT_PROMISE]) {
-	        return this.cache[INIT_PROMISE];
-	      } else {
-	        this.cache[INIT_PROMISE] = new _promise2.default(function (resolve, reject) {
+	        var marketing = new _marketing2.default();
 
-	          // Initialize once;
-	          if (!initialized) {
+	        // Apply configs
+	        for (var k in configs) {
+	          _config2.default.constant(k, configs[k]);
+	        }
 
-	            var marketing = new _marketing2.default();
-
-	            // Apply configs
-	            for (var k in configs) {
-	              _config2.default.constant(k, configs[k]);
-	            }
-
-	            marketing.load().then(function (response) {
-	              _this.onReady(function () {
-	                new _render2.default(response.data);
-	              });
-	            });
-
-	            resolve('Initialize successful.');
-	            delete _this.cache[INIT_PROMISE];
-	            initialized = true;
-	          } else {
-	            reject('MSSDK is already initialize.');
-	          }
+	        marketing.load().then(function (response) {
+	          _this.onReady(function () {
+	            new _render2.default(response.data);
+	          });
 	        });
+
+	        if (_common2.default.isFunc(this.onInit)) {
+	          try {
+	            this.onInit();
+	          } catch (e) {}
+	        }
+
+	        initialized = true;
 	      }
 	    }
 
@@ -196,7 +188,7 @@
 
 	      return new _promise2.default(function (resolve, reject) {
 
-	        _this2.init().then(function () {
+	        _this2.onInit = function () {
 
 	          new _mlink2.default().deferrerRedirect(function (result) {
 	            resolve(result);
@@ -209,7 +201,7 @@
 	              onError(result);
 	            }
 	          });
-	        });
+	        };
 	      });
 	    }
 

@@ -25,40 +25,32 @@ class Mwsdk {
    * 初始化SDK
    */
   init (configs) {
-    const INIT_PROMISE = 'initPromise';
-    this.cache = this.cache || {};
 
-    if (this.cache[INIT_PROMISE]) {
-      return this.cache[INIT_PROMISE];
-    } else {
-      this.cache[INIT_PROMISE] = new Promise((resolve, reject)=>{
+    // Initialize once;
+    if (!initialized) {
 
-        // Initialize once;
-        if (!initialized) {
+      let marketing = new Marketing();
 
-          let marketing = new Marketing();
+      // Apply configs
+      for (var k in configs) {
+        config.constant(k, configs[k]);
+      }
 
-          // Apply configs
-          for (var k in configs) {
-            config.constant(k, configs[k]);
-          }
-
-          marketing.load().then(
-            (response) => {
-              this.onReady(()=>{
-                new Render(response.data);
-              });
-            }
-          );
-
-          resolve('Initialize successful.');
-          delete this.cache[INIT_PROMISE];
-          initialized = true;
-        } else {
-          reject('MSSDK is already initialize.');
+      marketing.load().then(
+        (response) => {
+          this.onReady(()=>{
+            new Render(response.data);
+          });
         }
+      );
 
-      });
+      if (common.isFunc(this.onInit)) {
+        try {
+          this.onInit();
+        } catch(e){}
+      }
+
+      initialized = true;
     }
   }
 
@@ -84,7 +76,7 @@ class Mwsdk {
   router(callback, onError) {
     return new Promise((resolve, reject)=>{
 
-      this.init().then(()=>{
+      this.onInit = ()=>{
 
         new Mlink().deferrerRedirect(
           (result)=>{
@@ -100,7 +92,8 @@ class Mwsdk {
             }
           }
         );
-      });
+
+      };
     });
   }
 
