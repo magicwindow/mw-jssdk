@@ -1,5 +1,6 @@
 import common from './common';
 import config from './config';
+import Promise from './promise';
 import Marketing from './marketing';
 import Render from './render';
 import Mlink from './mlink';
@@ -24,25 +25,40 @@ class Mwsdk {
    * 初始化SDK
    */
   init (configs) {
-    var marketing = new Marketing();
+    const INIT_PROMISE = 'initPromise';
+    this.cache = this.cache || {};
 
-    // Apply configs
-    for (var k in configs) {
-      config.constant(k, configs[k]);
-    }
+    if (this.cache[INIT_PROMISE]) {
+      return this.cache[INIT_PROMISE];
+    } else {
+      this.cache[INIT_PROMISE] = new Promise((resolve, reject)=>{
 
-    // Initialize once;
-    if (!initialized) {
+        // Initialize once;
+        if (!initialized) {
 
-      marketing.load().then(
-        (response) => {
-          this.onReady(()=>{
-            new Render(response.data);
-          });
+          let marketing = new Marketing();
+
+          // Apply configs
+          for (var k in configs) {
+            config.constant(k, configs[k]);
+          }
+
+          marketing.load().then(
+            (response) => {
+              this.onReady(()=>{
+                new Render(response.data);
+              });
+            }
+          );
+
+          resolve('Initialize successful.');
+          delete this.cache[INIT_PROMISE];
+          initialized = true;
+        } else {
+          reject('MSSDK is already initialize.');
         }
-      );
 
-      initialized = true;
+      });
     }
   }
 
@@ -63,22 +79,27 @@ class Mwsdk {
    * 第一次安装App时执行,场景还原
    * @param callback(mlinkAndParams)
    * @param onError
-   * @returns {Promise} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
+   * @returns {PromisePolyfill} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
    */
   router(callback, onError) {
     return new Promise((resolve, reject)=>{
-      this.onReady(()=>{
-        new Mlink().deferrerRedirect((result)=>{
-          resolve(result);
-          if (common.isFunc(callback)) {
-            callback(result);
+
+      this.init().then(()=>{
+
+        new Mlink().deferrerRedirect(
+          (result)=>{
+            resolve(result);
+            if (common.isFunc(callback)) {
+              callback(result);
+            }
+          },
+          (err)=> {
+            reject(err);
+            if (common.isFunc(onError)) {
+              onError(result);
+            }
           }
-        }, (err)=>{
-          reject(err);
-          if (common.isFunc(onError)) {
-            onError(result);
-          }
-        });
+        );
       });
     });
   }

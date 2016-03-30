@@ -60,7 +60,11 @@
 
 	var _config2 = _interopRequireDefault(_config);
 
-	var _marketing = __webpack_require__(3);
+	var _promise = __webpack_require__(3);
+
+	var _promise2 = _interopRequireDefault(_promise);
+
+	var _marketing = __webpack_require__(6);
 
 	var _marketing2 = _interopRequireDefault(_marketing);
 
@@ -108,23 +112,37 @@
 	    value: function init(configs) {
 	      var _this = this;
 
-	      var marketing = new _marketing2.default();
+	      var INIT_PROMISE = 'initPromise';
+	      this.cache = this.cache || {};
 
-	      // Apply configs
-	      for (var k in configs) {
-	        _config2.default.constant(k, configs[k]);
-	      }
+	      if (this.cache[INIT_PROMISE]) {
+	        return this.cache[INIT_PROMISE];
+	      } else {
+	        this.cache[INIT_PROMISE] = new _promise2.default(function (resolve, reject) {
 
-	      // Initialize once;
-	      if (!initialized) {
+	          // Initialize once;
+	          if (!initialized) {
 
-	        marketing.load().then(function (response) {
-	          _this.onReady(function () {
-	            new _render2.default(response.data);
-	          });
+	            var marketing = new _marketing2.default();
+
+	            // Apply configs
+	            for (var k in configs) {
+	              _config2.default.constant(k, configs[k]);
+	            }
+
+	            marketing.load().then(function (response) {
+	              _this.onReady(function () {
+	                new _render2.default(response.data);
+	              });
+	            });
+
+	            resolve('Initialize successful.');
+	            delete _this.cache[INIT_PROMISE];
+	            initialized = true;
+	          } else {
+	            reject('MSSDK is already initialize.');
+	          }
 	        });
-
-	        initialized = true;
 	      }
 	    }
 
@@ -168,7 +186,7 @@
 	     * 第一次安装App时执行,场景还原
 	     * @param callback(mlinkAndParams)
 	     * @param onError
-	     * @returns {Promise} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
+	     * @returns {PromisePolyfill} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
 	     */
 
 	  }, {
@@ -176,8 +194,10 @@
 	    value: function router(callback, onError) {
 	      var _this2 = this;
 
-	      return new Promise(function (resolve, reject) {
-	        _this2.onReady(function () {
+	      return new _promise2.default(function (resolve, reject) {
+
+	        _this2.init().then(function () {
+
 	          new _mlink2.default().deferrerRedirect(function (result) {
 	            resolve(result);
 	            if (_common2.default.isFunc(callback)) {
@@ -571,522 +591,6 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _config = __webpack_require__(2);
-
-	var _config2 = _interopRequireDefault(_config);
-
-	var _ajax = __webpack_require__(4);
-
-	var _ajax2 = _interopRequireDefault(_ajax);
-
-	var _promise = __webpack_require__(5);
-
-	var _promise2 = _interopRequireDefault(_promise);
-
-	var _device = __webpack_require__(8);
-
-	var _device2 = _interopRequireDefault(_device);
-
-	var _apis = __webpack_require__(11);
-
-	var _apis2 = _interopRequireDefault(_apis);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var dataCache = null;
-	var dataPromise = null;
-
-	var Marketing = function () {
-	  function Marketing() {
-	    _classCallCheck(this, Marketing);
-	  }
-
-	  _createClass(Marketing, [{
-	    key: 'getParams',
-
-	    /**
-	     * 获取参数
-	     * @returns {{server: string, ak: *, av: *, sv: *}}
-	     */
-	    value: function getParams() {
-	      return {
-	        ak: _device2.default.appKey || _config2.default.constant('appkey'),
-	        os: _device2.default.os,
-	        sv: _device2.default.sdkVersion,
-	        d: _device2.default.uuid,
-	        sr: _device2.default.screen,
-	        av: _device2.default.appVersion || _config2.default.constant('av'),
-	        fp: _device2.default.getCanvasFingerprint()
-	      };
-	    }
-
-	    /**
-	     * 替换参数
-	     * @param url
-	     * @param params
-	     * @returns {*|XML|void|string}
-	     */
-
-	  }, {
-	    key: 'applyParams',
-	    value: function applyParams(url, params) {
-	      if (url) {
-	        for (var k in params) {
-	          url = url.replace('{' + k.toUpperCase() + '}', params[k]);
-	        }
-	      }
-
-	      url = url.replace(/\{(\w)*\}/g, '');
-	      return url;
-	    }
-
-	    /**
-	     * 获取服务器
-	     * @returns {string|*|{res}|void|XML}
-	     */
-
-	  }, {
-	    key: 'getServer',
-	    value: function getServer() {
-	      return _config2.default.constant('server').replace(/\/$/, '');
-	    }
-
-	    /**
-	     * 加载Marketing数据
-	     * @param {Function} [callback] 如果有此参数, 则使用回调方式加载,否则使用Promise模式
-	     * @returns {*}
-	       */
-
-	  }, {
-	    key: 'load',
-	    value: function load(callback) {
-	      if (typeof callback !== 'undefined') {
-	        return this.loadCallback(callback);
-	      } else {
-	        return this.loadPromise();
-	      }
-	    }
-
-	    /**
-	     * 加载 Marketing 数据
-	     * @param {Fucntion} callback
-	     */
-
-	  }, {
-	    key: 'loadCallback',
-	    value: function loadCallback(callback) {
-
-	      // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
-	      //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
-	      var params = this.getParams();
-	      var url = this.getServer() + _apis2.default.marketing;
-	      var ajax = new _ajax2.default();
-
-	      return ajax.request({
-	        url: url,
-	        type: 'get',
-	        dataType: 'jsonp',
-	        params: params,
-	        success: function success(response) {
-	          if (typeof callback === 'function') {
-	            callback(response);
-	          }
-	        },
-	        error: function error(msg) {
-	          console.log(msg);
-	        }
-	      });
-	    }
-
-	    /**
-	     * 加载 Marketing 数据
-	     * @returns {Promise|PromisePolyfill}
-	     */
-
-	  }, {
-	    key: 'loadPromise',
-	    value: function loadPromise() {
-
-	      // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
-	      //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
-	      var params = this.getParams();
-	      var url = this.getServer() + _apis2.default.marketing;
-	      var ajax = new _ajax2.default();
-
-	      // 如果Markting数据有缓存,则直接使用缓存执行resolve
-	      if (dataCache) {
-	        return new _promise2.default(function (resolve) {
-	          resolve(dataCache);
-	        });
-	      } else if (dataPromise) {
-	        // 如果有未resolve的Promise对象,则直接返回该Promise对象;
-	        return dataPromise;
-	      } else {
-	        // 执行HTTP请求
-	        dataPromise = ajax.request({
-	          url: url,
-	          type: 'get',
-	          dataType: 'jsonp',
-	          success: function success(response) {
-	            dataCache = response;
-	            dataPromise = null; // 清除用于HTTP请求的Promise对象
-	          },
-	          params: params
-	        });
-	        return dataPromise;
-	      }
-	    }
-	  }]);
-
-	  return Marketing;
-	}();
-
-	exports.default = Marketing;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _common = __webpack_require__(1);
-
-	var _common2 = _interopRequireDefault(_common);
-
-	var _promise = __webpack_require__(5);
-
-	var _promise2 = _interopRequireDefault(_promise);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Ajax = function () {
-
-	  /**
-	   * Constructor
-	   * @returns {*}
-	   */
-
-	  function Ajax() {
-	    _classCallCheck(this, Ajax);
-	  }
-
-	  /**
-	   * 发起一个Ajax请求，从服务器加载JSON数据或HTML片段，支持JSONP请求。
-	   *
-	   * 代码实例：
-	   *
-	   *     @example
-	   *     new Ajax({
-	   *         url: 'api/list',
-	   *         method: 'GET',
-	   *         params: {cat:'123', userId:'kjfjrek132454nnfsdj'},
-	   *         callback: function(json, http, xtra){
-	   *
-	   *         }
-	   *     });
-	   *
-	   * @param {Object} options               Ajax请求配置对象
-	   * @param {String} options.method        请求类型：GET 或 POST
-	   * @param {String} options.url           请求地址（URL），如果URL的domain与目前domain不一致，会导致跨域问题
-	   * @param {Number} options.tries         在请求失败时重新尝试请求的次数
-	   * @param {Object} options.params        附加的URL后面或者POST数据的参数，如果method=='GET'，则拼接到URL后；如果method=='POST'=='POST',则以POST数据发送。
-	   * @param {Function} options.success     请求成功的回调方法
-	   * @param {Function} options.filter      过滤向服务器发送的参数
-	   * @param {Function} options.complete    请求完成时的回调方法，无论请求成功都会被调研；
-	   * @param {Function} options.beforeSend  发送请求前调用，返回false时http请求将会被终止；
-	   * @param {Function} options.xtra        Callback arguments
-	   *
-	   * @returns {Promise}
-	   */
-
-	  _createClass(Ajax, [{
-	    key: 'request',
-	    value: function request() {
-	      var _this = this;
-
-	      var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-	      var http = undefined,
-	          filter = options.filter,
-	          onBeforeSend = options.beforeSend,
-	          onSuccess = options.success || options.callback,
-	          onError = options.error,
-	          onComplete = options.complete,
-	          timeout = options.timeout || 100000,
-	          url = options.url,
-	          method = options.method || options.type || 'GET',
-
-	      //xtra = options.xtra,
-	      dataType = options.dataType || 'text',
-	          params = options.params || options.data,
-	          defaultHeaders = {
-	        "ContentType": options.ContentType || 'application/x-www-form-urlencoded'
-	        // "Access-Control-Allow-Origin": "*"
-	      },
-	          headers = {};
-
-	      // Extend defalt headers
-	      for (var k in defaultHeaders) {
-	        headers[k] = defaultHeaders[k];
-	      }
-
-	      // Extend custom headers
-	      if (options.headers) {
-	        for (var k in options.headers) {
-	          headers[k] = options.headers[k] || defaultHeaders[k];
-	        }
-	      }
-
-	      method = method.toUpperCase();
-
-	      return new _promise2.default(function (resolve, reject) {
-
-	        var successHandler = function successHandler(data) {
-	          typeof onSuccess === 'function' && onSuccess(data);
-	          resolve(data);
-	        };
-
-	        var errorHandler = function errorHandler(msg) {
-	          typeof onError === 'function' && onError(msg);
-	          reject(msg);
-	        };
-
-	        // Load jsonp
-	        if (dataType && dataType.toLowerCase() === 'jsonp') {
-	          url += (url.indexOf('?') === -1 ? '?' : '&') + _this.seriesParams(params, filter);
-	          _this.loadJsonp(url, successHandler, errorHandler, timeout);
-	        } else {
-
-	          http = Ajax.create();
-
-	          if (method === 'POST') {
-	            params = headers.ContentType === 'application/json' ? JSON.stringify(params) : _this.seriesParams(params, filter);
-	          } else {
-	            url += (url.indexOf('?') === -1 ? '?' : '&') + _this.seriesParams(params, filter);
-	            params = null;
-	          }
-
-	          http.open(method, url, true);
-	          http.setRequestHeader('Method', method.toUpperCase() + ' ' + url + ' HTTP/1.1');
-	          http.setRequestHeader('Content-type', headers.ContentType);
-
-	          http.onreadystatechange = function () {
-	            _this.onReadyStatusChange(http, dataType, successHandler, onComplete, errorHandler);
-	          };
-
-	          if (typeof onBeforeSend !== 'function' || onBeforeSend.call(http) !== false) {
-	            http.send(params);
-	          }
-	        }
-	      });
-	    }
-
-	    /**
-	     * Http Request status change listener
-	     * @param http
-	     * @param xtra
-	     * @param dataType
-	     * @param onSuccess
-	     * @param onComplete
-	     * @param onError
-	     */
-
-	  }, {
-	    key: 'onReadyStatusChange',
-	    value: function onReadyStatusChange(http, dataType, onSuccess, onComplete, onError) {
-
-	      if (http.readyState !== 4) {
-	        return;
-	      }
-
-	      if (typeof onComplete === 'function') {
-	        onComplete.call(null);
-	      }
-
-	      if (http.status === 200) {
-
-	        var responseText = http.responseText;
-
-	        // JSON
-	        if (dataType.toUpperCase() === 'JSON') {
-
-	          /*jslint evil: true*/
-	          try {
-	            var json = new Function('return ' + responseText)();
-
-	            if (json && typeof onSuccess === 'function') {
-	              onSuccess(json);
-	            }
-	          } catch (e) {}
-	        } else if (typeof onSuccess === 'function') {
-	          onSuccess(responseText);
-	        }
-	      } else {
-	        onError('Error code:' + http.status, http);
-	      }
-	    }
-
-	    /**
-	     * 拼接参数
-	     * @param {Object} params
-	     * @returns {string}
-	     */
-
-	  }, {
-	    key: 'seriesParams',
-	    value: function seriesParams(params, filter) {
-	      var tmp = [];
-	      var j = undefined;
-
-	      if (params) {
-	        for (var i in params) {
-	          j = params[i];
-	          tmp.push(i + '=' + (typeof filter === 'function' ? filter.call(null, j) : escape(j)));
-	        }
-	      }
-
-	      return tmp.join('&');
-	    }
-
-	    /**
-	     * request use jsonp
-	     * @param url
-	     * @param onSuccess
-	     */
-
-	  }, {
-	    key: 'loadJsonp',
-	    value: function loadJsonp(url, onSuccess, onError, timeout) {
-	      var cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
-	          script = document.createElement('script');
-
-	      url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
-
-	      window[cbHandler] = function (data) {
-	        if (typeof onSuccess === 'function') {
-	          onSuccess(data);
-	        }
-	        delete window[cbHandler];
-	        document.head.removeChild(script);
-	      };
-
-	      if (timeout > 0) {
-	        setTimeout(function () {
-	          if (window[cbHandler]) {
-	            typeof onError === 'function' && onError();
-	          }
-	        }, timeout);
-	      }
-
-	      document.head.appendChild(script);
-	      script.src = url;
-	    }
-
-	    /**
-	     *
-	     * @method
-	     * @member fetch
-	     */
-
-	  }, {
-	    key: 'fetch',
-	    value: function fetch(url, data, callback, type) {
-	      if (this.isFunction(data)) {
-	        type = type || callback;
-	        callback = data;
-	        data = undefined;
-	      }
-
-	      return this.http({
-	        url: url,
-	        method: 'GET',
-	        dataType: type,
-	        data: data,
-	        success: callback
-	      });
-	    }
-
-	    /**
-	     * @method
-	     * @member post
-	     */
-
-	  }, {
-	    key: 'post',
-	    value: function post(url, data, callback, type) {
-
-	      if (this.isFunction(data)) {
-	        type = type || callback;
-	        callback = data;
-	        data = undefined;
-	      }
-
-	      return this.http({
-	        url: url,
-	        method: 'POST',
-	        dataType: type,
-	        data: data,
-	        success: callback
-	      });
-	    }
-
-	    /**
-	     * Creates XMLHttpRequest
-	     * @static
-	     * @member create
-	     * @return {XMLHttpRequest}
-	     */
-
-	  }], [{
-	    key: 'create',
-	    value: function create() {
-	      var http;
-
-	      try {
-	        http = new XMLHttpRequest();
-	      } catch (e) {
-	        try {
-	          http = new ActiveXObject('Msxml2.XMLHTTP');
-	        } catch (f) {
-	          try {
-	            http = new ActiveXObject('Microsoft.XMLHTTP');
-	          } catch (g) {
-	            console.log(g);
-	          }
-	        }
-	      }
-
-	      return http;
-	    }
-	  }]);
-
-	  return Ajax;
-	}();
-
-	exports.default = Ajax;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(setImmediate) {'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1439,13 +943,13 @@
 	}();
 
 	exports.default = nativePromiseSupported ? global['Promise'] : PromisePolyfill;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4).setImmediate))
 
 /***/ },
-/* 6 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(7).nextTick;
+	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(5).nextTick;
 	var apply = Function.prototype.apply;
 	var slice = Array.prototype.slice;
 	var immediateIds = {};
@@ -1521,10 +1025,10 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6).setImmediate, __webpack_require__(6).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4).setImmediate, __webpack_require__(4).clearImmediate))
 
 /***/ },
-/* 7 */
+/* 5 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -1619,6 +1123,522 @@
 	};
 	process.umask = function() { return 0; };
 
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _config = __webpack_require__(2);
+
+	var _config2 = _interopRequireDefault(_config);
+
+	var _ajax = __webpack_require__(7);
+
+	var _ajax2 = _interopRequireDefault(_ajax);
+
+	var _promise = __webpack_require__(3);
+
+	var _promise2 = _interopRequireDefault(_promise);
+
+	var _device = __webpack_require__(8);
+
+	var _device2 = _interopRequireDefault(_device);
+
+	var _apis = __webpack_require__(11);
+
+	var _apis2 = _interopRequireDefault(_apis);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var dataCache = null;
+	var dataPromise = null;
+
+	var Marketing = function () {
+	  function Marketing() {
+	    _classCallCheck(this, Marketing);
+	  }
+
+	  _createClass(Marketing, [{
+	    key: 'getParams',
+
+	    /**
+	     * 获取参数
+	     * @returns {{server: string, ak: *, av: *, sv: *}}
+	     */
+	    value: function getParams() {
+	      return {
+	        ak: _device2.default.appKey || _config2.default.constant('appkey'),
+	        os: _device2.default.os,
+	        sv: _device2.default.sdkVersion,
+	        d: _device2.default.uuid,
+	        sr: _device2.default.screen,
+	        av: _device2.default.appVersion || _config2.default.constant('av'),
+	        fp: _device2.default.getCanvasFingerprint()
+	      };
+	    }
+
+	    /**
+	     * 替换参数
+	     * @param url
+	     * @param params
+	     * @returns {*|XML|void|string}
+	     */
+
+	  }, {
+	    key: 'applyParams',
+	    value: function applyParams(url, params) {
+	      if (url) {
+	        for (var k in params) {
+	          url = url.replace('{' + k.toUpperCase() + '}', params[k]);
+	        }
+	      }
+
+	      url = url.replace(/\{(\w)*\}/g, '');
+	      return url;
+	    }
+
+	    /**
+	     * 获取服务器
+	     * @returns {string|*|{res}|void|XML}
+	     */
+
+	  }, {
+	    key: 'getServer',
+	    value: function getServer() {
+	      return _config2.default.constant('server').replace(/\/$/, '');
+	    }
+
+	    /**
+	     * 加载Marketing数据
+	     * @param {Function} [callback] 如果有此参数, 则使用回调方式加载,否则使用Promise模式
+	     * @returns {*}
+	       */
+
+	  }, {
+	    key: 'load',
+	    value: function load(callback) {
+	      if (typeof callback !== 'undefined') {
+	        return this.loadCallback(callback);
+	      } else {
+	        return this.loadPromise();
+	      }
+	    }
+
+	    /**
+	     * 加载 Marketing 数据
+	     * @param {Fucntion} callback
+	     */
+
+	  }, {
+	    key: 'loadCallback',
+	    value: function loadCallback(callback) {
+
+	      // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
+	      //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
+	      var params = this.getParams();
+	      var url = this.getServer() + _apis2.default.marketing;
+	      var ajax = new _ajax2.default();
+
+	      return ajax.request({
+	        url: url,
+	        type: 'get',
+	        dataType: 'jsonp',
+	        params: params,
+	        success: function success(response) {
+	          if (typeof callback === 'function') {
+	            callback(response);
+	          }
+	        },
+	        error: function error(msg) {
+	          console.log(msg);
+	        }
+	      });
+	    }
+
+	    /**
+	     * 加载 Marketing 数据
+	     * @returns {Promise|PromisePolyfill}
+	     */
+
+	  }, {
+	    key: 'loadPromise',
+	    value: function loadPromise() {
+
+	      // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
+	      //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
+	      var params = this.getParams();
+	      var url = this.getServer() + _apis2.default.marketing;
+	      var ajax = new _ajax2.default();
+
+	      // 如果Markting数据有缓存,则直接使用缓存执行resolve
+	      if (dataCache) {
+	        return new _promise2.default(function (resolve) {
+	          resolve(dataCache);
+	        });
+	      } else if (dataPromise) {
+	        // 如果有未resolve的Promise对象,则直接返回该Promise对象;
+	        return dataPromise;
+	      } else {
+	        // 执行HTTP请求
+	        dataPromise = ajax.request({
+	          url: url,
+	          type: 'get',
+	          dataType: 'jsonp',
+	          success: function success(response) {
+	            dataCache = response;
+	            dataPromise = null; // 清除用于HTTP请求的Promise对象
+	          },
+	          params: params
+	        });
+	        return dataPromise;
+	      }
+	    }
+	  }]);
+
+	  return Marketing;
+	}();
+
+	exports.default = Marketing;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _common = __webpack_require__(1);
+
+	var _common2 = _interopRequireDefault(_common);
+
+	var _promise = __webpack_require__(3);
+
+	var _promise2 = _interopRequireDefault(_promise);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Ajax = function () {
+
+	  /**
+	   * Constructor
+	   * @returns {*}
+	   */
+
+	  function Ajax() {
+	    _classCallCheck(this, Ajax);
+	  }
+
+	  /**
+	   * 发起一个Ajax请求，从服务器加载JSON数据或HTML片段，支持JSONP请求。
+	   *
+	   * 代码实例：
+	   *
+	   *     @example
+	   *     new Ajax({
+	   *         url: 'api/list',
+	   *         method: 'GET',
+	   *         params: {cat:'123', userId:'kjfjrek132454nnfsdj'},
+	   *         callback: function(json, http, xtra){
+	   *
+	   *         }
+	   *     });
+	   *
+	   * @param {Object} options               Ajax请求配置对象
+	   * @param {String} options.method        请求类型：GET 或 POST
+	   * @param {String} options.url           请求地址（URL），如果URL的domain与目前domain不一致，会导致跨域问题
+	   * @param {Number} options.tries         在请求失败时重新尝试请求的次数
+	   * @param {Object} options.params        附加的URL后面或者POST数据的参数，如果method=='GET'，则拼接到URL后；如果method=='POST'=='POST',则以POST数据发送。
+	   * @param {Function} options.success     请求成功的回调方法
+	   * @param {Function} options.filter      过滤向服务器发送的参数
+	   * @param {Function} options.complete    请求完成时的回调方法，无论请求成功都会被调研；
+	   * @param {Function} options.beforeSend  发送请求前调用，返回false时http请求将会被终止；
+	   * @param {Function} options.xtra        Callback arguments
+	   *
+	   * @returns {Promise}
+	   */
+
+	  _createClass(Ajax, [{
+	    key: 'request',
+	    value: function request() {
+	      var _this = this;
+
+	      var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	      var http = undefined,
+	          filter = options.filter,
+	          onBeforeSend = options.beforeSend,
+	          onSuccess = options.success || options.callback,
+	          onError = options.error,
+	          onComplete = options.complete,
+	          timeout = options.timeout || 100000,
+	          url = options.url,
+	          method = options.method || options.type || 'GET',
+
+	      //xtra = options.xtra,
+	      dataType = options.dataType || 'text',
+	          params = options.params || options.data,
+	          defaultHeaders = {
+	        "ContentType": options.ContentType || 'application/x-www-form-urlencoded'
+	        // "Access-Control-Allow-Origin": "*"
+	      },
+	          headers = {};
+
+	      // Extend defalt headers
+	      for (var k in defaultHeaders) {
+	        headers[k] = defaultHeaders[k];
+	      }
+
+	      // Extend custom headers
+	      if (options.headers) {
+	        for (var k in options.headers) {
+	          headers[k] = options.headers[k] || defaultHeaders[k];
+	        }
+	      }
+
+	      method = method.toUpperCase();
+
+	      return new _promise2.default(function (resolve, reject) {
+
+	        var successHandler = function successHandler(data) {
+	          typeof onSuccess === 'function' && onSuccess(data);
+	          resolve(data);
+	        };
+
+	        var errorHandler = function errorHandler(msg) {
+	          typeof onError === 'function' && onError(msg);
+	          reject(msg);
+	        };
+
+	        // Load jsonp
+	        if (dataType && dataType.toLowerCase() === 'jsonp') {
+	          url += (url.indexOf('?') === -1 ? '?' : '&') + _this.seriesParams(params, filter);
+	          _this.loadJsonp(url, successHandler, errorHandler, timeout);
+	        } else {
+
+	          http = Ajax.create();
+
+	          if (method === 'POST') {
+	            params = headers.ContentType === 'application/json' ? JSON.stringify(params) : _this.seriesParams(params, filter);
+	          } else {
+	            url += (url.indexOf('?') === -1 ? '?' : '&') + _this.seriesParams(params, filter);
+	            params = null;
+	          }
+
+	          http.open(method, url, true);
+	          http.setRequestHeader('Method', method.toUpperCase() + ' ' + url + ' HTTP/1.1');
+	          http.setRequestHeader('Content-type', headers.ContentType);
+
+	          http.onreadystatechange = function () {
+	            _this.onReadyStatusChange(http, dataType, successHandler, onComplete, errorHandler);
+	          };
+
+	          if (typeof onBeforeSend !== 'function' || onBeforeSend.call(http) !== false) {
+	            http.send(params);
+	          }
+	        }
+	      });
+	    }
+
+	    /**
+	     * Http Request status change listener
+	     * @param http
+	     * @param xtra
+	     * @param dataType
+	     * @param onSuccess
+	     * @param onComplete
+	     * @param onError
+	     */
+
+	  }, {
+	    key: 'onReadyStatusChange',
+	    value: function onReadyStatusChange(http, dataType, onSuccess, onComplete, onError) {
+
+	      if (http.readyState !== 4) {
+	        return;
+	      }
+
+	      if (typeof onComplete === 'function') {
+	        onComplete.call(null);
+	      }
+
+	      if (http.status === 200) {
+
+	        var responseText = http.responseText;
+
+	        // JSON
+	        if (dataType.toUpperCase() === 'JSON') {
+
+	          /*jslint evil: true*/
+	          try {
+	            var json = new Function('return ' + responseText)();
+
+	            if (json && typeof onSuccess === 'function') {
+	              onSuccess(json);
+	            }
+	          } catch (e) {}
+	        } else if (typeof onSuccess === 'function') {
+	          onSuccess(responseText);
+	        }
+	      } else {
+	        onError('Error code:' + http.status, http);
+	      }
+	    }
+
+	    /**
+	     * 拼接参数
+	     * @param {Object} params
+	     * @returns {string}
+	     */
+
+	  }, {
+	    key: 'seriesParams',
+	    value: function seriesParams(params, filter) {
+	      var tmp = [];
+	      var j = undefined;
+
+	      if (params) {
+	        for (var i in params) {
+	          j = params[i];
+	          tmp.push(i + '=' + (typeof filter === 'function' ? filter.call(null, j) : escape(j)));
+	        }
+	      }
+
+	      return tmp.join('&');
+	    }
+
+	    /**
+	     * request use jsonp
+	     * @param url
+	     * @param onSuccess
+	     */
+
+	  }, {
+	    key: 'loadJsonp',
+	    value: function loadJsonp(url, onSuccess, onError, timeout) {
+	      var cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
+	          script = document.createElement('script');
+
+	      url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
+
+	      window[cbHandler] = function (data) {
+	        if (typeof onSuccess === 'function') {
+	          onSuccess(data);
+	        }
+	        delete window[cbHandler];
+	        document.head.removeChild(script);
+	      };
+
+	      if (timeout > 0) {
+	        setTimeout(function () {
+	          if (window[cbHandler]) {
+	            typeof onError === 'function' && onError();
+	          }
+	        }, timeout);
+	      }
+
+	      document.head.appendChild(script);
+	      script.src = url;
+	    }
+
+	    /**
+	     *
+	     * @method
+	     * @member fetch
+	     */
+
+	  }, {
+	    key: 'fetch',
+	    value: function fetch(url, data, callback, type) {
+	      if (this.isFunction(data)) {
+	        type = type || callback;
+	        callback = data;
+	        data = undefined;
+	      }
+
+	      return this.http({
+	        url: url,
+	        method: 'GET',
+	        dataType: type,
+	        data: data,
+	        success: callback
+	      });
+	    }
+
+	    /**
+	     * @method
+	     * @member post
+	     */
+
+	  }, {
+	    key: 'post',
+	    value: function post(url, data, callback, type) {
+
+	      if (this.isFunction(data)) {
+	        type = type || callback;
+	        callback = data;
+	        data = undefined;
+	      }
+
+	      return this.http({
+	        url: url,
+	        method: 'POST',
+	        dataType: type,
+	        data: data,
+	        success: callback
+	      });
+	    }
+
+	    /**
+	     * Creates XMLHttpRequest
+	     * @static
+	     * @member create
+	     * @return {XMLHttpRequest}
+	     */
+
+	  }], [{
+	    key: 'create',
+	    value: function create() {
+	      var http;
+
+	      try {
+	        http = new XMLHttpRequest();
+	      } catch (e) {
+	        try {
+	          http = new ActiveXObject('Msxml2.XMLHTTP');
+	        } catch (f) {
+	          try {
+	            http = new ActiveXObject('Microsoft.XMLHTTP');
+	          } catch (g) {
+	            console.log(g);
+	          }
+	        }
+	      }
+
+	      return http;
+	    }
+	  }]);
+
+	  return Ajax;
+	}();
+
+	exports.default = Ajax;
 
 /***/ },
 /* 8 */
@@ -2419,7 +2439,7 @@
 	  value: true
 	});
 
-	var _ajax = __webpack_require__(4);
+	var _ajax = __webpack_require__(7);
 
 	var _ajax2 = _interopRequireDefault(_ajax);
 
@@ -2427,7 +2447,7 @@
 
 	var _uri2 = _interopRequireDefault(_uri);
 
-	var _promise = __webpack_require__(5);
+	var _promise = __webpack_require__(3);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -2447,7 +2467,7 @@
 
 	var _apis2 = _interopRequireDefault(_apis);
 
-	var _marketing = __webpack_require__(3);
+	var _marketing = __webpack_require__(6);
 
 	var _marketing2 = _interopRequireDefault(_marketing);
 
