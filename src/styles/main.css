@@ -18,6 +18,10 @@ mw-block {
   position: relative;
 }
 
+mw-block img{
+  max-width: 100%;
+}
+
 .mw-loading {
   display: block;
   position: absolute;
