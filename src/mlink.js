@@ -17,6 +17,25 @@ export default class Mlink {
     this.cache = {};
   }
 
+  /**
+   * 场景还原方法
+   * @param callback
+   * @param onError
+   * @returns {PromisePolyfill}
+   */
+  static deferreRedirect(callback, onError) {
+    return new Promise(()=>{
+      this.getDeferrerInfo().then((result)=>{
+        if (typeof callback === 'function') {
+          callback(result);
+        }
+      }, ()=>{
+        if (typeof onError === 'function') {
+          onError(result);
+        }
+      });
+    });
+  }
 
   /**
    * 拼接成真正的url

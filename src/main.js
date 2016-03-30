@@ -2,6 +2,7 @@ import common from './common';
 import config from './config';
 import Marketing from './marketing';
 import Render from './render';
+import Mlink from './mlink';
 import Profile from './profile';
 import device from './device';
 
@@ -45,7 +46,6 @@ class Mwsdk {
     }
   }
 
-
   /**
    * 公开接口
    * @param phoneNumber
@@ -59,6 +59,15 @@ class Mwsdk {
   setUserProfile (userProfile) { Profile.setUserProfile(userProfile); }
   getUserProfile () { return Profile.getUserProfile(); }
 
+  /**
+   * 第一次安装App时执行,场景还原
+   * @param callback(mlinkAndParams)
+   * @param onError
+   * @returns {Promise} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
+   */
+  deferrerRoute(callback, onError) {
+    return Mlink.deferreRedirect(callback, onError);
+  }
 
   /**
    * @member mw.sdk.onReady
