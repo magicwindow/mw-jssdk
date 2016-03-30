@@ -118,12 +118,12 @@ export default class Common {
    * @param p1
      */
   static mix(obj, obj2) {
-    if (!p) {
+    if (!obj) {
       return;
     }
 
-    if (!p1 && p) {
-      return p;
+    if (!obj1 && obj) {
+      return obj;
     }
 
     for (let k in obj) {
