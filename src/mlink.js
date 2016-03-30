@@ -23,7 +23,7 @@ export default class Mlink {
    * @param onError
    * @returns {PromisePolyfill}
    */
-  static deferreRedirect(callback, onError) {
+   deferrerRedirect(callback, onError) {
     return new Promise(()=>{
       this.getDeferrerInfo().then((result)=>{
         if (typeof callback === 'function') {

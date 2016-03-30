@@ -66,7 +66,7 @@ class Mwsdk {
    * @returns {Promise} 返回Promise对象, 若你可以使用Promise处理结果,也可以使用回调方法callback和onError来跳转;
    */
   router(callback, onError) {
-    return Mlink.deferreRedirect(callback, onError);
+    return new Mlink().deferrerRedirect(callback, onError);
   }
 
   /**

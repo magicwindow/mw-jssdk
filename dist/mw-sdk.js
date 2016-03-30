@@ -174,7 +174,7 @@
 	  }, {
 	    key: 'router',
 	    value: function router(callback, onError) {
-	      return _mlink2.default.deferreRedirect(callback, onError);
+	      return new _mlink2.default().deferrerRedirect(callback, onError);
 	    }
 
 	    /**
@@ -2458,7 +2458,22 @@
 	   */
 
 	  _createClass(Mlink, [{
-	    key: 'getRealUrl',
+	    key: 'deferrerRedirect',
+	    value: function deferrerRedirect(callback, onError) {
+	      var _this = this;
+
+	      return new _promise2.default(function () {
+	        _this.getDeferrerInfo().then(function (result) {
+	          if (typeof callback === 'function') {
+	            callback(result);
+	          }
+	        }, function () {
+	          if (typeof onError === 'function') {
+	            onError(result);
+	          }
+	        });
+	      });
+	    }
 
 	    /**
 	     * 拼接成真正的url
@@ -2467,6 +2482,9 @@
 	     * @param params        JSONObject 动态参数
 	     * @return String
 	     */
+
+	  }, {
+	    key: 'getRealUrl',
 	    value: function getRealUrl(url, params, defaultParams) {
 
 	      if (!url) {
@@ -2567,7 +2585,7 @@
 	  }, {
 	    key: 'openDownloadUrl',
 	    value: function openDownloadUrl(failUrl) {
-	      var _this = this;
+	      var _this2 = this;
 
 	      setTimeout(function () {
 	        var hidden;
@@ -2583,7 +2601,7 @@
 	          hidden = false;
 	        }
 
-	        _this.sendDplEvent(failUrl);
+	        _this2.sendDplEvent(failUrl);
 
 	        if (hidden === false) {
 	          window.location.href = failUrl;
@@ -2601,11 +2619,11 @@
 	  }, {
 	    key: 'redirect',
 	    value: function redirect(mlinkUrl, params) {
-	      var _this2 = this;
+	      var _this3 = this;
 
 	      this.loadDefaultParams().then(function (defaultParams) {
 
-	        var realUrl = _this2.getRealUrl(mlinkUrl, params, defaultParams);
+	        var realUrl = _this3.getRealUrl(mlinkUrl, params, defaultParams);
 
 	        // 微信
 	        if (_device2.default.isWeixin()) {
@@ -2614,7 +2632,7 @@
 	          if (/^https?:\/\//.test(realUrl)) {
 	            window.location.href = realUrl;
 	          } else {
-	            _this2.showWeixinDownloadModal();
+	            _this3.showWeixinDownloadModal();
 	          }
 	        } else {
 	          window.location.href = realUrl;
@@ -2805,23 +2823,6 @@
 	        dataType: 'json',
 	        ContentType: 'application/json',
 	        params: params
-	      });
-	    }
-	  }], [{
-	    key: 'deferreRedirect',
-	    value: function deferreRedirect(callback, onError) {
-	      var _this3 = this;
-
-	      return new _promise2.default(function () {
-	        _this3.getDeferrerInfo().then(function (result) {
-	          if (typeof callback === 'function') {
-	            callback(result);
-	          }
-	        }, function () {
-	          if (typeof onError === 'function') {
-	            onError(result);
-	          }
-	        });
 	      });
 	    }
 	  }]);
