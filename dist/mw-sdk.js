@@ -399,7 +399,7 @@
 	        return;
 	      }
 
-	      if (!obj1 && obj) {
+	      if (!obj2 && obj) {
 	        return obj;
 	      }
 
