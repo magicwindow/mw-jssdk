@@ -128,7 +128,8 @@ export default class Render {
           let params = Common.parseJson(mwBlock.getAttribute('data-mlink-params'));
           mlink.redirect(url, params);
         } else {
-          window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
+          this.openMwBlockDialog(url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
+          //window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
         }
       });
     }
