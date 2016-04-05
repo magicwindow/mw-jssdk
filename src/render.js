@@ -135,6 +135,21 @@ export default class Render {
   }
 
   /**
+   * 以modal方式打开魔窗位
+   * @param mwBlock
+     */
+  openMwBlockDialog(url) {
+    let dialog = document.createElement('div');
+    let iframe = document.createElement('iframe');
+
+    dialog.classList.add('mw-block-dialog');
+    dialog.appendChild(iframe);
+    document.body.appendChild(dialog);
+
+    iframe.src = url;
+  }
+
+  /**
    * 点击魔窗位时,在魔窗位上显示Loading效果
    * @param mwBlock
      */

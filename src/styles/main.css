@@ -54,6 +54,21 @@ mw-block img{
   animation: mw-kfr-loading 0.8s linear infinite;
 }
 
+.mw-block-dialog {
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom:0;
+  right:0;
+  background-color: #fff;
+  overflow: auto;
+}
+
+.mw-block-dialog iframe {
+  height: 100%;
+  width: 100%;
+}
+
 /*下载链接*/
 #mw-download-tips {
   display: none;
