@@ -140,6 +140,7 @@ export default class Render {
    * @param mwBlock
      */
   openMwBlockDialog(url) {
+    debugger;
     let dialog = document.createElement('div');
     let iframe = document.createElement('iframe');
 
