@@ -2420,8 +2420,10 @@
 
 	      dialog.style.top = top + 'px';
 	      dialog.style.left = left + 'px';
-	      dialog.style.right = bdWidth - mwBlock.offsetWidth - left + 'px';
-	      dialog.style.bottom = bdHeight - mwBlock.offsetHeight - top + 'px';
+	      dialog.style.right = bdWidth - 48 - left + 'px';
+	      dialog.style.bottom = bdHeight - 48 - top + 'px';
+	      //dialog.style.right = (bdWidth - mwBlock.offsetWidth - left) + 'px';
+	      //dialog.style.bottom = (bdHeight - mwBlock.offsetHeight - top) + 'px';
 
 	      dialog.classList.add('mw-block-dialog');
 	      dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
