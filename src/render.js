@@ -150,7 +150,7 @@ export default class Render {
       '<iframe src="about:blank" frameborder="0"></iframe>';
     iframe = dialog.getElementsByTagName('iframe')[0];
     btnClose = dialog.getElementsByTagName('a')[0];
-    btnClose.addElListener('click', function(event) {
+    btnClose.addEventListener('click', function(event) {
       dialog.parentNode.removeChild(dialog);
       btnClose = iframe = dialog = null;
     });
