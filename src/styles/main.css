@@ -61,6 +61,7 @@ mw-block img{
   height: auto;
   width: auto;
   z-index: 1;
+  padding: 10px;
 }
 
 .mw-block-dialog {
@@ -69,7 +70,6 @@ mw-block img{
   overflow: auto;
   z-index: 10000000;
   transition: 0.5s;
-  border: 5px solid rgba(255, 255, 255, 1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
@@ -80,7 +80,6 @@ mw-block img{
   bottom:0 !important;
   right:0 !important;
   background-color: rgba(255, 255, 255, 1);
-  border: 0px solid rgba(255, 255, 255, 0);
   border-radius: 0px;
 }
 
@@ -106,8 +105,10 @@ mw-block img{
   position: absolute;
   background-color: #fff;
   height: 2px;
-  width: 80%;
+  width: 60%;
   transform: rotate(45deg);
+  top: 22px;
+  right: 8px;
 }
 
 .closeMWBlock:after {
