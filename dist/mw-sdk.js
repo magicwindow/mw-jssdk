@@ -2379,10 +2379,31 @@
 	            var params = _common2.default.parseJson(mwBlock.getAttribute('data-mlink-params'));
 	            mlink.redirect(url, params);
 	          } else {
-	            window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
+	            debugger;
+	            _this2.openMwBlockDialog(url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
+	            //window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
 	          }
 	        });
 	      }
+	    }
+
+	    /**
+	     * 以modal方式打开魔窗位
+	     * @param mwBlock
+	       */
+
+	  }, {
+	    key: 'openMwBlockDialog',
+	    value: function openMwBlockDialog(url) {
+	      debugger;
+	      var dialog = document.createElement('div');
+	      var iframe = document.createElement('iframe');
+
+	      dialog.classList.add('mw-block-dialog');
+	      dialog.appendChild(iframe);
+	      document.body.appendChild(dialog);
+
+	      iframe.src = url;
 	    }
 
 	    /**
@@ -3285,7 +3306,7 @@
 
 
 	// module
-	exports.push([module.id, "@-webkit-keyframes mw-kfr-loading {\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@-moz-keyframes mw-kfr-loading {\n  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@keyframes mw-kfr-loading {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\nmw-block {\n  display: block;\n  position: relative;\n}\n\nmw-block img{\n  max-width: 100%;\n}\n\n.mw-loading {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 10;\n  background-color: rgba(0, 0, 0, 0.5);\n}\n\n.mw-loading-icon {\n  display: block;\n  height: 48px;\n  width: 48px;\n  position: absolute;\n  z-index: 100000000000;\n  top: 50%;\n  left: 50%;\n  margin: -24px auto auto -24px;\n  border: 3px solid rgba(255,255,255,0);\n  border-top: 3px solid rgba(255,255,255,0.8);\n  border-left: 2px dotted rgba(255,255,255,0.6);\n  border-bottom: 1px dashed rgba(255,255,255,0.2);\n  border-radius: 50%;\n  box-shadow: 0 0 15px rgba(0,0,0, 1);\n\n  -webkit-animation: mw-kfr-loading 0.8s linear infinite;\n  -moz-animation: mw-kfr-loading 0.8s linear infinite;\n  animation: mw-kfr-loading 0.8s linear infinite;\n}\n\n/*下载链接*/\n#mw-download-tips {\n  display: none;\n  position: fixed;\n  z-index: 9990;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(0, 0, 0, 0.8);\n  background-repeat: no-repeat;\n  background-position: top right;\n  background-size: 85% auto;\n}\n\n#mw-download-tips.android {\n  display: block;\n  background-image: url(\"http://activity.test.magicwindow.cn/common/asserts/navigator-modal/bg-android.png\");\n}\n\n#mw-download-tips.ios {\n  display: block;\n  background-image: url(\"http://activity.test.magicwindow.cn/common/asserts/navigator-modal/bg-ios.png\");\n}\n", ""]);
+	exports.push([module.id, "@-webkit-keyframes mw-kfr-loading {\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@-moz-keyframes mw-kfr-loading {\n  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@keyframes mw-kfr-loading {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\nmw-block {\n  display: block;\n  position: relative;\n}\n\nmw-block img{\n  max-width: 100%;\n}\n\n.mw-loading {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 10;\n  background-color: rgba(0, 0, 0, 0.5);\n}\n\n.mw-loading-icon {\n  display: block;\n  height: 48px;\n  width: 48px;\n  position: absolute;\n  z-index: 100000000000;\n  top: 50%;\n  left: 50%;\n  margin: -24px auto auto -24px;\n  border: 3px solid rgba(255,255,255,0);\n  border-top: 3px solid rgba(255,255,255,0.8);\n  border-left: 2px dotted rgba(255,255,255,0.6);\n  border-bottom: 1px dashed rgba(255,255,255,0.2);\n  border-radius: 50%;\n  box-shadow: 0 0 15px rgba(0,0,0, 1);\n\n  -webkit-animation: mw-kfr-loading 0.8s linear infinite;\n  -moz-animation: mw-kfr-loading 0.8s linear infinite;\n  animation: mw-kfr-loading 0.8s linear infinite;\n}\n\n.mw-block-dialog {\n  position: fixed;\n  top:0;\n  left: 0;\n  bottom:0;\n  right:0;\n  background-color: #fff;\n  overflow: auto;\n}\n\n.mw-block-dialog iframe {\n  height: 100%;\n  width: 100%;\n}\n\n/*下载链接*/\n#mw-download-tips {\n  display: none;\n  position: fixed;\n  z-index: 9990;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(0, 0, 0, 0.8);\n  background-repeat: no-repeat;\n  background-position: top right;\n  background-size: 85% auto;\n}\n\n#mw-download-tips.android {\n  display: block;\n  background-image: url(\"http://activity.test.magicwindow.cn/common/asserts/navigator-modal/bg-android.png\");\n}\n\n#mw-download-tips.ios {\n  display: block;\n  background-image: url(\"http://activity.test.magicwindow.cn/common/asserts/navigator-modal/bg-ios.png\");\n}\n", ""]);
 
 	// exports
 
