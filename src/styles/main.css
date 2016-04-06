@@ -69,7 +69,7 @@ mw-block img{
   background-color: rgba(255, 255, 255, 0);
   overflow: auto;
   z-index: 10000000;
-  transition: 0.5s;
+  transition: 0.3s;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
@@ -89,13 +89,17 @@ mw-block img{
 }
 
 .closeMWBlock {
-  display: block;
+  display: none;
   border-radius: 64px;
   width: 48px;
   height: 48px;
   background-color: #00aaff;
   position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.mw-block-dialog.show .closeMWBlock{
+  display: block;
 }
 
 .closeMWBlock:before,
