@@ -80,6 +80,7 @@ mw-block img{
 }
 
 .closeMWBlock {
+  display: block;
   border-radius: 64px;
   width: 48px;
   height: 48px;
@@ -90,6 +91,7 @@ mw-block img{
 
 .closeMWBlock:before,
 .closeMWBlock:after {
+  content: " ";
   display: block;
   position: absolute;
   background-color: #fff;
