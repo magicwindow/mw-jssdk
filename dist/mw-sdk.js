@@ -2415,13 +2415,13 @@
 	      var bdHeight = document.documentElement.clientHeight;
 	      var offset = this.getOffset(mwBlock);
 
-	      var top = offset.top + (mwBlock.offsetWidth / 2 - 24);
-	      var left = offset.left + (mwBlock.offsetHeight / 2 - 24);
+	      var top = offset.top + mwBlock.offsetWidth / 2;
+	      var left = offset.left + mwBlock.offsetHeight / 2;
 
 	      dialog.style.top = top + 'px';
 	      dialog.style.left = left + 'px';
-	      dialog.style.right = bdWidth - 48 - left + 'px';
-	      dialog.style.bottom = bdHeight - 48 - top + 'px';
+	      dialog.style.right = bdWidth - left + 'px';
+	      dialog.style.bottom = bdHeight - top + 'px';
 	      //dialog.style.right = (bdWidth - mwBlock.offsetWidth - left) + 'px';
 	      //dialog.style.bottom = (bdHeight - mwBlock.offsetHeight - top) + 'px';
 
