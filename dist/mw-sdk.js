@@ -2415,8 +2415,8 @@
 	      var bdHeight = document.documentElement.clientHeight;
 	      var offset = this.getOffset(mwBlock);
 
-	      var top = offset.top + (mwBlock.offsetWidth / 2 - 24) + 'px';
-	      var left = offset.left + (mwBlock.offsetHeight / 2 - 24) + 'px';
+	      var top = offset.top + (mwBlock.offsetWidth / 2 - 24);
+	      var left = offset.left + (mwBlock.offsetHeight / 2 - 24);
 
 	      dialog.style.top = top + 'px';
 	      dialog.style.left = left + 'px';
