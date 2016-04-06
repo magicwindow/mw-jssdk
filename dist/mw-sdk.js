@@ -2413,7 +2413,6 @@
 	    value: function openMwBlockDialog(mwBlock, url) {
 	      var _this3 = this;
 
-	      debugger;
 	      var dialog = document.createElement('div');
 	      var iframe = undefined;
 	      var btnClose = undefined;
@@ -2436,7 +2435,6 @@
 	      document.body.appendChild(dialog);
 
 	      iframe.onload = function () {
-	        alert('iframe loaded.');
 	        dialog.classList.add('show');
 	        _this3.hideLoading(mwBlock);
 	        mwBlock = null;

@@ -156,7 +156,6 @@ export default class Render {
    * @param mwBlock
      */
   openMwBlockDialog(mwBlock, url) {
-    debugger;
     let dialog = document.createElement('div');
     let iframe;
     let btnClose;
@@ -180,7 +179,6 @@ export default class Render {
     document.body.appendChild(dialog);
 
     iframe.onload = () => {
-      alert('iframe loaded.');
       dialog.classList.add('show');
       this.hideLoading(mwBlock);
       mwBlock = null;
