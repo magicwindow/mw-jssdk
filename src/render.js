@@ -138,17 +138,11 @@ export default class Render {
   }
 
   getOffset (elem) {
-    let top = 0;
-    let left = 0;
-    let parent = elem;
-
-    while (parent) {
-      top += (parent.offsetTop - parent.scrollTop);
-      left += (parent.offsetLeft - parent.scrollLeft);
-      parent = parent.offsetParent;
-    }
-
-    return {top:top, left: left};
+    let rect = elem.getBoundingClientRect();
+    return {
+      top: Math.max(0, rect.top),
+      left: Math.max(0, rect.left)
+    };
   }
 
   /**

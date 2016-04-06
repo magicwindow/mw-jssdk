@@ -65,12 +65,13 @@ mw-block img{
 
 .mw-block-dialog {
   position: fixed;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0);
   overflow: auto;
   z-index: 10000000;
   transition: 0.5s;
   border: 5px solid rgba(255, 255, 255, 1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
 }
 
 .mw-block-dialog.show {
@@ -78,7 +79,9 @@ mw-block img{
   left: 0 !important;
   bottom:0 !important;
   right:0 !important;
+  background-color: rgba(255, 255, 255, 1);
   border: 0px solid rgba(255, 255, 255, 0);
+  border-radius: 0px;
 }
 
 .mw-block-dialog iframe {
