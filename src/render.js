@@ -156,8 +156,8 @@ export default class Render {
 
     let bdWidth = document.documentElement.clientWidth;
     let bdHeight = document.documentElement.clientHeight;
-    let offset = this.getOffset(mwBlock);
     let loading = mwBlock.getElementsByClassName('mw-loading-icon')[0];
+    let offset = this.getOffset(loading);
     let loadingWidth = loading.clientWidth;
     let loadingHeight = loading.clientHeight;
 

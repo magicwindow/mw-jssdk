@@ -2413,8 +2413,8 @@
 
 	      var bdWidth = document.documentElement.clientWidth;
 	      var bdHeight = document.documentElement.clientHeight;
-	      var offset = this.getOffset(mwBlock);
 	      var loading = mwBlock.getElementsByClassName('mw-loading-icon')[0];
+	      var offset = this.getOffset(loading);
 	      var loadingWidth = loading.clientWidth;
 	      var loadingHeight = loading.clientHeight;
 
