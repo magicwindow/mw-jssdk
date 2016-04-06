@@ -144,7 +144,10 @@ export default class Render {
     debugger;
     let dialog = document.createElement('div');
     let iframe = document.createElement('iframe');
+    let toolbar = document.createElement('div');
 
+    toolbar.classList.add('mw-block-dialog-toolbar');
+    toolbar.innerHTML = '<div><a class="closeMWBlock" href="javascript:void(0);"></a></div>';
     dialog.classList.add('mw-block-dialog');
     dialog.appendChild(iframe);
     document.body.appendChild(dialog);

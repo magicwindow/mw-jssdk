@@ -54,6 +54,15 @@ mw-block img{
   animation: mw-kfr-loading 0.8s linear infinite;
 }
 
+.mw-block-dialog-toolbar {
+  position: absolute;
+  top: 0;
+  right:0;
+  height: auto;
+  width: auto;
+  z-index: 1;
+}
+
 .mw-block-dialog {
   position: fixed;
   top:0;
@@ -62,11 +71,35 @@ mw-block img{
   right:0;
   background-color: #fff;
   overflow: auto;
+  z-index: 10000000;
 }
 
 .mw-block-dialog iframe {
   height: 100%;
   width: 100%;
+}
+
+.closeMWBlock {
+  border-radius: 64px;
+  width: 48px;
+  height: 48px;
+  background-color: #00aaff;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.closeMWBlock:before,
+.closeMWBlock:after {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  height: 2px;
+  width: 80%;
+  transform: rotate(45deg);
+}
+
+.closeMWBlock:after {
+  transform: rotate(-45deg);
 }
 
 /*下载链接*/
