@@ -2380,11 +2380,26 @@
 	            mlink.redirect(url, params);
 	          } else {
 	            debugger;
-	            _this2.openMwBlockDialog(url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
+	            _this2.openMwBlockDialog(mwBlock, url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
 	            //window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
 	          }
 	        });
 	      }
+	    }
+	  }, {
+	    key: 'getOffset',
+	    value: function getOffset(elem) {
+	      var top = 0;
+	      var left = 0;
+	      var parent = elem;
+
+	      while (parent) {
+	        top += parent.offsetTop - parent.scrollTop;
+	        left += parent.offsetLeft - parent.scrollLeft;
+	        parent = elem.offsetParent;
+	      }
+
+	      return { top: top, left: left };
 	    }
 
 	    /**
@@ -2394,23 +2409,33 @@
 
 	  }, {
 	    key: 'openMwBlockDialog',
-	    value: function openMwBlockDialog(url) {
+	    value: function openMwBlockDialog(mwBlock, url) {
+	      var _this3 = this;
+
 	      debugger;
 	      var dialog = document.createElement('div');
 	      var iframe = undefined;
 	      var btnClose = undefined;
 
+	      var offset = this.getOffset(mwBlock);
+
 	      dialog.classList.add('mw-block-dialog');
 	      dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
 	      iframe = dialog.getElementsByTagName('iframe')[0];
 	      btnClose = dialog.getElementsByTagName('a')[0];
-	      btnClose.addEventListener('click', function (event) {
+	      btnClose.addEventListener('click', function () {
 	        dialog.parentNode.removeChild(dialog);
-	        btnClose = iframe = dialog = null;
+	        _this3.hideLoading(mwBlock);
+	        mwBlock = btnClose = iframe = dialog = null;
 	      });
 
 	      document.body.appendChild(dialog);
 
+	      iframe.onload = function () {
+	        alert('iframe loaded.');
+	        _this3.hideLoading(mwBlock);
+	        mwBlock = null;
+	      };
 	      iframe.src = url;
 	    }
 
@@ -2440,6 +2465,23 @@
 
 	      icon.classList.add('mw-loading-icon');
 	      loading.appendChild(icon);
+	    }
+
+	    /**
+	     * 隐藏魔窗位上的Loading图标
+	     * @param mwBLock
+	       */
+
+	  }, {
+	    key: 'hideLoading',
+	    value: function hideLoading(mwBLock) {
+	      if (mwBLock) {
+	        var loading = mwBLock.getElementsByClassName('mw-loading')[0];
+	        if (loading) {
+	          loading.parentNode.removeChild(loading);
+	          return true;
+	        }
+	      }
 	    }
 	  }]);
 

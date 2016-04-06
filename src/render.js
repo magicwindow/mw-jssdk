@@ -129,35 +129,57 @@ export default class Render {
           mlink.redirect(url, params);
         } else {
           debugger;
-          this.openMwBlockDialog(url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
+          this.openMwBlockDialog(mwBlock, url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
           //window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
         }
       });
     }
   }
 
+  getOffset (elem) {
+    let top = 0;
+    let left = 0;
+    let parent = elem;
+
+    while (parent) {
+      top += (parent.offsetTop - parent.scrollTop);
+      left += (parent.offsetLeft - parent.scrollLeft);
+      parent = elem.offsetParent;
+    }
+
+    return {top:top, left: left};
+  }
+
   /**
    * 以modal方式打开魔窗位
    * @param mwBlock
      */
-  openMwBlockDialog(url) {
+  openMwBlockDialog(mwBlock, url) {
     debugger;
     let dialog = document.createElement('div');
     let iframe;
     let btnClose;
+
+    let offset = this.getOffset(mwBlock);
 
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
       '<iframe src="about:blank" frameborder="0"></iframe>';
     iframe = dialog.getElementsByTagName('iframe')[0];
     btnClose = dialog.getElementsByTagName('a')[0];
-    btnClose.addEventListener('click', function(event) {
+    btnClose.addEventListener('click', () => {
       dialog.parentNode.removeChild(dialog);
-      btnClose = iframe = dialog = null;
+      this.hideLoading(mwBlock);
+      mwBlock = btnClose = iframe = dialog = null;
     });
 
     document.body.appendChild(dialog);
 
+    iframe.onload = () => {
+      alert('iframe loaded.');
+      this.hideLoading(mwBlock);
+      mwBlock = null;
+    };
     iframe.src = url;
   }
 
@@ -184,6 +206,20 @@ export default class Render {
 
     icon.classList.add('mw-loading-icon');
     loading.appendChild(icon);
+  }
+
+  /**
+   * 隐藏魔窗位上的Loading图标
+   * @param mwBLock
+     */
+  hideLoading (mwBLock) {
+    if (mwBLock) {
+      let loading = mwBLock.getElementsByClassName('mw-loading')[0];
+      if (loading) {
+        loading.parentNode.removeChild(loading);
+        return true;
+      }
+    }
   }
 
 }
