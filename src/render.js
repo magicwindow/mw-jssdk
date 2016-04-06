@@ -160,17 +160,18 @@ export default class Render {
     let iframe;
     let btnClose;
 
+    let bdWidth = document.documentElement.offsetWidth;
+    let bdHeight = document.documentElement.offsetHeight;
     let offset = this.getOffset(mwBlock);
 
     dialog.style.top = offset.top + 'px';
     dialog.style.left = offset.left + 'px';
-    dialog.style.right = (document.documentElement.offsetWidth - mwBlock.offsetWidth + offset.left) + 'px';
-    dialog.style.bottom = (document.documentElement.offsetHeight - mwBlock.offsetHeight + offset.top) + 'px';
+    dialog.style.right = (bdWidth - mwBlock.offsetWidth + offset.left) + 'px';
+    dialog.style.bottom = (bdHeight - mwBlock.offsetHeight + offset.top) + 'px';
 
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
       '<iframe src="about:blank" frameborder="0"></iframe>';
-    iframe = dialog.getElementsByTagName('iframe')[0];
     btnClose = dialog.getElementsByTagName('a')[0];
     btnClose.addEventListener('click', () => {
       dialog.parentNode.removeChild(dialog);
@@ -179,6 +180,9 @@ export default class Render {
 
     document.body.appendChild(dialog);
 
+    iframe = dialog.getElementsByTagName('iframe')[0];
+    iframe.style.width = bdWidth + 'px';
+    iframe.style.height = bdHeight + 'px';
     iframe.onload = () => {
       dialog.classList.add('show');
       this.hideLoading(mwBlock);
