@@ -2396,7 +2396,7 @@
 	      while (parent) {
 	        top += parent.offsetTop - parent.scrollTop;
 	        left += parent.offsetLeft - parent.scrollLeft;
-	        parent = elem.offsetParent;
+	        parent = parent.offsetParent;
 	      }
 
 	      return { top: top, left: left };
