@@ -164,8 +164,8 @@ export default class Render {
 
     dialog.style.top = offset.top + 'px';
     dialog.style.left = offset.left + 'px';
-    dialog.style.right = mwBlock.offsetWidth + offset.left + 'px';
-    dialog.style.bottom = mwBlock.offsetHeight + offset.top + 'px';
+    dialog.style.right = (document.documentElement.offsetWidth - mwBlock.offsetWidth + offset.left) + 'px';
+    dialog.style.bottom = (document.documentElement.offsetHeight - mwBlock.offsetHeight + offset.top) + 'px';
 
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
