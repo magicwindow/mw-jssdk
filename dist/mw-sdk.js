@@ -2234,6 +2234,7 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var RENDERED = 'rendered';
+	var PREFIX_DIALOG_ID = 'mw-block-dialog-';
 	var marketingData = undefined;
 	var mlink = new _mlink2.default();
 
@@ -2398,6 +2399,21 @@
 	    }
 
 	    /**
+	     * 关闭显示魔窗位的Dialog
+	     * @param id
+	       */
+
+	  }, {
+	    key: 'closeMwBlockDialog',
+	    value: function closeMwBlockDialog(id) {
+	      var dialog = document.getElementById(id);
+	      dialog.classList.remove('show');
+	      setTimeout(function () {
+	        dialog.parentNode.removeChild(dialog);
+	      }, 300);
+	    }
+
+	    /**
 	     * 以modal方式打开魔窗位
 	     * @param mwBlock
 	       */
@@ -2432,8 +2448,9 @@
 	      dialog.style.right = bdWidth - loadingWidth - left + 'px';
 	      dialog.style.bottom = bdHeight - loadingHeight - top + 'px';
 
-	      dialog.classList.add('mw-block-dialog');
-	      dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
+	      dialog.id = PREFIX_DIALOG_ID + '-' + mwBlock.id;
+	      dialog.classList.add(PREFIX_DIALOG_ID);
+	      dialog.innerHTML = '<div class=' + PREFIX_DIALOG_ID + '-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
 	      btnClose = dialog.getElementsByTagName('a')[0];
 	      btnClose.addEventListener('click', function () {
 	        dialog.parentNode.removeChild(dialog);
@@ -2461,6 +2478,8 @@
 	  }, {
 	    key: 'showLoading',
 	    value: function showLoading(mwBlock) {
+	      var _this4 = this;
+
 	      var loading = document.createElement('div');
 	      var icon = document.createElement('div');
 
@@ -2468,6 +2487,7 @@
 	      loading.addEventListener('click', function (event) {
 	        event.stopPropagation();
 
+	        _this4.closeMwBlockDialog(PREFIX_DIALOG_ID + mwBlock.id);
 	        loading.removeChild(icon);
 	        mwBlock.removeChild(loading);
 	        loading = null;

@@ -4,6 +4,7 @@ import Common from './common';
 import BannerHelper from './bannerHelper';
 
 const RENDERED = 'rendered';
+const PREFIX_DIALOG_ID = 'mw-block-dialog-';
 let marketingData;
 let mlink = new Mlink();
 
@@ -146,6 +147,18 @@ export default class Render {
   }
 
   /**
+   * 关闭显示魔窗位的Dialog
+   * @param id
+     */
+  closeMwBlockDialog (id) {
+    let dialog = document.getElementById(id);
+    dialog.classList.remove('show');
+    setTimeout(()=>{
+      dialog.parentNode.removeChild(dialog);
+    }, 300);
+  }
+
+  /**
    * 以modal方式打开魔窗位
    * @param mwBlock
      */
@@ -176,8 +189,9 @@ export default class Render {
     dialog.style.right = (bdWidth - loadingWidth - left) + 'px';
     dialog.style.bottom = (bdHeight - loadingHeight - top) + 'px';
 
-    dialog.classList.add('mw-block-dialog');
-    dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
+    dialog.id = PREFIX_DIALOG_ID + '-' + mwBlock.id;
+    dialog.classList.add(PREFIX_DIALOG_ID);
+    dialog.innerHTML = '<div class=' + PREFIX_DIALOG_ID + '-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
       '<iframe src="about:blank" frameborder="0"></iframe>';
     btnClose = dialog.getElementsByTagName('a')[0];
     btnClose.addEventListener('click', () => {
@@ -210,6 +224,7 @@ export default class Render {
     loading.addEventListener('click', (event)=>{
       event.stopPropagation();
 
+      this.closeMwBlockDialog(PREFIX_DIALOG_ID + mwBlock.id);
       loading.removeChild(icon);
       mwBlock.removeChild(loading);
       loading = null;
