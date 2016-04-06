@@ -162,10 +162,10 @@ export default class Render {
 
     let offset = this.getOffset(mwBlock);
 
-    dialog.style.top = offset.top;
-    dialog.style.left = offset.left;
-    dialog.style.width = mwBlock.offsetWidth;
-    dialog.style.height = mwBlock.offsetHeight;
+    dialog.style.top = offset.top + 'px';
+    dialog.style.left = offset.left + 'px';
+    dialog.style.width = mwBlock.offsetWidth + 'px';
+    dialog.style.height = mwBlock.offsetHeight + 'px';
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
       '<iframe src="about:blank" frameborder="0"></iframe>';
