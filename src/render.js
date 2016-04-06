@@ -154,14 +154,14 @@ export default class Render {
     let iframe;
     let btnClose;
 
-    let bdWidth = document.documentElement.offsetWidth;
-    let bdHeight = document.documentElement.offsetHeight;
+    let bdWidth = document.documentElement.clientWidth;
+    let bdHeight = document.documentElement.clientHeight;
     let offset = this.getOffset(mwBlock);
 
     dialog.style.top = offset.top + 'px';
     dialog.style.left = offset.left + 'px';
-    dialog.style.right = (bdWidth - mwBlock.offsetWidth + offset.left) + 'px';
-    dialog.style.bottom = (bdHeight - mwBlock.offsetHeight + offset.top) + 'px';
+    dialog.style.right = (bdWidth - mwBlock.offsetWidth - offset.left) + 'px';
+    dialog.style.bottom = (bdHeight - mwBlock.offsetHeight - offset.top) + 'px';
 
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
