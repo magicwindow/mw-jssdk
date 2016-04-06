@@ -128,9 +128,10 @@ export default class Render {
           let params = Common.parseJson(mwBlock.getAttribute('data-mlink-params'));
           mlink.redirect(url, params);
         } else {
-          debugger;
-          this.openMwBlockDialog(mwBlock, url.replace(/([&\?])?mw=1[&$]?/g, '$1'));
-          //window.location = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
+          url = url.replace(/([&\?])?mw=1[&$]?/g, '$1');
+
+          this.openMwBlockDialog(mwBlock, url);
+          //window.location = url;
         }
       });
     }
@@ -162,6 +163,10 @@ export default class Render {
 
     let offset = this.getOffset(mwBlock);
 
+    dialog.style.top = offset.top;
+    dialog.style.left = offset.left;
+    dialog.style.width = mwBlock.offsetWidth;
+    dialog.style.height = mwBlock.offsetHeight;
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
       '<iframe src="about:blank" frameborder="0"></iframe>';
@@ -169,7 +174,6 @@ export default class Render {
     btnClose = dialog.getElementsByTagName('a')[0];
     btnClose.addEventListener('click', () => {
       dialog.parentNode.removeChild(dialog);
-      this.hideLoading(mwBlock);
       mwBlock = btnClose = iframe = dialog = null;
     });
 
@@ -177,6 +181,7 @@ export default class Render {
 
     iframe.onload = () => {
       alert('iframe loaded.');
+      dialog.classList.add('show');
       this.hideLoading(mwBlock);
       mwBlock = null;
     };

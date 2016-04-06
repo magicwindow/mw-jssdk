@@ -65,13 +65,19 @@ mw-block img{
 
 .mw-block-dialog {
   position: fixed;
-  top:0;
-  left: 0;
-  bottom:0;
-  right:0;
   background-color: #fff;
   overflow: auto;
   z-index: 10000000;
+  transition: 0.3s;
+}
+
+.mw-block-dialog.show {
+  height: inherit !important;
+  width: auto !important;
+  top:0 !important;
+  left: 0 !important;
+  bottom:0 !important;
+  right:0 !important;
 }
 
 .mw-block-dialog iframe {
