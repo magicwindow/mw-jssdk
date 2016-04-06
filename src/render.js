@@ -158,8 +158,8 @@ export default class Render {
     let bdHeight = document.documentElement.clientHeight;
     let offset = this.getOffset(mwBlock);
 
-    let top = offset.top + (mwBlock.offsetWidth/2);
-    let left = offset.left + (mwBlock.offsetHeight/2);
+    let top = offset.top + (mwBlock.clientWidth/2);
+    let left = offset.left + (mwBlock.clientHeight/2);
 
     dialog.style.top = top + 'px';
     dialog.style.left = left + 'px';
