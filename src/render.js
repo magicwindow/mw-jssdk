@@ -143,13 +143,18 @@ export default class Render {
   openMwBlockDialog(url) {
     debugger;
     let dialog = document.createElement('div');
-    let iframe = document.createElement('iframe');
-    let toolbar = document.createElement('div');
+    let iframe;
+    let btnClose;
 
-    toolbar.classList.add('mw-block-dialog-toolbar');
-    toolbar.innerHTML = '<div><a class="closeMWBlock" href="javascript:void(0);"></a></div>';
-    dialog.classList.add('mw-block-dialog');
-    dialog.appendChild(iframe);
+    dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
+      '<iframe src="about:blank" frameborder="0"></iframe>';
+    iframe = dialog.getElementsByTagName('iframe')[0];
+    btnClose = dialog.getElementsByTagName('a')[0];
+    btnClose.addElListener('click', function(event) {
+      dialog.parentNode.removeChild(dialog);
+      btnClose = iframe = dialog = null;
+    });
+
     document.body.appendChild(dialog);
 
     iframe.src = url;

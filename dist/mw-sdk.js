@@ -2397,13 +2397,17 @@
 	    value: function openMwBlockDialog(url) {
 	      debugger;
 	      var dialog = document.createElement('div');
-	      var iframe = document.createElement('iframe');
-	      var toolbar = document.createElement('div');
+	      var iframe = undefined;
+	      var btnClose = undefined;
 
-	      toolbar.classList.add('mw-block-dialog-toolbar');
-	      toolbar.innerHTML = '<div><a class="closeMWBlock" href="javascript:void(0);"></a></div>';
-	      dialog.classList.add('mw-block-dialog');
-	      dialog.appendChild(iframe);
+	      dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
+	      iframe = dialog.getElementsByTagName('iframe')[0];
+	      btnClose = dialog.getElementsByTagName('a')[0];
+	      btnClose.addElListener('click', function (event) {
+	        dialog.parentNode.removeChild(dialog);
+	        btnClose = iframe = dialog = null;
+	      });
+
 	      document.body.appendChild(dialog);
 
 	      iframe.src = url;
