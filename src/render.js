@@ -146,6 +146,7 @@ export default class Render {
     let iframe;
     let btnClose;
 
+    dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
       '<iframe src="about:blank" frameborder="0"></iframe>';
     iframe = dialog.getElementsByTagName('iframe')[0];
