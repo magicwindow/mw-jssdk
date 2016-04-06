@@ -2414,16 +2414,23 @@
 	      var bdWidth = document.documentElement.clientWidth;
 	      var bdHeight = document.documentElement.clientHeight;
 	      var offset = this.getOffset(mwBlock);
+	      var loading = mwBlock.getElementsByClassName('.mw-loading')[0];
+	      var loadingWidth = loading.clientWidth;
+	      var loadingHeight = loading.clientHeight;
 
-	      var top = offset.top + mwBlock.clientWidth / 2;
-	      var left = offset.left + mwBlock.clientHeight / 2;
+	      var top = offset.top;
+	      var left = offset.left;
 
-	      dialog.style.top = top + 'px';
-	      dialog.style.left = left + 'px';
-	      dialog.style.right = bdWidth - left + 'px';
-	      dialog.style.bottom = bdHeight - top + 'px';
-	      //dialog.style.right = (bdWidth - mwBlock.offsetWidth - left) + 'px';
-	      //dialog.style.bottom = (bdHeight - mwBlock.offsetHeight - top) + 'px';
+	      //let top = offset.top + (mwBlock.clientWidth/2);
+	      //let left = offset.left + (mwBlock.clientHeight/2);
+	      //dialog.style.top = top + 'px';
+	      //dialog.style.left = left + 'px';
+	      //dialog.style.right = (bdWidth - left) + 'px';
+	      //dialog.style.bottom = (bdHeight - top) + 'px';
+	      dialog.style.top = offset.top + 'px';
+	      dialog.style.left = offset.left + 'px';
+	      dialog.style.right = bdWidth - loadingWidth - left + 'px';
+	      dialog.style.bottom = bdHeight - loadingHeight - top + 'px';
 
 	      dialog.classList.add('mw-block-dialog');
 	      dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';

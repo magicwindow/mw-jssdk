@@ -157,16 +157,24 @@ export default class Render {
     let bdWidth = document.documentElement.clientWidth;
     let bdHeight = document.documentElement.clientHeight;
     let offset = this.getOffset(mwBlock);
+    let loading = mwBlock.getElementsByClassName('.mw-loading')[0];
+    let loadingWidth = loading.clientWidth;
+    let loadingHeight = loading.clientHeight;
 
-    let top = offset.top + (mwBlock.clientWidth/2);
-    let left = offset.left + (mwBlock.clientHeight/2);
 
-    dialog.style.top = top + 'px';
-    dialog.style.left = left + 'px';
-    dialog.style.right = (bdWidth - left) + 'px';
-    dialog.style.bottom = (bdHeight - top) + 'px';
-    //dialog.style.right = (bdWidth - mwBlock.offsetWidth - left) + 'px';
-    //dialog.style.bottom = (bdHeight - mwBlock.offsetHeight - top) + 'px';
+    let top = offset.top;
+    let left = offset.left;
+
+    //let top = offset.top + (mwBlock.clientWidth/2);
+    //let left = offset.left + (mwBlock.clientHeight/2);
+    //dialog.style.top = top + 'px';
+    //dialog.style.left = left + 'px';
+    //dialog.style.right = (bdWidth - left) + 'px';
+    //dialog.style.bottom = (bdHeight - top) + 'px';
+    dialog.style.top = offset.top + 'px';
+    dialog.style.left = offset.left + 'px';
+    dialog.style.right = (bdWidth - loadingWidth - left) + 'px';
+    dialog.style.bottom = (bdHeight - loadingHeight - top) + 'px';
 
     dialog.classList.add('mw-block-dialog');
     dialog.innerHTML = '<div class="mw-block-dialog-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
