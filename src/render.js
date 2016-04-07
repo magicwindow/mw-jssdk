@@ -4,7 +4,7 @@ import Common from './common';
 import BannerHelper from './bannerHelper';
 
 const RENDERED = 'rendered';
-const PREFIX_DIALOG_ID = 'mw-block-dialog-';
+const PREFIX_DIALOG_ID = 'mw-block-dialog';
 let marketingData;
 let mlink = new Mlink();
 

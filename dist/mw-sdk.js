@@ -2234,7 +2234,7 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var RENDERED = 'rendered';
-	var PREFIX_DIALOG_ID = 'mw-block-dialog-';
+	var PREFIX_DIALOG_ID = 'mw-block-dialog';
 	var marketingData = undefined;
 	var mlink = new _mlink2.default();
 
