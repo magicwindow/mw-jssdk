@@ -2450,7 +2450,7 @@
 
 	      dialog.id = PREFIX_DIALOG_ID + '-' + mwBlock.id;
 	      dialog.classList.add(PREFIX_DIALOG_ID);
-	      dialog.innerHTML = '<div class=' + PREFIX_DIALOG_ID + '-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
+	      dialog.innerHTML = '<div class="' + PREFIX_DIALOG_ID + '-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<iframe src="about:blank" frameborder="0"></iframe>';
 	      btnClose = dialog.getElementsByTagName('a')[0];
 	      btnClose.addEventListener('click', function () {
 	        dialog.parentNode.removeChild(dialog);
