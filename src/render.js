@@ -202,8 +202,8 @@ export default class Render {
     document.body.appendChild(dialog);
 
     iframe = dialog.getElementsByTagName('iframe')[0];
-    iframe.style.width = bdWidth + 'px';
-    iframe.style.height = bdHeight + 'px';
+    //iframe.style.width = bdWidth + 'px';
+    //iframe.style.height = bdHeight + 'px';
     iframe.onload = () => {
       dialog.classList.add('show');
       this.hideLoading(mwBlock);
