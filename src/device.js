@@ -23,6 +23,7 @@ class Device {
     this.constructor.serial = '';
     this.constructor.screen = window.screen.width + 'x'+ window.screen.height;
     this.constructor.deviceId = '';
+    this.constructor.fingerprint = '';
   }
 
   set sdkVersion(value) { if(value) { this.constructor.sdkVersion = value; }}
@@ -58,14 +59,21 @@ class Device {
   set screen(value) { if(value) { this.constructor.screen = value; }}
   get screen()      { return this.constructor.screen; }
 
+  set deviceId(value) { if(value) { this.constructor.deviceId = value; }}
+  get deviceId()      { return this.constructor.deviceId; }
+
+  set fingerprint(value) { if(value) { this.constructor.fingerprint = value; }}
+  get fingerprint()      { return this.constructor.fingerprint; }
+
   /**
    * 读取MagicWindow信息
    * @returns {{}}
      */
-  getMWMetaData() {
+  getMWMetaData(userAgent) {
+    userAgent = userAgent || UA;
     // (MagicWindow;d/%@;fp/%@;av/%@;sv/%@;uid/%@;m/%@;c/%@;b/Apple;mf/Apple)
-    let mwUA = UA.match(/\(MagicWindow\s*([\d\.]*)*;([^\)]*)*\)/);
-    let metaStr = mwUA ? mwUA[2] : '';
+    let mwUA = userAgent.match(/\(MagicWindow\s*([\w]*)*\s*([\d\.]*)*;([^\)]*)*\)/);
+    let metaStr = mwUA ? mwUA[3] : '';
     let metaArr = metaStr.split(';');
     let meta = {};
 

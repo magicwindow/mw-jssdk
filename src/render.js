@@ -2,6 +2,7 @@ import Mlink from './mlink';
 import config from './config';
 import Common from './common';
 import BannerHelper from './bannerHelper';
+import Messager from './messager';
 
 const RENDERED = 'rendered';
 const PREFIX_DIALOG_ID = 'mw-block-dialog';
@@ -173,17 +174,9 @@ export default class Render {
     let offset = this.getOffset(loading);
     let loadingWidth = loading.clientWidth;
     let loadingHeight = loading.clientHeight;
-
-
     let top = offset.top;
     let left = offset.left;
 
-    //let top = offset.top + (mwBlock.clientWidth/2);
-    //let left = offset.left + (mwBlock.clientHeight/2);
-    //dialog.style.top = top + 'px';
-    //dialog.style.left = left + 'px';
-    //dialog.style.right = (bdWidth - left) + 'px';
-    //dialog.style.bottom = (bdHeight - top) + 'px';
     dialog.style.top = offset.top + 'px';
     dialog.style.left = offset.left + 'px';
     dialog.style.right = (bdWidth - loadingWidth - left) + 'px';
@@ -202,11 +195,17 @@ export default class Render {
     document.body.appendChild(dialog);
 
     iframe = dialog.getElementsByTagName('iframe')[0];
-    //iframe.style.width = bdWidth + 'px';
-    //iframe.style.height = bdHeight + 'px';
+    iframe.contentWindow.opener = mwsdk;
     iframe.onload = () => {
+
       dialog.classList.add('show');
       this.hideLoading(mwBlock);
+      try {
+        let url = typeof window.URL === 'function' ? new URL(url) : {};
+        new Messager().postUA(url.origin);
+      } catch(e){
+
+      }
       mwBlock = null;
     };
     iframe.src = url;

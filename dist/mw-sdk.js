@@ -1682,6 +1682,7 @@
 	    this.constructor.serial = '';
 	    this.constructor.screen = window.screen.width + 'x' + window.screen.height;
 	    this.constructor.deviceId = '';
+	    this.constructor.fingerprint = '';
 	  }
 
 	  _createClass(Device, [{
@@ -1691,10 +1692,11 @@
 	     * 读取MagicWindow信息
 	     * @returns {{}}
 	       */
-	    value: function getMWMetaData() {
+	    value: function getMWMetaData(userAgent) {
+	      userAgent = userAgent || UA;
 	      // (MagicWindow;d/%@;fp/%@;av/%@;sv/%@;uid/%@;m/%@;c/%@;b/Apple;mf/Apple)
-	      var mwUA = UA.match(/\(MagicWindow\s*([\d\.]*)*;([^\)]*)*\)/);
-	      var metaStr = mwUA ? mwUA[2] : '';
+	      var mwUA = userAgent.match(/\(MagicWindow\s*([\w]*)*\s*([\d\.]*)*;([^\)]*)*\)/);
+	      var metaStr = mwUA ? mwUA[3] : '';
 	      var metaArr = metaStr.split(';');
 	      var meta = {};
 
@@ -1943,6 +1945,26 @@
 	    },
 	    get: function get() {
 	      return this.constructor.screen;
+	    }
+	  }, {
+	    key: 'deviceId',
+	    set: function set(value) {
+	      if (value) {
+	        this.constructor.deviceId = value;
+	      }
+	    },
+	    get: function get() {
+	      return this.constructor.deviceId;
+	    }
+	  }, {
+	    key: 'fingerprint',
+	    set: function set(value) {
+	      if (value) {
+	        this.constructor.fingerprint = value;
+	      }
+	    },
+	    get: function get() {
+	      return this.constructor.fingerprint;
 	    }
 	  }]);
 
@@ -2229,6 +2251,10 @@
 
 	var _bannerHelper2 = _interopRequireDefault(_bannerHelper);
 
+	var _messager = __webpack_require__(21);
+
+	var _messager2 = _interopRequireDefault(_messager);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2433,16 +2459,9 @@
 	      var offset = this.getOffset(loading);
 	      var loadingWidth = loading.clientWidth;
 	      var loadingHeight = loading.clientHeight;
-
 	      var top = offset.top;
 	      var left = offset.left;
 
-	      //let top = offset.top + (mwBlock.clientWidth/2);
-	      //let left = offset.left + (mwBlock.clientHeight/2);
-	      //dialog.style.top = top + 'px';
-	      //dialog.style.left = left + 'px';
-	      //dialog.style.right = (bdWidth - left) + 'px';
-	      //dialog.style.bottom = (bdHeight - top) + 'px';
 	      dialog.style.top = offset.top + 'px';
 	      dialog.style.left = offset.left + 'px';
 	      dialog.style.right = bdWidth - loadingWidth - left + 'px';
@@ -2460,11 +2479,15 @@
 	      document.body.appendChild(dialog);
 
 	      iframe = dialog.getElementsByTagName('iframe')[0];
-	      //iframe.style.width = bdWidth + 'px';
-	      //iframe.style.height = bdHeight + 'px';
+	      iframe.contentWindow.opener = mwsdk;
 	      iframe.onload = function () {
+
 	        dialog.classList.add('show');
 	        _this3.hideLoading(mwBlock);
+	        try {
+	          var _url = typeof window.URL === 'function' ? new URL(_url) : {};
+	          new _messager2.default().postUA(_url.origin);
+	        } catch (e) {}
 	        mwBlock = null;
 	      };
 	      iframe.src = url;
@@ -3704,6 +3727,115 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _device = __webpack_require__(8);
+
+	var _device2 = _interopRequireDefault(_device);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var DOMAINS = ['magicwindow.cn', 'mlinks.cc'];
+
+	var MSG_CHANNEL = ['getUserAgent'];
+
+	var Messager = function () {
+	  function Messager(config) {
+	    var _this = this;
+
+	    _classCallCheck(this, Messager);
+
+	    window.addEventListener('message', function (event) {
+
+	      var origin = event.origin;
+
+	      DOMAINS.forEach(function (domain) {
+
+	        if (origin.indexOf(domain) !== -1) {
+	          _this.receive(event.data, domain);
+	        }
+	      });
+	    });
+
+	    this.channels = {
+	      getUserAgent: function getUserAgent() {
+	        var ua = '(MagicWindow JSSDK 2.0.3;$META)';
+	        var meta = [];
+	        // d/%@;fp/%@;av/%@;sv/%@;uid/%@;m/%@;c/%@;b/Apple;mf/Apple
+	        meta.push(['d', _device2.default.deviceId].join('/'));
+	        meta.push(['fp', _device2.default.fingerprint].join('/'));
+	        meta.push(['av', _device2.default.appVersion].join('/'));
+	        meta.push(['sv', _device2.default.sdkVersion].join('/'));
+	        meta.push(['uid', _device2.default.uuid].join('/'));
+	        meta.push(['m', _device2.default.model].join('/'));
+	        meta.push(['c', 0].join('/'));
+	        meta.push(['b', 0].join('/'));
+	        meta.push(['mf', _device2.default.manufacturer].join('/'));
+
+	        ua.replace('$META', meta.join(';'));
+	        return window.navigator.userAgent + ua;
+	      }
+	    };
+	  }
+
+	  _createClass(Messager, [{
+	    key: 'receive',
+	    value: function receive(data, domain) {
+	      var msg = undefined;
+	      try {
+	        msg = JSON.parse(data);
+	      } catch (e) {
+	        msg = {};
+	      }
+
+	      switch (msg.channel) {
+	        case 'getUserAgent':
+	          this.post('getUserAgent', this.channels[msg.channel](), domain);
+	          break;
+
+	      }
+	    }
+
+	    /**
+	     * 向打开的
+	     * @param domain
+	       */
+
+	  }, {
+	    key: 'postUA',
+	    value: function postUA(domain) {
+	      var channel = 'getUserAgent';
+	      this.post(channel, this.channels[channel](), domain);
+	    }
+	  }, {
+	    key: 'post',
+	    value: function post(channel, data, domain) {
+	      var msg = {
+	        channel: channel,
+	        data: data
+	      };
+
+	      window.postMessage(JSON.stringify(msg), domain);
+	    }
+	  }]);
+
+	  return Messager;
+	}();
+
+	exports.default = Messager;
 
 /***/ }
 /******/ ]);
