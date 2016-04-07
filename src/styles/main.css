@@ -54,16 +54,6 @@ mw-block img{
   animation: mw-kfr-loading 0.8s linear infinite;
 }
 
-.mw-block-dialog-toolbar {
-  position: absolute;
-  top: 0;
-  right:0;
-  height: auto;
-  width: auto;
-  z-index: 1;
-  padding: 10px;
-}
-
 .mw-block-dialog {
   position: fixed;
   background-color: rgba(255, 255, 255, 0);
@@ -88,6 +78,15 @@ mw-block img{
   opacity: 1;
 }
 
+.mw-block-dialog-toolbar {
+  position: absolute;
+  top: 0;
+  right:0;
+  height: auto;
+  width: auto;
+  z-index: 1;
+  padding: 10px;
+}
 .mw-block-dialog iframe {
   height: 100%;
   width: 100%;
