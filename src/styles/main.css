@@ -69,6 +69,9 @@ mw-block img{
   background-color: rgba(255, 255, 255, 0);
   overflow: auto;
   z-index: 10000000;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
@@ -112,12 +115,18 @@ mw-block img{
   background-color: #fff;
   height: 2px;
   width: 60%;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 22px;
   right: 8px;
 }
 
 .closeMWBlock:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
