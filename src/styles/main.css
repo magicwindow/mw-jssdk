@@ -87,12 +87,18 @@ mw-block img{
   z-index: 1;
   padding: 10px;
 }
-.mw-block-dialog iframe {
+
+.mw-block-dialog-main {
   position: absolute;
-  top: 64px;
-  left: 0px;
-  right: 0;
+  top: 0;
+  right:0;
+  left: 0;
   bottom: 0;
+  overflow: auto;
+  z-index: 1;
+}
+.mw-block-dialog iframe {
+  height: 100%;
   width: 100%;
 }
 
