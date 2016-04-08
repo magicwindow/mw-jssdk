@@ -56,7 +56,7 @@ export default class Messager{
 
     switch (msg.channel) {
       case 'getUserAgent':
-            this.post('getUserAgent', this.channels[msg.channel](), domain);
+            this.post(window, 'getUserAgent', this.channels[msg.channel](), domain);
             break;
 
     }
@@ -66,12 +66,12 @@ export default class Messager{
    * 向打开的
    * @param domain
      */
-  postUA (domain) {
+  postUA (window, domain) {
     let channel = 'getUserAgent';
-    this.post(channel, this.channels[channel](), domain);
+    this.post(window, channel, this.channels[channel](), domain);
   }
 
-  post (channel, data, domain) {
+  post (window, channel, data, domain) {
     let msg = {
       channel: channel,
       data: data

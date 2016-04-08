@@ -2469,7 +2469,7 @@
 
 	      dialog.id = PREFIX_DIALOG_ID + '-' + mwBlock.id;
 	      dialog.classList.add(PREFIX_DIALOG_ID);
-	      dialog.innerHTML = '<div class="' + PREFIX_DIALOG_ID + '-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' + '<div class="' + PREFIX_DIALOG_ID + '-main"><iframe src="about:blank" frameborder="0"></iframe></div>';
+	      dialog.innerHTML = '\n      <div class="' + PREFIX_DIALOG_ID + '-toolbar">\n        <a class="closeMWBlock" href="javascript:void(0);"></a>\n       </div>\n      <div class="' + PREFIX_DIALOG_ID + '-main">\n        <iframe src="about:blank" frameborder="0"></iframe>\n      </div>';
 	      btnClose = dialog.getElementsByTagName('a')[0];
 	      btnClose.addEventListener('click', function () {
 	        dialog.parentNode.removeChild(dialog);
@@ -2485,8 +2485,8 @@
 	        dialog.classList.add('show');
 	        _this3.hideLoading(mwBlock);
 	        try {
-	          var _url = typeof window.URL === 'function' ? new URL(_url) : {};
-	          new _messager2.default().postUA(_url.origin);
+	          var myurl = typeof window.URL === 'function' ? new URL(url) : {};
+	          new _messager2.default().postUA(iframe.contentWindow, myurl.origin);
 	        } catch (e) {}
 	        mwBlock = null;
 	      };
@@ -2510,7 +2510,7 @@
 	      loading.addEventListener('click', function (event) {
 	        event.stopPropagation();
 
-	        _this4.closeMwBlockDialog(PREFIX_DIALOG_ID + mwBlock.id);
+	        _this4.closeMwBlockDialog(PREFIX_DIALOG_ID + '-' + mwBlock.id);
 	        loading.removeChild(icon);
 	        mwBlock.removeChild(loading);
 	        loading = null;
@@ -3803,7 +3803,7 @@
 
 	      switch (msg.channel) {
 	        case 'getUserAgent':
-	          this.post('getUserAgent', this.channels[msg.channel](), domain);
+	          this.post(window, 'getUserAgent', this.channels[msg.channel](), domain);
 	          break;
 
 	      }
@@ -3816,13 +3816,13 @@
 
 	  }, {
 	    key: 'postUA',
-	    value: function postUA(domain) {
+	    value: function postUA(window, domain) {
 	      var channel = 'getUserAgent';
-	      this.post(channel, this.channels[channel](), domain);
+	      this.post(window, channel, this.channels[channel](), domain);
 	    }
 	  }, {
 	    key: 'post',
-	    value: function post(channel, data, domain) {
+	    value: function post(window, channel, data, domain) {
 	      var msg = {
 	        channel: channel,
 	        data: data

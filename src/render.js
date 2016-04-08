@@ -184,8 +184,13 @@ export default class Render {
 
     dialog.id = PREFIX_DIALOG_ID + '-' + mwBlock.id;
     dialog.classList.add(PREFIX_DIALOG_ID);
-    dialog.innerHTML = '<div class="' + PREFIX_DIALOG_ID + '-toolbar"><a class="closeMWBlock" href="javascript:void(0);"> </a></div>' +
-      '<div class="'+ PREFIX_DIALOG_ID +'-main"><iframe src="about:blank" frameborder="0"></iframe></div>';
+    dialog.innerHTML = `
+      <div class="${PREFIX_DIALOG_ID}-toolbar">
+        <a class="closeMWBlock" href="javascript:void(0);"></a>
+       </div>
+      <div class="${PREFIX_DIALOG_ID}-main">
+        <iframe src="about:blank" frameborder="0"></iframe>
+      </div>`;
     btnClose = dialog.getElementsByTagName('a')[0];
     btnClose.addEventListener('click', () => {
       dialog.parentNode.removeChild(dialog);
@@ -201,8 +206,8 @@ export default class Render {
       dialog.classList.add('show');
       this.hideLoading(mwBlock);
       try {
-        let url = typeof window.URL === 'function' ? new URL(url) : {};
-        new Messager().postUA(url.origin);
+        let myurl = typeof window.URL === 'function' ? new URL(url) : {};
+        new Messager().postUA(iframe.contentWindow, myurl.origin);
       } catch(e){
 
       }
@@ -223,7 +228,7 @@ export default class Render {
     loading.addEventListener('click', (event)=>{
       event.stopPropagation();
 
-      this.closeMwBlockDialog(PREFIX_DIALOG_ID + mwBlock.id);
+      this.closeMwBlockDialog(PREFIX_DIALOG_ID + '-' + mwBlock.id);
       loading.removeChild(icon);
       mwBlock.removeChild(loading);
       loading = null;
