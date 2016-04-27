@@ -193,8 +193,11 @@ export default class Render {
       </div>`;
     btnClose = dialog.getElementsByTagName('a')[0];
     btnClose.addEventListener('click', () => {
-      dialog.parentNode.removeChild(dialog);
-      mwBlock = btnClose = iframe = dialog = null;
+      dialog.classList.remove('show');
+      setTimeout(()=>{
+        dialog.parentNode.removeChild(dialog);
+        mwBlock = btnClose = iframe = dialog = null;
+      }, 500);
     });
 
     document.body.appendChild(dialog);
