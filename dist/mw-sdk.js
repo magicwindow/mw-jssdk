@@ -46,11 +46,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _common = __webpack_require__(1);
 
@@ -76,7 +76,7 @@
 
 	var _mlink2 = _interopRequireDefault(_mlink);
 
-	var _profile = __webpack_require__(15);
+	var _profile = __webpack_require__(16);
 
 	var _profile2 = _interopRequireDefault(_profile);
 
@@ -88,7 +88,7 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	__webpack_require__(17);
+	__webpack_require__(18);
 
 	var initialized;
 	var readyQueue = [];
@@ -106,6 +106,7 @@
 	  /**
 	   * 初始化SDK
 	   */
+
 
 	  _createClass(Mwsdk, [{
 	    key: 'init',
@@ -259,11 +260,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -274,6 +275,7 @@
 
 	  _createClass(Common, null, [{
 	    key: 'isFunction',
+
 
 	    /**
 	     * 判断变量是否为Function
@@ -456,11 +458,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -474,6 +476,7 @@
 
 	  _createClass(Config, [{
 	    key: 'config',
+
 
 	    /**
 	     * @method
@@ -585,13 +588,13 @@
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate) {'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -604,7 +607,7 @@
 	// Older version of the spec had a resolver object
 	// as the arg rather than a function
 	function () {
-	  var resolve = undefined;
+	  var resolve = void 0;
 	  new NativePromise(function (r) {
 	    resolve = r;
 	  });
@@ -614,7 +617,7 @@
 	// async calls
 	var asyncSetTimer = typeof setImmediate !== 'undefined' ? setImmediate : setTimeout;
 	var asyncQueue = [];
-	var asyncTimer = undefined;
+	var asyncTimer = void 0;
 
 	var PENDING = 'pending';
 	var SEALED = 'sealed';
@@ -686,7 +689,7 @@
 	}
 
 	function handleThenable(promise, value) {
-	  var resolved = undefined;
+	  var resolved = void 0;
 
 	  try {
 	    if (promise === value) throw new TypeError('A promises callback cannot return that same promise.');
@@ -793,6 +796,7 @@
 	   * @param onRejection
 	   * @returns {*}
 	   */
+
 
 	  _createClass(PromisePolyfill, [{
 	    key: 'then',
@@ -1122,11 +1126,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _config = __webpack_require__(2);
 
@@ -1162,6 +1166,7 @@
 
 	  _createClass(Marketing, [{
 	    key: 'getParams',
+
 
 	    /**
 	     * 获取参数
@@ -1308,11 +1313,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _common = __webpack_require__(1);
 
@@ -1366,6 +1371,7 @@
 	   * @returns {Promise}
 	   */
 
+
 	  _createClass(Ajax, [{
 	    key: 'request',
 	    value: function request() {
@@ -1373,7 +1379,8 @@
 
 	      var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-	      var http = undefined,
+
+	      var http = void 0,
 	          filter = options.filter,
 	          onBeforeSend = options.beforeSend,
 	          onSuccess = options.success || options.callback,
@@ -1399,8 +1406,8 @@
 
 	      // Extend custom headers
 	      if (options.headers) {
-	        for (var k in options.headers) {
-	          headers[k] = options.headers[k] || defaultHeaders[k];
+	        for (var _k in options.headers) {
+	          headers[_k] = options.headers[_k] || defaultHeaders[_k];
 	        }
 	      }
 
@@ -1503,7 +1510,7 @@
 	    key: 'seriesParams',
 	    value: function seriesParams(params, filter) {
 	      var tmp = [];
-	      var j = undefined;
+	      var j = void 0;
 
 	      if (params) {
 	        for (var i in params) {
@@ -1638,11 +1645,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _uri = __webpack_require__(9);
 
@@ -1687,6 +1694,7 @@
 
 	  _createClass(Device, [{
 	    key: 'getMWMetaData',
+
 
 	    /**
 	     * 读取MagicWindow信息
@@ -1794,7 +1802,7 @@
 	          iosExp = /(iPad|iPhone)\s*OS\s*(\d*_\d*_?\d?)/,
 	          androidExp = /Android\s*(\d*\.?\d*\.?\d?)/,
 	          versionExp = /Version\/(\d*\.?\d*\.?\d?)/,
-	          version = undefined,
+	          version = void 0,
 	          ios = UA.match(iosExp),
 	          android = UA.match(androidExp);
 
@@ -1979,11 +1987,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _common = __webpack_require__(1);
 
@@ -2020,6 +2028,7 @@
 	   * 获取所有参数集合
 	   * @returns {Map}
 	   */
+
 
 	  _createClass(Uri, [{
 	    key: 'getParams',
@@ -2087,22 +2096,22 @@
 	    return strout;
 	  }
 
-	  var blockstart = undefined,
-	      i = undefined,
-	      j = undefined,
+	  var blockstart = void 0,
+	      i = void 0,
+	      j = void 0,
 	      W = [],
 	      H0 = 0x67452301,
 	      H1 = 0xEFCDAB89,
 	      H2 = 0x98BADCFE,
 	      H3 = 0x10325476,
 	      H4 = 0xC3D2E1F0,
-	      A = undefined,
-	      B = undefined,
-	      C = undefined,
-	      D = undefined,
-	      E = undefined,
-	      temp = undefined,
-	      str_len = undefined,
+	      A = void 0,
+	      B = void 0,
+	      C = void 0,
+	      D = void 0,
+	      E = void 0,
+	      temp = void 0,
+	      str_len = void 0,
 	      word_array = [];
 
 	  str = encodeURIComponent(str);
@@ -2229,11 +2238,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _mlink = __webpack_require__(13);
 
@@ -2251,7 +2260,7 @@
 
 	var _bannerHelper2 = _interopRequireDefault(_bannerHelper);
 
-	var _messager = __webpack_require__(21);
+	var _messager = __webpack_require__(15);
 
 	var _messager2 = _interopRequireDefault(_messager);
 
@@ -2261,7 +2270,7 @@
 
 	var RENDERED = 'rendered';
 	var PREFIX_DIALOG_ID = 'mw-block-dialog';
-	var marketingData = undefined;
+	var marketingData = void 0;
 	var mlink = new _mlink2.default();
 
 	var Render = function () {
@@ -2277,6 +2286,7 @@
 	  /**
 	   * 检测页面DOM节点，并渲染
 	   */
+
 
 	  _createClass(Render, [{
 	    key: 'watch',
@@ -2369,7 +2379,7 @@
 	      if (_common2.default.isString(template)) {
 	        (function () {
 	          var matched = template.match(regExpGlobal);
-	          var fieldName = undefined;
+	          var fieldName = void 0;
 
 	          if (matched) {
 	            matched.forEach(function (field) {
@@ -2450,8 +2460,8 @@
 	      var _this3 = this;
 
 	      var dialog = document.createElement('div');
-	      var iframe = undefined;
-	      var btnClose = undefined;
+	      var iframe = void 0;
+	      var btnClose = void 0;
 
 	      var bdWidth = document.documentElement.clientWidth;
 	      var bdHeight = document.documentElement.clientHeight;
@@ -2553,11 +2563,11 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _ajax = __webpack_require__(7);
 
@@ -2595,8 +2605,8 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var deeplinks = undefined;
-	var deeplinksPromise = undefined;
+	var deeplinks = void 0;
+	var deeplinksPromise = void 0;
 	var markting = new _marketing2.default();
 
 	var Mlink = function () {
@@ -2612,6 +2622,7 @@
 	   * @param onError
 	   * @returns {PromisePolyfill}
 	   */
+
 
 	  _createClass(Mlink, [{
 	    key: 'deferrerRedirect',
@@ -2994,11 +3005,11 @@
 
 	"use strict";
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3018,8 +3029,10 @@
 	   * @returns {String}
 	     */
 
+
 	  _createClass(BannerHelper, [{
 	    key: "isExpired",
+
 
 	    /**
 	     * 判断活动是否已过期
@@ -3223,13 +3236,122 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _device = __webpack_require__(8);
+
+	var _device2 = _interopRequireDefault(_device);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var DOMAINS = ['magicwindow.cn', 'mlinks.cc'];
+
+	var MSG_CHANNEL = ['getUserAgent'];
+
+	var Messager = function () {
+	  function Messager(config) {
+	    var _this = this;
+
+	    _classCallCheck(this, Messager);
+
+	    window.addEventListener('message', function (event) {
+
+	      var origin = event.origin;
+
+	      DOMAINS.forEach(function (domain) {
+
+	        if (origin.indexOf(domain) !== -1) {
+	          _this.receive(event.data, domain);
+	        }
+	      });
+	    });
+
+	    this.channels = {
+	      getUserAgent: function getUserAgent() {
+	        var ua = '(MagicWindow JSSDK 2.0.3;$META)';
+	        var meta = [];
+	        // d/%@;fp/%@;av/%@;sv/%@;uid/%@;m/%@;c/%@;b/Apple;mf/Apple
+	        meta.push(['d', _device2.default.deviceId].join('/'));
+	        meta.push(['fp', _device2.default.fingerprint].join('/'));
+	        meta.push(['av', _device2.default.appVersion].join('/'));
+	        meta.push(['sv', _device2.default.sdkVersion].join('/'));
+	        meta.push(['uid', _device2.default.uuid].join('/'));
+	        meta.push(['m', _device2.default.model].join('/'));
+	        meta.push(['c', 0].join('/'));
+	        meta.push(['b', 0].join('/'));
+	        meta.push(['mf', _device2.default.manufacturer].join('/'));
+
+	        ua.replace('$META', meta.join(';'));
+	        return window.navigator.userAgent + ua;
+	      }
+	    };
+	  }
+
+	  _createClass(Messager, [{
+	    key: 'receive',
+	    value: function receive(data, domain) {
+	      var msg = void 0;
+	      try {
+	        msg = JSON.parse(data);
+	      } catch (e) {
+	        msg = {};
+	      }
+
+	      switch (msg.channel) {
+	        case 'getUserAgent':
+	          this.post(window, 'getUserAgent', this.channels[msg.channel](), domain);
+	          break;
+
+	      }
+	    }
+
+	    /**
+	     * 向打开的
+	     * @param domain
+	       */
+
+	  }, {
+	    key: 'postUA',
+	    value: function postUA(window, domain) {
+	      var channel = 'getUserAgent';
+	      this.post(window, channel, this.channels[channel](), domain);
+	    }
+	  }, {
+	    key: 'post',
+	    value: function post(window, channel, data, domain) {
+	      var msg = {
+	        channel: channel,
+	        data: data
+	      };
+
+	      window.postMessage(JSON.stringify(msg), domain);
+	    }
+	  }]);
+
+	  return Messager;
+	}();
+
+	exports.default = Messager;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _cookie = __webpack_require__(16);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _cookie = __webpack_require__(17);
 
 	var _cookie2 = _interopRequireDefault(_cookie);
 
@@ -3244,6 +3366,7 @@
 
 	  _createClass(Profile, null, [{
 	    key: 'setPhoneNumber',
+
 
 	    /**
 	     * 设置用户手机号码
@@ -3314,16 +3437,16 @@
 	exports.default = Profile;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3334,6 +3457,7 @@
 
 	  _createClass(Cookie, null, [{
 	    key: 'getCookie',
+
 
 	    /**
 	     * 获取Cookie
@@ -3379,23 +3503,23 @@
 	exports.default = Cookie;
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(19);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(20)(content, {});
+	var update = __webpack_require__(21)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?:global!./main.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?:global!./main.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./main.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./main.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3405,21 +3529,21 @@
 	}
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(19)();
+	exports = module.exports = __webpack_require__(20)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "@-webkit-keyframes mw-kfr-loading {\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@-moz-keyframes mw-kfr-loading {\n  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }\n  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@keyframes mw-kfr-loading {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\nmw-block {\n  display: block;\n  position: relative;\n}\n\nmw-block img{\n  max-width: 100%;\n}\n\n.mw-loading {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 10;\n  background-color: rgba(0, 0, 0, 0.5);\n}\n\n.mw-loading-icon {\n  display: block;\n  height: 48px;\n  width: 48px;\n  position: absolute;\n  z-index: 100000000000;\n  top: 50%;\n  left: 50%;\n  margin: -24px auto auto -24px;\n  border: 3px solid rgba(255,255,255,0);\n  border-top: 3px solid rgba(255,255,255,0.8);\n  border-left: 2px dotted rgba(255,255,255,0.6);\n  border-bottom: 1px dashed rgba(255,255,255,0.2);\n  border-radius: 50%;\n  box-shadow: 0 0 15px rgba(0,0,0, 1);\n\n  -webkit-animation: mw-kfr-loading 0.8s linear infinite;\n  -moz-animation: mw-kfr-loading 0.8s linear infinite;\n  animation: mw-kfr-loading 0.8s linear infinite;\n}\n\n.mw-block-dialog {\n  position: fixed;\n  background-color: rgba(255, 255, 255, 0);\n  overflow: auto;\n  z-index: 10000000;\n  -webkit-transition: 0.3s;\n  -moz-transition: 0.3s;\n  -o-transition: 0.3s;\n  transition: 0.3s;\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);\n  border-radius: 50%;\n  opacity: 0;\n}\n\n.mw-block-dialog.show {\n  top: 0px !important;\n  left: 0 !important;\n  bottom:0 !important;\n  right:0 !important;\n  background-color: rgba(255, 255, 255, 1);\n  border-radius: 0px;\n  opacity: 1;\n}\n\n.mw-block-dialog-toolbar {\n  position: absolute;\n  top: 0;\n  right:0;\n  height: 64px;\n  width: auto;\n  z-index: 1;\n  padding: 10px;\n}\n\n.mw-block-dialog-main {\n  position: absolute;\n  top: 64px;\n  right:0;\n  left: 0;\n  bottom: 0;\n  overflow: auto;\n  z-index: 1;\n}\n.mw-block-dialog iframe {\n  height: 100%;\n  width: 100%;\n}\n\n.closeMWBlock {\n  display: none;\n  border-radius: 64px;\n  width: 48px;\n  height: 48px;\n  background-color: #00aaff;\n  position: relative;\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);\n}\n\n.mw-block-dialog.show .closeMWBlock{\n  display: block;\n}\n\n.closeMWBlock:before,\n.closeMWBlock:after {\n  content: \" \";\n  display: block;\n  position: absolute;\n  background-color: #fff;\n  height: 2px;\n  width: 60%;\n  -webkit-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  -o-transform: rotate(45deg);\n  transform: rotate(45deg);\n  top: 22px;\n  right: 8px;\n}\n\n.closeMWBlock:after {\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n}\n\n/*下载链接*/\n#mw-download-tips {\n  display: none;\n  position: fixed;\n  z-index: 9990;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(0, 0, 0, 0.8);\n  background-repeat: no-repeat;\n  background-position: top right;\n  background-size: 85% auto;\n}\n\n#mw-download-tips.android {\n  display: block;\n  background-image: url(\"http://activity.test.magicwindow.cn/common/asserts/navigator-modal/bg-android.png\");\n}\n\n#mw-download-tips.ios {\n  display: block;\n  background-image: url(\"http://activity.test.magicwindow.cn/common/asserts/navigator-modal/bg-ios.png\");\n}\n", ""]);
+	exports.push([module.id, "@-webkit-keyframes mw-kfr-loading {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n@-moz-keyframes mw-kfr-loading {\n  0% {\n    -moz-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -moz-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n@keyframes mw-kfr-loading {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\nmw-block {\n  display: block;\n  position: relative;\n}\nmw-block img {\n  max-width: 100%;\n}\nmw-block .mw-loading {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 10;\n  background-color: rgba(0, 0, 0, 0.5);\n}\nmw-block .mw-loading-icon {\n  display: block;\n  height: 48px;\n  width: 48px;\n  position: absolute;\n  z-index: 100000000000;\n  top: 50%;\n  left: 50%;\n  margin: -24px auto auto -24px;\n  border: 3px solid rgba(255, 255, 255, 0);\n  border-top: 3px solid rgba(255, 255, 255, 0.8);\n  border-left: 2px dotted rgba(255, 255, 255, 0.6);\n  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);\n  border-radius: 50%;\n  box-shadow: 0 0 15px #000000;\n  -webkit-animation: mw-kfr-loading 0.8s linear infinite;\n  -moz-animation: mw-kfr-loading 0.8s linear infinite;\n  animation: mw-kfr-loading 0.8s linear infinite;\n}\n.mw-block-dialog {\n  position: fixed;\n  background-color: rgba(255, 255, 255, 0);\n  overflow: auto;\n  z-index: 10000000;\n  -webkit-transition: 0.3s;\n  -moz-transition: 0.3s;\n  -o-transition: 0.3s;\n  transition: 0.3s;\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);\n  border-radius: 50%;\n  opacity: 0;\n}\n.mw-block-dialog.show {\n  top: 0px !important;\n  left: 0 !important;\n  bottom: 0 !important;\n  right: 0 !important;\n  background-color: #ffffff;\n  border-radius: 0px;\n  opacity: 1;\n}\n.mw-block-dialog.show .closeMWBlock {\n  display: block;\n}\n.mw-block-dialog .mw-block-dialog-toolbar {\n  position: absolute;\n  top: 0;\n  right: 0;\n  height: 64px;\n  width: auto;\n  z-index: 1;\n  padding: 10px;\n}\n.mw-block-dialog .mw-block-dialog-main {\n  position: absolute;\n  top: 64px;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  overflow: auto;\n  z-index: 1;\n}\n.mw-block-dialog iframe {\n  height: 100%;\n  width: 100%;\n}\n.mw-block-dialog .closeMWBlock {\n  display: none;\n  border-radius: 64px;\n  width: 48px;\n  height: 48px;\n  background-color: #00aaff;\n  position: relative;\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);\n}\n.mw-block-dialog .closeMWBlock:before,\n.mw-block-dialog .closeMWBlock:after {\n  content: \" \";\n  display: block;\n  position: absolute;\n  background-color: #fff;\n  height: 2px;\n  width: 60%;\n  -webkit-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  -o-transform: rotate(45deg);\n  transform: rotate(45deg);\n  top: 22px;\n  right: 8px;\n}\n.mw-block-dialog .closeMWBlock:after {\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	/*
@@ -3475,7 +3599,7 @@
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -3691,7 +3815,6 @@
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-		var sourceMap = obj.sourceMap;
 
 		if(media) {
 			styleElement.setAttribute("media", media)
@@ -3709,7 +3832,6 @@
 
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
-		var media = obj.media;
 		var sourceMap = obj.sourceMap;
 
 		if(sourceMap) {
@@ -3727,115 +3849,6 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _device = __webpack_require__(8);
-
-	var _device2 = _interopRequireDefault(_device);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var DOMAINS = ['magicwindow.cn', 'mlinks.cc'];
-
-	var MSG_CHANNEL = ['getUserAgent'];
-
-	var Messager = function () {
-	  function Messager(config) {
-	    var _this = this;
-
-	    _classCallCheck(this, Messager);
-
-	    window.addEventListener('message', function (event) {
-
-	      var origin = event.origin;
-
-	      DOMAINS.forEach(function (domain) {
-
-	        if (origin.indexOf(domain) !== -1) {
-	          _this.receive(event.data, domain);
-	        }
-	      });
-	    });
-
-	    this.channels = {
-	      getUserAgent: function getUserAgent() {
-	        var ua = '(MagicWindow JSSDK 2.0.3;$META)';
-	        var meta = [];
-	        // d/%@;fp/%@;av/%@;sv/%@;uid/%@;m/%@;c/%@;b/Apple;mf/Apple
-	        meta.push(['d', _device2.default.deviceId].join('/'));
-	        meta.push(['fp', _device2.default.fingerprint].join('/'));
-	        meta.push(['av', _device2.default.appVersion].join('/'));
-	        meta.push(['sv', _device2.default.sdkVersion].join('/'));
-	        meta.push(['uid', _device2.default.uuid].join('/'));
-	        meta.push(['m', _device2.default.model].join('/'));
-	        meta.push(['c', 0].join('/'));
-	        meta.push(['b', 0].join('/'));
-	        meta.push(['mf', _device2.default.manufacturer].join('/'));
-
-	        ua.replace('$META', meta.join(';'));
-	        return window.navigator.userAgent + ua;
-	      }
-	    };
-	  }
-
-	  _createClass(Messager, [{
-	    key: 'receive',
-	    value: function receive(data, domain) {
-	      var msg = undefined;
-	      try {
-	        msg = JSON.parse(data);
-	      } catch (e) {
-	        msg = {};
-	      }
-
-	      switch (msg.channel) {
-	        case 'getUserAgent':
-	          this.post(window, 'getUserAgent', this.channels[msg.channel](), domain);
-	          break;
-
-	      }
-	    }
-
-	    /**
-	     * 向打开的
-	     * @param domain
-	       */
-
-	  }, {
-	    key: 'postUA',
-	    value: function postUA(window, domain) {
-	      var channel = 'getUserAgent';
-	      this.post(window, channel, this.channels[channel](), domain);
-	    }
-	  }, {
-	    key: 'post',
-	    value: function post(window, channel, data, domain) {
-	      var msg = {
-	        channel: channel,
-	        data: data
-	      };
-
-	      window.postMessage(JSON.stringify(msg), domain);
-	    }
-	  }]);
-
-	  return Messager;
-	}();
-
-	exports.default = Messager;
 
 /***/ }
 /******/ ]);

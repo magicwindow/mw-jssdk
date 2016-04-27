@@ -23,13 +23,14 @@ module.exports = {
         //}],
         loaders:[
             { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel?presets[]=react,presets[]=es2015' },
-            {test: /\.jsx?$/, loader: 'string-replace', query: {
+            { test: /\.jsx?$/, loader: 'string-replace', query: {
               search: '[[VERSION]]',
               replace: package.version
             }},
             //{ test: /\.(jpg|png|gif)$/, loader: "url?limit=8192"},
             { test: /\.css$/, loader: 'style!css?:global' },
-            { test: /\.scss$/, loader: 'style!css?modules!autoprefixer?browsers=last 10 versions!' }
+            { test: /\.less/, loader: 'style!css!less' },
+            { test: /\.s[ca]ss$/, loader: 'style!css?modules!autoprefixer?browsers=last 10 versions!' }
             //{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url?limit=10000&minetype=application/font-woff" },
             //{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file" }
         ]

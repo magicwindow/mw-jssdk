@@ -7,7 +7,7 @@ import Mlink from './mlink';
 import Profile from './profile';
 import device from './device';
 
-require('./styles/main.css');
+require('./styles/main.less');
 
 var initialized;
 var readyQueue = [];
