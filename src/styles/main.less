@@ -13,10 +13,6 @@
   100% { transform: rotate(360deg); }
 }
 
-body {
-  background: red !important;
-}
-
 mw-block {
   display: block;
   position: relative;
@@ -86,17 +82,17 @@ mw-block {
   }
 
   .mw-block-dialog-toolbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     right:0;
     height: 64px;
     width: auto;
-    z-index: 1;
+    z-index: 2;
     padding: 10px;
   }
 
   .mw-block-dialog-main {
-    position: absolute;
+    position: fixed;
     top: 0px;
     right:0;
     left: 0;
