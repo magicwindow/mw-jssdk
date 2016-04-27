@@ -85,10 +85,62 @@ mw-block {
     position: fixed;
     top: 0;
     right:0;
+    left:0;
     height: 64px;
-    width: auto;
     z-index: 2;
     padding: 10px;
+
+    .closeMWBlock {
+      display: none;
+      border-radius: 64px;
+      width: 48px;
+      height: 48px;
+      background-color: #00aaff;
+      position: relative;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+      &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        background-color: rgba(255,255,255,0);
+        height: 16px;
+        width: 16px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 16px;
+        left: 20px;
+        border: 2px solid rgba(255,255,255,1);
+        border-top-width: 0;
+        border-right-width: 0;
+        border-radius: 2px;
+      }
+
+      //&:before,
+      //&:after {
+      //  content: " ";
+      //  display: block;
+      //  position: absolute;
+      //  background-color: #fff;
+      //  height: 2px;
+      //  width: 60%;
+      //  -webkit-transform: rotate(45deg);
+      //  -moz-transform: rotate(45deg);
+      //  -o-transform: rotate(45deg);
+      //  transform: rotate(45deg);
+      //  top: 22px;
+      //  right: 8px;
+      //}
+      //
+      //&:after {
+      //  -webkit-transform: rotate(-45deg);
+      //  -moz-transform: rotate(-45deg);
+      //  -o-transform: rotate(-45deg);
+      //  transform: rotate(-45deg);
+      //}
+    }
   }
 
   .mw-block-dialog-main {
@@ -104,39 +156,5 @@ mw-block {
   iframe {
     height: 100%;
     width: 100%;
-  }
-
-  .closeMWBlock {
-    display: none;
-    border-radius: 64px;
-    width: 48px;
-    height: 48px;
-    background-color: #00aaff;
-    position: relative;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-
-
-    &:before,
-    &:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      background-color: #fff;
-      height: 2px;
-      width: 60%;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      top: 22px;
-      right: 8px;
-    }
-
-    &:after {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
   }
 }
