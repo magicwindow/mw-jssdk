@@ -47,7 +47,8 @@ export default class Marketing {
    * @returns {string|*|{res}|void|XML}
    */
   getServer() {
-    return config.constant('server').replace(/\/$/, '');
+    let server = config.constant('server') || 'http://stats.magicwindow.cn';
+    return server.replace(/\/$/, '');
   }
 
   /**

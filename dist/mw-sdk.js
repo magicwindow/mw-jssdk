@@ -1212,7 +1212,8 @@
 	  }, {
 	    key: 'getServer',
 	    value: function getServer() {
-	      return _config2.default.constant('server').replace(/\/$/, '');
+	      var server = _config2.default.constant('server') || 'http://stats.magicwindow.cn';
+	      return server.replace(/\/$/, '');
 	    }
 
 	    /**
