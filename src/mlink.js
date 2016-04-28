@@ -236,7 +236,7 @@ export default class Mlink {
       return cache['deeplinksPromise'];
     }
 
-    let url = config.constant('server').replace(/\/$/,'') + apis.deeplinks;
+    let url = apis.deeplinks;
     let ajax = new Ajax();
     let params = {
         ak  : config.constant('appkey') || config.constant('ak'),
@@ -290,7 +290,7 @@ export default class Mlink {
       return cache['deferrerPromise'];
     }
 
-    let url = config.constant('server').replace(/\/$/,'') + apis.deferrerInfo;
+    let url = apis.deferrerInfo;
     let ajax = new Ajax();
     let params = {
       ak  : config.constant('appkey') || config.constant('ak'),
@@ -330,7 +330,7 @@ export default class Mlink {
    */
   sendDplEvent(data, realUrl) {
 
-    let url = config.constant('server').replace(/\/$/,'') + apis.deeplinkEvent;
+    let url = apis.deeplinkEvent;
     let ajax = new Ajax();
     let params = {
       ak  : config.constant('appkey') || config.constant('ak'),

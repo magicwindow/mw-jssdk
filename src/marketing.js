@@ -43,15 +43,6 @@ export default class Marketing {
   }
 
   /**
-   * 获取服务器
-   * @returns {string|*|{res}|void|XML}
-   */
-  getServer() {
-    let server = config.constant('server') || 'http://stats.magicwindow.cn';
-    return server.replace(/\/$/, '');
-  }
-
-  /**
    * 加载Marketing数据
    * @param {Function} [callback] 如果有此参数, 则使用回调方式加载,否则使用Promise模式
    * @returns {*}
@@ -73,7 +64,7 @@ export default class Marketing {
     // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
     //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
     let params = this.getParams();
-    let url = this.getServer() + apis.marketing;
+    let url = apis.marketing;
     let ajax = new Ajax();
 
     return ajax.request({
@@ -101,7 +92,7 @@ export default class Marketing {
     // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
     //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
     let params = this.getParams();
-    let url = this.getServer() + apis.marketing;
+    let url = apis.marketing;
     let ajax = new Ajax();
 
     // 如果Markting数据有缓存,则直接使用缓存执行resolve

@@ -1205,18 +1205,6 @@
 	    }
 
 	    /**
-	     * 获取服务器
-	     * @returns {string|*|{res}|void|XML}
-	     */
-
-	  }, {
-	    key: 'getServer',
-	    value: function getServer() {
-	      var server = _config2.default.constant('server') || 'http://stats.magicwindow.cn';
-	      return server.replace(/\/$/, '');
-	    }
-
-	    /**
 	     * 加载Marketing数据
 	     * @param {Function} [callback] 如果有此参数, 则使用回调方式加载,否则使用Promise模式
 	     * @returns {*}
@@ -1244,7 +1232,7 @@
 	      // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
 	      //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
 	      var params = this.getParams();
-	      var url = this.getServer() + _apis2.default.marketing;
+	      var url = _apis2.default.marketing;
 	      var ajax = new _ajax2.default();
 
 	      return ajax.request({
@@ -1275,7 +1263,7 @@
 	      // marketing/v2?ak=XEJ7F76J61LHEWRI3Q9A6UN9BM4CRT3X&os=0&sv=2.3&d=864387021280405&sr=720x1280&av=2.3&fp=155439573
 	      //let macketingUrl = '{SERVER}/marketing/v2?ak={AK}&os={OS}&sv={SV}&d={D}&sr={SR}&av={AV}&fp={fp}';
 	      var params = this.getParams();
-	      var url = this.getServer() + _apis2.default.marketing;
+	      var url = _apis2.default.marketing;
 	      var ajax = new _ajax2.default();
 
 	      // 如果Markting数据有缓存,则直接使用缓存执行resolve
@@ -2226,11 +2214,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var hostName = '{{HOST_NAME}}'.replace(/\/$/, '');
+	var SERVER = hostName.indexOf('HOST_NAME') > -1 || !hostName ? 'http://stats.magicwindow.cn' : hostName;
+
 	exports.default = {
-	  marketing: '/marketing/v2',
-	  deeplinks: '/dp/dpls',
-	  deferrerInfo: '/dp/getDPL', // 还原参数
-	  deeplinkEvent: '/dp/event'
+	  marketing: SERVER + '/marketing/v2',
+	  deeplinks: SERVER + '/dp/dpls',
+	  deferrerInfo: SERVER + '/dp/getDPL', // 场景还原参数
+	  deeplinkEvent: SERVER + '/dp/event'
 	};
 
 /***/ },
@@ -2870,7 +2861,7 @@
 	        return cache['deeplinksPromise'];
 	      }
 
-	      var url = _config2.default.constant('server').replace(/\/$/, '') + _apis2.default.deeplinks;
+	      var url = _apis2.default.deeplinks;
 	      var ajax = new _ajax2.default();
 	      var params = {
 	        ak: _config2.default.constant('appkey') || _config2.default.constant('ak'),
@@ -2926,7 +2917,7 @@
 	        return cache['deferrerPromise'];
 	      }
 
-	      var url = _config2.default.constant('server').replace(/\/$/, '') + _apis2.default.deferrerInfo;
+	      var url = _apis2.default.deferrerInfo;
 	      var ajax = new _ajax2.default();
 	      var params = {
 	        ak: _config2.default.constant('appkey') || _config2.default.constant('ak'),
@@ -2969,7 +2960,7 @@
 	    key: 'sendDplEvent',
 	    value: function sendDplEvent(data, realUrl) {
 
-	      var url = _config2.default.constant('server').replace(/\/$/, '') + _apis2.default.deeplinkEvent;
+	      var url = _apis2.default.deeplinkEvent;
 	      var ajax = new _ajax2.default();
 	      var params = {
 	        ak: _config2.default.constant('appkey') || _config2.default.constant('ak'),
