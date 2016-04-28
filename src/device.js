@@ -4,6 +4,7 @@ import sha1 from './sha1';
 
 const URI = new Uri(document.location.href);
 const UA = window.navigator.userAgent;
+const device = window.device || {};
 
 class Device {
   constructor () {
@@ -14,16 +15,16 @@ class Device {
     this.constructor.appKey = config.constant('appKey');
     this.constructor.appVersion = config.constant('appVersion');
 
-    this.constructor.model = '';
-    this.constructor.os = os.platform;
-    this.constructor.version = os.version;
+    this.constructor.model = device.model || '';
+    this.constructor.os = device.platform || os.platform;
+    this.constructor.version = device.version || os.version;
     this.constructor.uuid = this.getCanvasFingerprint();
-    this.constructor.manufacturer = '';
-    this.constructor.isVirtual = '';
-    this.constructor.serial = '';
+    this.constructor.manufacturer = device.manufacturer || '';
+    this.constructor.isVirtual = device.isVirtual || '';
+    this.constructor.serial = device.serial || '';
     this.constructor.screen = window.screen.width + 'x'+ window.screen.height;
     this.constructor.deviceId = '';
-    this.constructor.fingerprint = '';
+    this.constructor.fingerprint = this.getCanvasFingerprint() || '';
   }
 
   set sdkVersion(value) { if(value) { this.constructor.sdkVersion = value; }}

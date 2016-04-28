@@ -1658,6 +1658,7 @@
 
 	var URI = new _uri2.default(document.location.href);
 	var UA = window.navigator.userAgent;
+	var device = window.device || {};
 
 	var Device = function () {
 	  function Device() {
@@ -1669,16 +1670,16 @@
 	    this.constructor.appKey = _config2.default.constant('appKey');
 	    this.constructor.appVersion = _config2.default.constant('appVersion');
 
-	    this.constructor.model = '';
-	    this.constructor.os = os.platform;
-	    this.constructor.version = os.version;
+	    this.constructor.model = device.model || '';
+	    this.constructor.os = device.platform || os.platform;
+	    this.constructor.version = device.version || os.version;
 	    this.constructor.uuid = this.getCanvasFingerprint();
-	    this.constructor.manufacturer = '';
-	    this.constructor.isVirtual = '';
-	    this.constructor.serial = '';
+	    this.constructor.manufacturer = device.manufacturer || '';
+	    this.constructor.isVirtual = device.isVirtual || '';
+	    this.constructor.serial = device.serial || '';
 	    this.constructor.screen = window.screen.width + 'x' + window.screen.height;
 	    this.constructor.deviceId = '';
-	    this.constructor.fingerprint = '';
+	    this.constructor.fingerprint = this.getCanvasFingerprint() || '';
 	  }
 
 	  _createClass(Device, [{
