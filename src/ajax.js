@@ -42,13 +42,13 @@ export default class Ajax {
 
   request(options = {}) {
 
-    const filter = options.filter;
-    const onBeforeSend = options.beforeSend;
-    const onSuccess = options.success || options.callback;
-    const onError = options.error;
-    const onComplete = options.complete;
-    const timeout = options.timeout || 100000;
-    const dataType = options.dataType || 'text';
+    let filter = options.filter;
+    let onBeforeSend = options.beforeSend;
+    let onSuccess = options.success || options.callback;
+    let onError = options.error;
+    let onComplete = options.complete;
+    let timeout = options.timeout || 100000;
+    let dataType = options.dataType || 'text';
     let params = options.params || options.data;
     // const xtra = options.xtra;
 
@@ -188,9 +188,9 @@ export default class Ajax {
    * @param onSuccess
    */
   loadJsonp(url, onSuccess, onError, timeout) {
-    const stamp = [new Date().getTime(), Math.floor(Math.random() * 500)].join(_);
-    const cbHandler = 'ajax_cb_'+ stamp;
-    const script = document.createElement('script');
+    let stamp = [new Date().getTime(), Math.floor(Math.random() * 500)].join(_);
+    let cbHandler = 'ajax_cb_'+ stamp;
+    let script = document.createElement('script');
 
     url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
 
