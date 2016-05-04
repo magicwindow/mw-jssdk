@@ -57,22 +57,19 @@ export default class Ajax {
     let method = options.method || options.type || 'GET';
     let headers = {};
     let k;
-    let  defaultHeaders = {
-        'ContentType': (options.ContentType || 'application/x-www-form-urlencoded')
-        // "Access-Control-Allow-Origin": "*"
+    let defaultHeaders = {
+      'ContentType': (options.ContentType || 'application/x-www-form-urlencoded')
+      // "Access-Control-Allow-Origin": "*"
     };
 
     // Extend defalt headers
     for (k in defaultHeaders) {
         headers[k] = defaultHeaders[k];
     }
-
     // Extend custom headers
     if (options.headers) {
       for (k in options.headers) {
-
         headers[k] = options.headers[k] || defaultHeaders[k];
-
       }
     }
 
@@ -95,7 +92,6 @@ export default class Ajax {
         url += (url.indexOf('?') === -1 ? '?' : '&') + this.seriesParams(params, filter);
         this.loadJsonp(url, successHandler, errorHandler, timeout);
       } else {
-
         http = Ajax.create();
 
         if (method === 'POST') {
@@ -188,13 +184,14 @@ export default class Ajax {
    * @param onSuccess
    */
   loadJsonp(url, onSuccess, onError, timeout) {
-    let stamp = [new Date().getTime(), Math.floor(Math.random() * 500)].join(_);
-    let cbHandler = 'ajax_cb_'+ stamp;
+
+    let stamp = [new Date().getTime(), Math.floor(Math.random() * 500)].join('_');
+    let cbHandler = 'ajax_cb_' + stamp;
     let script = document.createElement('script');
 
     url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
-
     window[cbHandler] = function (data) {
+
       if (typeof onSuccess === 'function') {
         onSuccess(data);
       }
