@@ -78,7 +78,6 @@ export default class Ajax {
 
     method = method.toUpperCase();
 
-    window.alert(Promise);
     return new Promise((resolve, reject)=>{
 
       let successHandler = (data)=> {
