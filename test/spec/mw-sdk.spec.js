@@ -1,6 +1,6 @@
 describe('Magic Window JS SDK Unit Test.', function(){
 
-  var _clock;
+  let _clock;
 
   /*
    * HELPER FUNCTIONS

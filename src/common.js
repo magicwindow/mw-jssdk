@@ -126,14 +126,8 @@ export default class Common {
       return obj;
     }
 
-    for (let k in obj) {
+    for (let k in obj2) {
       obj[k] = obj2[k];
-
-      for (let j in obj2) {
-        if (!obj[j]) {
-          obj[j] = obj2[j];
-        }
-      }
     }
 
     return obj;

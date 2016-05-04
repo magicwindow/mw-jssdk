@@ -10,22 +10,19 @@ module.exports = function (config) {
     basePath: '..',
 
     // frameworks to use
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'es6-shim'],
     // frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
 
-      'bower_components/chai/chai.js',
+      'node_modules/chai/chai.js',
       'test/test.conf.js',
 
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/jquery/dist/jquery.js',
 
-      {pattern: 'src/mw.sdk.com'},
-      {pattern: 'src/*.js'},
-      {pattern: 'src/apis/api.com'},
-      {pattern: 'src/apis/*.js'},
+      //{pattern: 'src/*.js'},
       {pattern: 'test/**/*.spec.js'},
 
       // fixtures
@@ -37,7 +34,21 @@ module.exports = function (config) {
 
     // For code coverage reporting
     preprocessors: {
-      'src/**/*.js': 'coverage'
+      'src/**/*.js': ['webpack'],
+      'test/**/*.js': ['webpack']
+    },
+
+    webpack: {
+      entry: {
+        "mw-sdk": "./src/main.js"
+      },
+      module: {
+        loaders: [
+          { test: /\.js/, exclude: /node_modules/, loader: 'babel?presets[]=react,presets[]=es2015' },
+          { test: /\.less/, loader: 'style!css!less' },
+        ]
+      },
+      watch: true
     },
 
     // test results reporter to use
@@ -83,7 +94,7 @@ module.exports = function (config) {
     // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
     // - PhantomJS
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // If browser does not capture in given timeout [ms], kill it
@@ -98,6 +109,8 @@ module.exports = function (config) {
       'karma-mocha',
       'karma-jasmine',
       'karma-coverage',
+      'karma-webpack',
+      'karma-es6-shim',
       'karma-phantomjs-launcher',
       'karma-chrome-launcher'
     ]

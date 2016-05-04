@@ -1,6 +1,11 @@
+import chai from 'chai';
+import Common from '../../src/common';
+
+const expect = chai.expect;
+
 describe('common.js.', function(){
 
-  var _clock;
+  let _clock;
 
   /*
    * HELPER FUNCTIONS
@@ -22,27 +27,27 @@ describe('common.js.', function(){
     });
 
     it("isObject(Object)", function () {
-      expect(mw.isObject({a:2})).equals(true);
+      expect(Common.isObject({a:2})).equals(true);
     });
 
     it("isObject(Element)", function () {
-      expect(mw.isObject(document.body)).equals(false);
+      expect(Common.isObject(document.body)).equals(false);
     });
 
     it("isObject(Array)", function () {
-      expect(mw.isObject([1,2,3,4])).equals(false);
+      expect(Common.isObject([1,2,3,4])).equals(false);
     });
 
     it("isObject(Boolean)", function () {
-      expect(mw.isObject(true)).equals(false);
+      expect(Common.isObject(true)).equals(false);
     });
 
     it("isObject(Number)", function () {
-      expect(mw.isObject(2)).equals(false);
+      expect(Common.isObject(2)).equals(false);
     });
 
     it("isObject(Number)", function () {
-      expect(mw.isObject(0)).equals(false);
+      expect(Common.isObject(0)).equals(false);
     });
   });
 
@@ -59,31 +64,31 @@ describe('common.js.', function(){
     });
 
     it("isArray(Object)", function () {
-      expect(mw.isArray({a:2})).equals(false);
+      expect(Common.isArray({a:2})).equals(false);
     });
 
     it("isArray(Element)", function () {
-      expect(mw.isArray(document.body)).equals(false);
+      expect(Common.isArray(document.body)).equals(false);
     });
 
     it("isArray(Array[...])", function () {
-      expect(mw.isArray([1,2,3,4])).equals(true);
+      expect(Common.isArray([1,2,3,4])).equals(true);
     });
 
     it("isArray(Array[])", function () {
-      expect(mw.isArray([])).equals(true);
+      expect(Common.isArray([])).equals(true);
     });
 
     it("isArray(Boolean)", function () {
-      expect(mw.isArray(true)).equals(false);
+      expect(Common.isArray(true)).equals(false);
     });
 
     it("isArray(Number)", function () {
-      expect(mw.isArray(2)).equals(false);
+      expect(Common.isArray(2)).equals(false);
     });
 
     it("isArray(Number)", function () {
-      expect(mw.isArray(0)).equals(false);
+      expect(Common.isArray(0)).equals(false);
     });
   });
 
@@ -100,31 +105,31 @@ describe('common.js.', function(){
     });
 
     it("isNumeric()(Object)", function () {
-      expect(mw.isNumeric({a:2})).equals(false);
+      expect(Common.isNumeric({a:2})).equals(false);
     });
 
     it("isNumeric()(Element)", function () {
-      expect(mw.isNumeric(document.body)).equals(false);
+      expect(Common.isNumeric(document.body)).equals(false);
     });
 
     it("isNumeric()(Array[...])", function () {
-      expect(mw.isNumeric([1,2,3,4])).equals(false);
+      expect(Common.isNumeric([1,2,3,4])).equals(false);
     });
 
     it("isNumeric()(Array[])", function () {
-      expect(mw.isNumeric([])).equals(false);
+      expect(Common.isNumeric([])).equals(false);
     });
 
     it("isNumeric()(Boolean)", function () {
-      expect(mw.isNumeric(true)).equals(false);
+      expect(Common.isNumeric(true)).equals(false);
     });
 
     it("isNumeric()(Number)", function () {
-      expect(mw.isNumeric(2)).equals(true);
+      expect(Common.isNumeric(2)).equals(true);
     });
 
     it("isNumeric()(Number)", function () {
-      expect(mw.isNumeric(0)).equals(true);
+      expect(Common.isNumeric(0)).equals(true);
     });
   });
 
@@ -142,46 +147,46 @@ describe('common.js.', function(){
     });
 
     it("isElement()(Object)", function () {
-      expect(mw.isElement({a:2})).equals(false);
+      expect(Common.isElement({a:2})).equals(false);
     });
 
     it("isElement()(Element)", function () {
-      expect(mw.isElement(document.body)).equals(true);
+      expect(Common.isElement(document.body)).equals(true);
     });
 
     it("isElement()(Element)", function () {
-      expect(mw.isElement(document.createElement('div'))).equals(true);
+      expect(Common.isElement(document.createElement('div'))).equals(true);
     });
 
     it("isElement()(Element)", function () {
-      expect(mw.isElement(document.createComment('Comments!'))).equals(true);
+      expect(Common.isElement(document.createComment('Comments!'))).equals(true);
     });
 
     it("isElement()(Array[...])", function () {
-      expect(mw.isElement([1,2,3,4])).equals(false);
+      expect(Common.isElement([1,2,3,4])).equals(false);
     });
 
     it("isElement()(Array[])", function () {
-      expect(mw.isElement([])).equals(false);
+      expect(Common.isElement([])).equals(false);
     });
 
     it("isElement()(Boolean)", function () {
-      expect(mw.isElement(true)).equals(false);
+      expect(Common.isElement(true)).equals(false);
     });
 
     it("isElement()(Number)", function () {
-      expect(mw.isElement(2)).equals(false);
+      expect(Common.isElement(2)).equals(false);
     });
 
     it("isElement()(Number)", function () {
-      expect(mw.isElement(0)).equals(false);
+      expect(Common.isElement(0)).equals(false);
     });
   });
 
   /*
    * extend
    */
-  describe('extend', function(){
+  describe('mix', function(){
 
     beforeEach(function () {
       _clock = sinon.useFakeTimers();
@@ -190,10 +195,10 @@ describe('common.js.', function(){
       _clock.restore();
     });
 
-    it("extend({a:1,b:2}, {x:3,b:4})", function () {
+    it("mix({a:1,b:2}, {x:3,b:4})", function () {
       var a = {a:1, b:2};
       var b = {x:3, b:4};
-      mw.extend(a, b);
+      Common.mix(a, b);
 
       expect(a.x).equals(3);
       expect(a.b).equals(4);
@@ -201,14 +206,14 @@ describe('common.js.', function(){
       expect(b.x).equals(3);
     });
 
-    it("extend(true, {m:{x:1,y:2}}, {m:{x:9}})", function () {
-      var a = {m:{x:1,y:2}};
-      var b = {m:{x:9}};
-      mw.extend(true, a, b);
+    it("mix(true, {m:{x:1,y:2}}, {m:{x:9}})", function () {
+      var a = {x:1,y:2};
+      var b = {x:9};
+      Common.mix(a, b);
 
-      expect(a.m.x).equals(9);
-      expect(a.m.y).equals(2);
-      expect(b.m.x).equals(9);
+      expect(a.x).equals(9);
+      expect(a.y).equals(2);
+      expect(b.x).equals(9);
     });
 
   });

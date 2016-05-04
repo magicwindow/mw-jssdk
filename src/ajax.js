@@ -2,14 +2,13 @@ import Common from './common';
 import Promise from './promise';
 
 export default class Ajax {
-
-  /**
-   * Constructor
-   * @returns {*}
-   */
-  constructor() {
-
-  }
+  // /**
+  //  * Constructor
+  //  * @returns {*}
+  //  */
+  // constructor() {
+  //
+  // }
 
   /**
    * 发起一个Ajax请求，从服务器加载JSON数据或HTML片段，支持JSONP请求。
@@ -30,7 +29,8 @@ export default class Ajax {
    * @param {String} options.method        请求类型：GET 或 POST
    * @param {String} options.url           请求地址（URL），如果URL的domain与目前domain不一致，会导致跨域问题
    * @param {Number} options.tries         在请求失败时重新尝试请求的次数
-   * @param {Object} options.params        附加的URL后面或者POST数据的参数，如果method=='GET'，则拼接到URL后；如果method=='POST'=='POST',则以POST数据发送。
+   * @param {Object} options.params        附加的URL后面或者POST数据的参数，如果method=='GET'，则拼接到URL后；
+   *                                       如果method=='POST'=='POST',则以POST数据发送。
    * @param {Function} options.success     请求成功的回调方法
    * @param {Function} options.filter      过滤向服务器发送的参数
    * @param {Function} options.complete    请求完成时的回调方法，无论请求成功都会被调研；
@@ -39,40 +39,46 @@ export default class Ajax {
    *
    * @returns {Promise}
    */
-  request(options={}) {
 
-    let http,
-      filter = options.filter,
-      onBeforeSend = options.beforeSend,
-      onSuccess = options.success || options.callback,
-      onError = options.error,
-      onComplete = options.complete,
-      timeout = options.timeout || 100000,
-      url = options.url,
-      method = options.method || options.type || 'GET',
-    //xtra = options.xtra,
-      dataType = options.dataType || 'text',
-      params = options.params || options.data,
-      defaultHeaders = {
-        "ContentType": options.ContentType || 'application/x-www-form-urlencoded'
+  request(options = {}) {
+
+    const filter = options.filter;
+    const onBeforeSend = options.beforeSend;
+    const onSuccess = options.success || options.callback;
+    const onError = options.error;
+    const onComplete = options.complete;
+    const timeout = options.timeout || 100000;
+    const dataType = options.dataType || 'text';
+    let params = options.params || options.data;
+    // const xtra = options.xtra;
+
+    let http;
+    let url = options.url;
+    let method = options.method || options.type || 'GET';
+    let headers = {};
+    let k;
+    let  defaultHeaders = {
+        'ContentType': (options.ContentType || 'application/x-www-form-urlencoded')
         // "Access-Control-Allow-Origin": "*"
-      },
-      headers = {};
+    };
 
     // Extend defalt headers
-    for (let k in defaultHeaders) {
+    for (k in defaultHeaders) {
         headers[k] = defaultHeaders[k];
     }
 
     // Extend custom headers
     if (options.headers) {
-      for (let k in options.headers) {
-          headers[k] = options.headers[k] || defaultHeaders[k];
+      for (k in options.headers) {
+
+        headers[k] = options.headers[k] || defaultHeaders[k];
+
       }
     }
 
     method = method.toUpperCase();
 
+    window.alert(Promise);
     return new Promise((resolve, reject)=>{
 
       let successHandler = (data)=> {
@@ -163,7 +169,7 @@ export default class Ajax {
    * @param {Object} params
    * @returns {string}
    */
-  seriesParams (params, filter) {
+  seriesParams(params, filter) {
     let tmp = [];
     let j;
 
@@ -182,9 +188,10 @@ export default class Ajax {
    * @param url
    * @param onSuccess
    */
-  loadJsonp (url, onSuccess, onError, timeout) {
-    let cbHandler = 'ajax_cb_' + new Date().getTime() + '_' + Math.floor(Math.random() * 500),
-      script = document.createElement('script');
+  loadJsonp(url, onSuccess, onError, timeout) {
+    const stamp = [new Date().getTime(), Math.floor(Math.random() * 500)].join(_);
+    const cbHandler = 'ajax_cb_'+ stamp;
+    const script = document.createElement('script');
 
     url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
 
@@ -214,19 +221,19 @@ export default class Ajax {
    * @method
    * @member fetch
    */
-  fetch (url, data, callback, type) {
-    if ( this.isFunction( data ) ) {
+  fetch(url, data, callback, type) {
+    if (Common.isFunc( data ) ) {
       type = type || callback;
       callback = data;
       data = undefined;
     }
 
-    return this.http({
+    return this.request({
       url: url,
       method: 'GET',
       dataType: type,
       data: data,
-      success: callback
+      success: callback,
     });
   }
 
@@ -234,15 +241,14 @@ export default class Ajax {
    * @method
    * @member post
    */
-  post (url, data, callback, type) {
-
-    if ( this.isFunction( data ) ) {
+  post(url, data, callback, type) {
+    if (Common.isFunction(data)) {
       type = type || callback;
       callback = data;
       data = undefined;
     }
 
-    return this.http({
+    return this.request({
       url: url,
       method: 'POST',
       dataType: type,

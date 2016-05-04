@@ -1,0 +1,38 @@
+{
+  "source" :  "./src/" ,
+  "destination" :  "./docs/esdoc" ,
+  "includes" :  [ "\\.(js|es6)$" ],
+  "excludes" :  [ "\\.none\\.(js|es6)$" ],
+  "access" :  [ "public" ,  "protected" ],
+  "autoPrivate" :  true ,
+  "unexportIdentifier" :  false ,
+  "undocumentIdentifier" :  true ,
+  "builtinExternal" :  true ,
+  "index" :  "./README.md" ,
+  "package" :  "./package.json" ,
+  "coverage" :  true ,
+  "includeSource" :  true ,
+  "test" :  {
+    "type" :  "mocha" ,
+    "source" :  "./test/spec" ,
+    "includes" :  [ "\\.spec\\.(js|es6)$" ],
+    "excludes" :  [ "\\.none\\.(js|es6)$" ]
+  },
+  "title" :  "MagicWindow JSSDK API" ,
+  "//styles" :  [ "./path/to/style.css" ],
+  "//scripts" :  [ "./path/to/script.js" ],
+  "plugins" :  [
+  ],
+  "//manual" :  {
+    "asset" :  "./manual/asset" ,
+    "overview" :  [ "./manual/overview.md" ],
+    "installation" :  [ "./manual/installation.md" ],
+    "usage" :  [ "./manual/usage.md" ],
+    "tutorial" :  [ "./manual/tutorial.md" ],
+    "configuration" :  [ "./manual/configuration.md" ],
+    "example" :  [ "./manual/example.md" ],
+    "faq" :  [ "./manual/faq.md" ],
+    "changelog" :  [ "./CHANGELOG.md" ]
+  },
+  "lint" :  true
+}

@@ -3,7 +3,7 @@ export default class Cookie {
 
   /**
    * 获取Cookie
-   * @param {String} cookieName
+   * @param {String} cookieName cookie名称
    */
   static getCookie (cookieName) {
 
@@ -15,11 +15,11 @@ export default class Cookie {
 
   /**
    * Set cookie value
-   * @param {String} cookieName
-   * @param {String} value
-   * @param {Number} msToExpire
-   * @param {String} path
-   * @param {String} domain
+   * @param {String} cookieName cookie名称
+   * @param {String} value cookie值
+   * @param {Number} msToExpire 过期时间
+   * @param {String} path 设置cookie的路径
+   * @param {String} domain 设置cookie域名
    * @param {String} secure
    */
   static setCookie (cookieName, value, msToExpire, path, domain, secure) {

@@ -88,7 +88,7 @@ class Mwsdk {
           (err)=> {
             reject(err);
             if (common.isFunc(onError)) {
-              onError(result);
+              onError(err);
             }
           }
         );

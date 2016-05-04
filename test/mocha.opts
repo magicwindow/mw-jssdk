@@ -1,2 +1,2 @@
 --reporter spec
---require ./test/s.js
+--compilers js:babel/register

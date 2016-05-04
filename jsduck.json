@@ -1,7 +1,0 @@
-{
-  "--title": "Magicwindow JSSDK api documentation",
-  "--warnings": ["-link", "-no_doc"],
-  "--seo": true,
-  "--output": "docs/jsduck",
-  "--": "src"
-}
