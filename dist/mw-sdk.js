@@ -189,8 +189,7 @@
 
 	      return new _promise2.default(function (resolve, reject) {
 
-	        _this2.onInit = function () {
-	          alert(11);
+	        var route = function route() {
 	          new _mlink2.default().deferrerRedirect(function (result) {
 	            resolve(result);
 	            if (_common2.default.isFunc(callback)) {
@@ -203,6 +202,12 @@
 	            }
 	          });
 	        };
+
+	        if (initialized) {
+	          route();
+	        } else {
+	          _this2.onInit = route;
+	        }
 	      });
 	    }
 
@@ -2626,17 +2631,39 @@
 	    value: function deferrerRedirect(callback, onError) {
 	      var _this = this;
 
-	      return new _promise2.default(function () {
-	        _this.getDeferrerInfo().then(function (result) {
+	      var DEFER_PROMISE = 'deferPromise';
+	      var DEFER_DATA = 'deferData';
+
+	      if (this.cache[DEFER_PROMISE]) {
+	        return this.cache[DEFER_PROMISE];
+	      } else if (this.cache[DEFER_DATA]) {
+	        return new _promise2.default(function (resolve) {
 	          if (typeof callback === 'function') {
-	            callback(result);
-	          }
-	        }, function () {
-	          if (typeof onError === 'function') {
-	            onError(result);
+	            resolve(_this.cache[DEFER_DATA]);
+	            callback(_this.cache[DEFER_DATA]);
 	          }
 	        });
-	      });
+	      } else {
+	        this.cache[DEFER_PROMISE] = new _promise2.default(function (resolve, reject) {
+	          _this.getDeferrerInfo().then(function (result) {
+
+	            _this.cache[DEFER_DATA] = result; // 缓存数据
+	            resolve(result);
+
+	            if (typeof callback === 'function') {
+	              callback(result);
+	            }
+	            _this.cache[DEFER_PROMISE] = null; // 清空Promise请求
+	          }, function () {
+	            reject(result);
+	            if (typeof onError === 'function') {
+	              onError(result);
+	            }
+	            _this.cache[DEFER_PROMISE] = null; // 清空Promise请求
+	          });
+	        });
+	        return this.cache[DEFER_PROMISE];
+	      }
 	    }
 
 	    /**

@@ -24,17 +24,39 @@ export default class Mlink {
    * @returns {PromisePolyfill}
    */
    deferrerRedirect(callback, onError) {
-    return new Promise(()=>{
-      this.getDeferrerInfo().then((result)=>{
+    const DEFER_PROMISE = 'deferPromise';
+    const DEFER_DATA = 'deferData';
+
+    if (this.cache[DEFER_PROMISE]) {
+      return this.cache[DEFER_PROMISE];
+    } else if (this.cache[DEFER_DATA]) {
+      return new Promise((resolve)=>{
         if (typeof callback === 'function') {
-          callback(result);
-        }
-      }, ()=>{
-        if (typeof onError === 'function') {
-          onError(result);
+          resolve(this.cache[DEFER_DATA]);
+          callback(this.cache[DEFER_DATA]);
         }
       });
-    });
+    } else {
+      this.cache[DEFER_PROMISE] = new Promise((resolve, reject)=>{
+        this.getDeferrerInfo().then((result)=>{
+
+          this.cache[DEFER_DATA] = result; // 缓存数据
+          resolve(result);
+
+          if (typeof callback === 'function') {
+            callback(result);
+          }
+          this.cache[DEFER_PROMISE] = null; // 清空Promise请求
+        }, ()=>{
+          reject(result);
+          if (typeof onError === 'function') {
+            onError(result);
+          }
+          this.cache[DEFER_PROMISE] = null; // 清空Promise请求
+        });
+      });
+      return this.cache[DEFER_PROMISE];
+    }
   }
 
   /**
