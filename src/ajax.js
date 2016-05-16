@@ -47,7 +47,7 @@ export default class Ajax {
     let onSuccess = options.success || options.callback;
     let onError = options.error;
     let onComplete = options.complete;
-    let timeout = options.timeout || 100000;
+    let timeout = options.timeout || 10000;
     let dataType = options.dataType || 'text';
     let params = options.params || options.data;
     // const xtra = options.xtra;
@@ -183,11 +183,12 @@ export default class Ajax {
    * @param url
    * @param onSuccess
    */
-  loadJsonp(url, onSuccess, onError, timeout) {
+  loadJsonp(url, onSuccess, onError, timeout=0) {
 
     let stamp = [new Date().getTime(), Math.floor(Math.random() * 500)].join('_');
     let cbHandler = 'ajax_cb_' + stamp;
     let script = document.createElement('script');
+    let timeoutHandle;
 
     url += (url.indexOf('?') === -1 ? '?' : '&') + 'callback=' + cbHandler;
     window[cbHandler] = function (data) {
@@ -196,11 +197,12 @@ export default class Ajax {
         onSuccess(data);
       }
       delete window[cbHandler];
+      clearTimeout(timeoutHandle);
       document.head.removeChild(script);
     };
 
     if (timeout>0) {
-      setTimeout(function() {
+      timeoutHandle = setTimeout(function() {
         if (window[cbHandler]) {
           typeof onError === 'function' && onError();
         }

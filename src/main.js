@@ -77,7 +77,7 @@ class Mwsdk {
     return new Promise((resolve, reject)=>{
 
       this.onInit = ()=>{
-
+alert(11);
         new Mlink().deferrerRedirect(
           (result)=>{
             resolve(result);

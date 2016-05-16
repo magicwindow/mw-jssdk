@@ -273,7 +273,7 @@ export default class Mlink {
 
 
   /**
-   * 加载发送方所有的Deeplinks
+   * 加载场景还原所需要的数据
    * @returns {*}
    */
   getDeferrerInfo () {
