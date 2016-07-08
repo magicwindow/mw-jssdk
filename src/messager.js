@@ -21,9 +21,7 @@ export default class Messager{
           this.receive(event.data, domain);
         }
       });
-
     });
-
 
     this.channels = {
       getUserAgent: ()=>{

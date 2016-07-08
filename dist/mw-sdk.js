@@ -2221,7 +2221,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var hostName = '{{HOST_NAME}}'.replace(/\/$/, '');
+	var hostName = 'http://stats.magicwindow.cn'.replace(/\/$/, '');
 	var SERVER = hostName.indexOf('HOST_NAME') > -1 || !hostName ? 'http://stats.magicwindow.cn' : hostName;
 
 	exports.default = {
@@ -2667,10 +2667,13 @@
 	    }
 
 	    /**
-	     * 拼接成真正的url
+	     * 拼接成真正的url:
+	     * 使用魔窗后台的短链配置中设置的默认参数和用户从短链后面传递过来的动态参数
+	     * 替换Custom Scheme或Universal Link中的占位符;
 	     *
 	     * @param url String 后台DeepLink 字符串
 	     * @param params        JSONObject 动态参数
+	     * @param defaultParams JSONObject 默认参数
 	     * @return String
 	     */
 
@@ -3509,7 +3512,7 @@
 	    key: 'setCookie',
 	    value: function setCookie(cookieName, value, msToExpire, path, domain, secure) {
 
-	      var expiryDate;
+	      var expiryDate = void 0;
 
 	      // relative time to expire in milliseconds
 	      if (msToExpire) {

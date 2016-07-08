@@ -60,10 +60,13 @@ export default class Mlink {
   }
 
   /**
-   * 拼接成真正的url
+   * 拼接成真正的url:
+   * 使用魔窗后台的短链配置中设置的默认参数和用户从短链后面传递过来的动态参数
+   * 替换Custom Scheme或Universal Link中的占位符;
    *
    * @param url String 后台DeepLink 字符串
    * @param params        JSONObject 动态参数
+   * @param defaultParams JSONObject 默认参数
    * @return String
    */
   getRealUrl(url, params, defaultParams) {

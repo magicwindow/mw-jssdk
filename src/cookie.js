@@ -1,13 +1,12 @@
 export default class Cookie {
 
-
   /**
    * 获取Cookie
    * @param {String} cookieName cookie名称
    */
   static getCookie (cookieName) {
 
-    var cookiePattern = new RegExp('(^|;)[ ]*' + cookieName + '=([^;]*)'),
+    let cookiePattern = new RegExp('(^|;)[ ]*' + cookieName + '=([^;]*)'),
       cookieMatch = cookiePattern.exec(document.cookie);
 
     return cookieMatch ? decodeURIComponent(cookieMatch[2]) : null;
@@ -24,7 +23,7 @@ export default class Cookie {
    */
   static setCookie (cookieName, value, msToExpire, path, domain, secure) {
 
-    var expiryDate;
+    let expiryDate;
 
     // relative time to expire in milliseconds
     if (msToExpire) {
