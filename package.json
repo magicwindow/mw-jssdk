@@ -3,7 +3,8 @@
   "description": "Javascript API",
   "version": "2.0.3",
   "scripts": {
-    "build": "webpack --config webpack.config.prod.js -p",
+    "dist": "webpack --config webpack.config.prod.js -p",
+    "build": "webpack --config webpack.config.prod.js",
     "test": ""
   },
   "main": "dist/mw-sdk.js",
