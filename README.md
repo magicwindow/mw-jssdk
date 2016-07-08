@@ -58,6 +58,7 @@ mwsdk.init({
   ```
 
   如果您需要使用动态模板,您可以通过制定一个JS函数作为魔窗位渲染模板,该函数会传入一个Map类型的参数,这个Map包含了投放在此魔窗位中的活动配置,此函数的返回结果就是动态魔窗位模板:
+  
   ```javascript
   mwsdk.init({
     'appkey'  : 'XEJ7F76J61LHEWRI3Q9A6UN9BM4C****',
@@ -101,7 +102,7 @@ mwsdk.init({
 
 接下来在您的App中调用魔窗JSSDK的场景还原方法,调用时机建议在您App首页初始化完成时调用。
 
-···javascript
+```javascript
 
 // 示例一：使用回调
 mwsdk.router(
@@ -116,7 +117,7 @@ mwsdk.router(
   }
 );
 
-// 实例二：使用Promise
+// 示例二：使用Promise
 mwsdk.router()
 .then(
   function resolve(path) {
