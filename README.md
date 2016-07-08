@@ -13,6 +13,11 @@ http://magicwindow.cn/sdk/jssdk/mw-sdk.js
 http://magicwindow.cn/sdk/jssdk/mw-sdk.min.js
 ```
 
+使用npm安装：
+```shell
+npm install mw-sdk --save
+```
+
 使用Bower安装：
 ```shell
 bower install mw-sdk --save
