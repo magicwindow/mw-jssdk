@@ -4,13 +4,12 @@ os:
   - windows
 language: node_js
 node_js:
-  - "0.12"
-  - "4.2.3"
+  - "0.12.15"
+  - "4.1.2"
+  - "4.4.7"
 script:
-  - npm test
+  - npm build
 before_script:
   - npm install -g npm
-  - npm install -g grunt-cli
-  - npm install -g bower
+  - npm install -g webpack
   - npm install
-  - bower install

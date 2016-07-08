@@ -3,7 +3,8 @@
   "description": "Javascript API",
   "version": "2.0.3",
   "scripts": {
-    "test": "grunt test"
+    "build": "webpack --config webpack.config.prod.js -p",
+    "test": ""
   },
   "main": "dist/mw-sdk.js",
   "repository": "http://colin.luo@stash.junjichu.net/scm/noad/mw-sdk-js.git",

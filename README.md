@@ -69,12 +69,12 @@ mwsdk.init({
   });
   ```
   __banner__支持的属性:
-  . banner.title 类型: String; 活动标题
-  . banner.description 类型: String; 活动描述
-  . banner.imgUrl 类型: String; 活动图片
-  . banner.thumbUrl 类型: String; 活动缩略图
-  . banner.startTime 类型: Number; 活动开始时间戳
-  . banner.endTime 类型: Number; 活动结束时间戳
+  a. banner.title 类型: String; 活动标题
+  b. banner.description 类型: String; 活动描述
+  c. banner.imgUrl 类型: String; 活动图片
+  d. banner.thumbUrl 类型: String; 活动缩略图
+  e. banner.startTime 类型: Number; 活动开始时间戳
+  f. banner.endTime 类型: Number; 活动结束时间戳
 
 
 2. 为不同的魔窗位自定义不同的渲染模板:
