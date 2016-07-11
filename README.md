@@ -165,7 +165,7 @@ mwsdk.init({
             'appVersion': '3.9',
             'template': {
                 'xxxx-1': '<img src="[ $imgUrl ]"/>', // 自定义模板1 (直接使用HTML自定义模板)
-                'xxxx-2': customBannerTemplate        // 自定义模板2 (使用JS函数动态生成模板)
+                'xxxx-2': customTemplate        // 自定义模板2 (使用JS函数动态生成模板)
             }
         });
 
@@ -181,7 +181,7 @@ mwsdk.init({
          *   @param data.startTime   {Number} 活动开始时间戳
          *   @param data.endTime     {Number} 活动结束时间戳
          */
-        function bannerTemplate (data) {
+        function customTemplate (data) {
             return  '<div>' +
                     '  <h2 style="color: red;">使用自定义模板渲染的魔窗位:</h2>' +
                     '  <img src="[ $imgUrl ]" thumb-src="[ $thumbUrl ]"/>' +
