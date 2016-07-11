@@ -149,17 +149,16 @@ mwsdk.init({
   </head>
   <body ng-app="starter">
 
-    <!-- 设置魔窗位（您可以放在您页面中的任何位置）, 其中的ID是魔窗位ID(在魔窗后台的应用设置中能找到) -->
+    <!-- 第一步: 设置魔窗位（您可以放在您页面中的任何位置）, 其中的ID是魔窗位ID(在魔窗后台的应用设置中能找到) -->
     <mw-block id="xxxx-1" class="mw-banner"></mw-block>
     <mw-block id="xxxx-2" class="mw-banner"></mw-block>
 
-    <!-- 引用mwsdk -->
+    <!-- 第二步: 引用mwsdk -->
     <script src="http://magicwindow.cn/sdk/jssdk/mw-sdk.min.js"></script>
+    
+    <!-- 第三步: 初始化SDK -->
     <script>
 
-        /**
-         * 初始化MWSDK
-         */
         mwsdk.init({
             'appkey'  : "appkey-xxxxxxxxxxxxx", // 从哪里获取appkey: 魔窗后台 》应用设置 》应用管理 》（你关联的应用里面的appkey）
             'appVersion': '3.9',
@@ -170,7 +169,7 @@ mwsdk.init({
         });
 
         /**
-         * 渲染一个有详细描述的魔窗位
+         * 渲染一个有详细描述的魔窗位, 渲染时, MWSDK会将当前魔窗位的配置做为第一个参数传给此方法, 参数类型是一个Map;
          *
          * @param data {Object} 魔窗位配置数据
          *
